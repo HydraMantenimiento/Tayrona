@@ -37,8 +37,8 @@
                 </a>
             </li>
             <li>
-                <a href="">
-                    <i class="fa fa-circle-o text-aqua"></i> <span>informacion</span>
+                <a href="{{ route('users.index') }}">
+                    <i class="fa fa-users"></i> <span>Usuarios</span>
                 </a>
             </li>
             <li>

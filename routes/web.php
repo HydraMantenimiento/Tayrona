@@ -17,7 +17,7 @@
         Route::resource('/product-category', 'Product_categorysController');
 
         Route::resource('/admin/blog', 'BlogController');
-        Route::view('/users','user/users')->name('users');
+        Route::resource('users', 'UserController');
     });
 
 
@@ -28,6 +28,7 @@
 
 
     //vista de home menu rutas
+        route::view('/perro','visitante/home')->name('perro');
     route::view('/perro','visitante/perro')->name('perro');
     route::view('/gato','visitante/gato')->name('gato');
     route::view('/otros','visitante/otros')->name('otros');
