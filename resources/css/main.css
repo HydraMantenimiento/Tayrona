@@ -13,3 +13,9 @@
 .bg-orange:focus{
     outline: #FE7A00 !important ;
 }
+
+.bg-dark{
+    background:#222D32 ;
+}
+
+
