@@ -36,9 +36,9 @@
                         </li>
                         </li>
                         <!-- Menu Footer-->
-                        <li class="user-footer header">
-                            <div class="pull-right ">
-                                <a class="dropdown-item btn btn-default btn-flat" href="{{ route('logout') }}"
+                        <li class="user-footer " style="background: #222D32;">
+                            <div class="pull-right" >
+                                <a class="dropdown-item btn btn-default btn-flat"  href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

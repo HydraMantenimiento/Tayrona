@@ -27,7 +27,7 @@ class HomeController extends Controller
         if(Auth::user()->role_id == '1') {
            return  redirect()->route('dashboard');
         }else if(Auth::user()->role_id == '2') {
-            return  redirect()->route('users');
+            return  redirect()->route('cliente');
         }
     }
 
@@ -37,12 +37,11 @@ class HomeController extends Controller
     }
 
     public function dashboard()
+{
+    return view('admin/dashboard');
+}
+    public function cliente()
     {
-        return view('admin/dashboard');
-    }
-
-    public function users()
-    {
-       return view('user/users');
+        return view('user/users');
     }
 }

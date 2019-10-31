@@ -19,7 +19,7 @@
         Route::resource('/admin/blog', 'BlogController');
         Route::resource('users', 'UserController');
 
-        Route::get('/users','HomeController@users')->name('users');
+        Route::get('cliente','HomeController@cliente')->name('cliente');
     });
 
 
