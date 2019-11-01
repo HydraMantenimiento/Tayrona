@@ -101,7 +101,9 @@
                                     <label for="recipient-" class="col-form-label">Subcategorias</label>
                                     <select name="categorias" id="recipient-status" class="form-control" >
                                         <option></option>
-
+                                        @foreach($subcategory as $sub)
+                                            <option value="{{$sub->id}}" >{{$sub->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\product_img;
 use App\product_status;
+use App\subcategorys;
 use Illuminate\Http\Request;
 use App\productos;
 
@@ -20,7 +21,8 @@ class ProductController extends Controller
     {
         $product = productos::paginate(4);
         $status = product_status::all();
-        return  view('admin/product', compact('product', 'status') );
+        $subcategory = subcategorys::all();
+        return  view('admin/product', compact('product', 'status','subcategory') );
     }
 
     /**

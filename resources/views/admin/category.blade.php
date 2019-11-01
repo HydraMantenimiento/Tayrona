@@ -117,7 +117,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form action="{{route('category.store')}}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="recipient-" class="col-form-label">categorias</label>
@@ -146,7 +146,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form action="{{route('subcategory.store')}}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="recipient-" class="col-form-label">Subcategoria</label>
