@@ -14,7 +14,8 @@
         Route::resource('/product', 'ProductController');
 
         Route::resource('/product-img', 'Product_imgController');
-        Route::resource('/product-category', 'Product_categorysController');
+        Route::resource('/category', 'categoryController');
+        Route::resource('/subcategorys', 'subcategoryController');
 
         Route::resource('/admin/blog', 'BlogController');
         Route::resource('users', 'UserController');

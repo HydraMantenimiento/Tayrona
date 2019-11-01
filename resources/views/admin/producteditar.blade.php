@@ -175,7 +175,7 @@
             </div>
         </div>
     </div>
-
+    <!--
     <div class="col-lg-6">
         <div class="box">
             <div class="box-header with-border">
@@ -223,6 +223,7 @@
             </div>
         </div>
     </div>
+    -->
 </div>
 
 

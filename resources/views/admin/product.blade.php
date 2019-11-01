@@ -98,12 +98,10 @@
                             </div>
 
                                 <div class="form-group">
-                                    <label for="recipient-" class="col-form-label">categorias</label>
+                                    <label for="recipient-" class="col-form-label">Subcategorias</label>
                                     <select name="categorias" id="recipient-status" class="form-control" >
                                         <option></option>
-                                        @foreach($categoria as $cat)
-                                            <option value="{{$cat->id}}" >{{$cat->name}}</option>
-                                        @endforeach
+
                                     </select>
                                 </div>
 

@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('product-category.index') }}">
+                <a href="{{ route('category.index') }}">
                     <i class="fa fa-book"></i> <span>categorias y sub categorias</span>
                 </a>
             </li>

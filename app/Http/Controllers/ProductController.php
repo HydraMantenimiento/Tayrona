@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\product_categorys;
+
 use App\product_img;
 use App\product_status;
 use Illuminate\Http\Request;
@@ -19,9 +19,8 @@ class ProductController extends Controller
     public function index()
     {
         $product = productos::paginate(4);
-        $categoria = product_categorys::all();
         $status = product_status::all();
-        return  view('admin/product', compact('product','categoria', 'status') );
+        return  view('admin/product', compact('product', 'status') );
     }
 
     /**
@@ -44,7 +43,7 @@ class ProductController extends Controller
     {
         $productoagregar = new productos;
         $productoagregar->product_status_id  = $request->estado;
-        $productoagregar->product_categorys_id  = $request->categorias;
+        $productoagregar->product_subcategorys_id  = $request->subcategorias;
         $productoagregar->name = $request->name;
         $productoagregar->descripcion = $request->descripcion;
         $productoagregar->precio = $request->precio;
