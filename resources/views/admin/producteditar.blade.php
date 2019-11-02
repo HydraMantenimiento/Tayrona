@@ -13,8 +13,6 @@
                     </a>
                 </div>-->
              </div>
-            <!-- /.box-header -->
-            <!-- form start -->
             <form class="form-horizontal" action="{{Route('product.update',$productactualizar->id)}}" method="post">
                 @method('put')
                 @csrf
@@ -51,6 +49,15 @@
                              <div class="form-group">
                                 <div class="col-sm-12">
                                     <input type="text" name="precio" class="form-control" id="recipient-precio" value="{{$productactualizar->precio}}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="">subcategoria</label>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="text" name="subcategoria" class="form-control" id="recipient-precio" value="{{$productactualizar->subcategory_id}}">
                                 </div>
                             </div>
                         </div>
@@ -96,13 +103,13 @@
                                             <img src="{{asset($im->url)}}" alt="" style="width:100px ">
                                         </td>
                                         <td class="td-actions text-center ">
-                                            <a  type="button"  data-toggle="modal" data-target="#modal4"><button   class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto">
+                                            <a  type="button"  data-toggle="modal" data-target="#modal4"><button   class="btn btn-round btn-group btn-success btn-icon" data-toggle="tooltip" title="Modificar Imagen">
                                                     <i class="fa fa-fw fa-edit "></i>
                                                 </button></a>
                                             <form action="{{Route('product-img.destroy',$im->id)}}" method="post"  class="d-inline btn-group">
                                                 @csrf
                                                 @method('delete')
-                                                <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar producto">
+                                                <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar Imagen">
                                                     <i class="fa fa-fw fa-trash "></i>
                                                 </button>
                                             </form>
@@ -148,19 +155,20 @@
                             <tbody>
 
                             <tr>
-                                <td class="text-center"></td>
-                                <td class="td-actions text-center ">
-                                    <a href=""><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto">
-                                            <i class="fa fa-fw fa-edit "></i>
-                                        </button></a>
-                                    <form action="" method="post"  class="d-inline btn-group">
-
-                                        <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar producto">
-                                            <i class="fa fa-fw fa-trash "></i>
-                                        </button>
-                                    </form>
-                                </td>
+                                @foreach($category_product as $catego)
+                                   <tr>
+                                       <td class="text-center">{{$catego->category_id}}</td>
+                                       <td class="td-actions text-center ">
+                                           <form action="" method="post"  class="d-inline btn-group">
+                                               <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar categoria">
+                                                   <i class="fa fa-fw fa-trash "></i>
+                                               </button>
+                                           </form>
+                                       </td>
+                                   </tr>
+                                @endforeach
                             </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -175,55 +183,7 @@
             </div>
         </div>
     </div>
-    <!--
-    <div class="col-lg-6">
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title">Sub categorias del producto:   {{$productactualizar->name}}</h3>
-                <div class="box-tools pull-right">
-                    <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal3" >
-                        <i class="fa fa-plus">    New Category</i>
-                    </a>
-                </div>
-                <form action="" class="form-horizontal" method="post" autocomplete="off" id="form-general">
-                    @csrf
-                    <div class="box-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead >
-                            <tr >
-                                <th class="text-center">NOMBRE</th>
-                                <th class="text-center" >ACCIONES</th>
-                            </tr>
-                            </thead>
-                            <tbody>
 
-                            <tr>
-                                <td class="text-center"></td>
-                                <td class="td-actions text-center ">
-                                    <a href=""><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto">
-                                            <i class="fa fa-fw fa-edit "></i>
-                                        </button></a>
-                                    <form action="" method="post"  class="d-inline btn-group">
-
-                                        <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar producto">
-                                            <i class="fa fa-fw fa-trash "></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="box-footer">
-                        <div class="col-lg-3"></div>
-                        <div class="col lg 6">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    -->
 </div>
 
 
@@ -259,7 +219,7 @@
     </div>
 </div>
 
-<!-- Modal categorias-->
+<!-- Modal category_product-->
 <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -270,18 +230,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('product-category.store')}}" method="post">
-                   @method('PUT')
+                <form action="{{ route('category_product.store') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="recipient-" class="col-form-label">Categoria</label>
                         <input type="hidden" name="productid" value="{{$productactualizar->id}}">
                         <select name="categoria" id="recipient-category" class="form-control" >
                             <option value="" ></option>
-                            <option value="perros" >Perros</option>
-                            <option value="gatos" >Gatos</option>
-                            <option value="otras mascotas" >Otras Mascotas</option>
-                            <option value="accesorios" >Accesorios</option>
+                            @foreach($category as $categorys)
+                                <option value="{{$categorys->id}}" >{{$categorys->name}}</option>
+                            @endforeach
                         </select>
                     </div>
 
@@ -295,41 +253,6 @@
     </div>
 </div>
 
-<!-- Modal sub  categorias-->
-<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modal2">Sub Categorias</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                    <spam aria-hidden="true">&times;</spam>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post">
-                    @method('PUT')
-                    @csrf
-
-                        <div class="form-group">
-                            <label for="recipient-" class="col-form-label">sub categorias</label>
-                            <select name="subcategorias" id="recipient-status" class="form-control" >
-                                <option value="" ></option>
-                                <option value="1" >alimento</option>
-                                <option value="2" >juguetes</option>
-                                <option value="3" >remedios</option>
-                                <option value="4" >Accesorios</option>
-                            </select>
-                        </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
-                        <button type="submit" class="btn btn-primary" >Enviar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Modal imagenes update-->
 <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-hidden="true">

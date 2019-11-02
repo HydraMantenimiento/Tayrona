@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\category;
+use App\category_product;
 use App\product_img;
 use App\product_status;
 use App\subcategorys;
@@ -19,10 +21,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = productos::paginate(4);
+        $product = productos::paginate(5);
         $status = product_status::all();
+        $category = category::all();
         $subcategory = subcategorys::all();
-        return  view('admin/product', compact('product', 'status','subcategory') );
+        $category_product = category_product::all();
+        return  view('admin/product', compact('product','status','category','subcategory','category_product') );
     }
 
     /**
@@ -45,7 +49,7 @@ class ProductController extends Controller
     {
         $productoagregar = new productos;
         $productoagregar->product_status_id  = $request->estado;
-        $productoagregar->product_subcategorys_id  = $request->subcategorias;
+        $productoagregar->subcategory_id  = $request->subcategorias;
         $productoagregar->name = $request->name;
         $productoagregar->descripcion = $request->descripcion;
         $productoagregar->precio = $request->precio;
@@ -72,9 +76,12 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+
         $productactualizar = productos::findOrFail($id);
         $img = product_img::where('product_id', $id)->get();
-        return view('admin/producteditar', compact('productactualizar', 'img'));
+        $category = category::all();
+        $category_product = category_product::all();
+        return view('admin/producteditar', compact('productactualizar', 'img','category','category_product'));
     }
 
 

@@ -24,34 +24,36 @@
                                 <th class="text-center">DESCRIPCION</th>
                                 <th class="text-center">PRECIO</th>
                                 <th class="text-center">ESTADO</th>
-                                <th class="text-center" >CATEGORIAS</th>
+                                <th class="text-center" >SUBCATEGORIAS</th>
                                 <th class="text-center" >ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($product as $item)
+                            @foreach($product as $pro)
                                 <tr>
-                                    <td class="text-center">{{$item->name}}</td>
-                                    <td class="text-center">{{$item->descripcion}}</td>
-                                    <td class="text-center">{{$item->precio}}</td>
-                                    <td class="text-center">{{$item->product_status->name}}</td>
-                                    <td class="text-center">{{$item->product_categorys->name}}</td>
+                                    <td class="text-center">{{$pro->name}}</td>
+                                    <td class="text-center">{{$pro->descripcion}}</td>
+                                    <td class="text-center">{{$pro->precio}}</td>
+                                    <td class="text-center">{{$pro->product_status->name}}</td>
+                                    <td class="text-center">{{$pro->subcategory_id}}</td>
                                     <td class="td-actions text-center ">
-                                        <a href="{{Route('product.edit',$item->id)}}"><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto">
+                                        <a href="{{Route('product.edit',$pro->id)}}"><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto">
                                                 <i class="fa fa-fw fa-edit "></i>
                                             </button></a>
-                                        <form action="{{Route('product.destroy',$item->id)}}" method="POST"  class="d-inline btn-group">
-                                            @csrf
+                                        <form action="{{ Route('product.destroy', $pro->id) }}" method="POST"  class="d-inline btn-group">
                                             @method('DELETE')
-                                            <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar producto">
+                                            @csrf()
+                                            <button   class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar producto">
                                                 <i class="fa fa-fw fa-trash "></i>
                                             </button>
+
                                         </form>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+                        {{$product -> links()}}
                     </div>
                     <div class="box-footer">
                         <div class="col-lg-3"></div>
@@ -99,7 +101,7 @@
 
                                 <div class="form-group">
                                     <label for="recipient-" class="col-form-label">Subcategorias</label>
-                                    <select name="categorias" id="recipient-status" class="form-control" >
+                                    <select name="subcategorias" id="recipient" class="form-control" >
                                         <option></option>
                                         @foreach($subcategory as $sub)
                                             <option value="{{$sub->id}}" >{{$sub->name}}</option>
