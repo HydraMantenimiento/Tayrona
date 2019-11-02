@@ -77,12 +77,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($errors as $item)
+                                @foreach($subcategorias as $sub)
                                     <tr>
-                                        <td class="text-center">{{$item->name}}</td>
+                                        <td class="text-center">{{$sub->name}}</td>
                                         <td class="td-actions text-center ">
 
-                                            <form action="{{Route('subcategorys.destroy',$item->id)}}" method="post"  class="d-inline btn-group">
+                                            <form action="{{Route('subcategory.destroy',$sub->id)}}" method="post"  class="d-inline btn-group">
                                                 @method('delete')
                                                 @csrf
                                                 <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar categoria">

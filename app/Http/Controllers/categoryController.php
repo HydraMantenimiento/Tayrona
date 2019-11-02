@@ -33,7 +33,10 @@ class categoryController extends Controller
      */
     public function store(Request $request)
     {
-        return 'hola';
+        $category = new category;
+        $category->name = $request->categoria;
+        $category->save();
+        return back()->with('agregar','El producto se ha agregado');
     }
 
     /**
@@ -80,6 +83,8 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-
+        $categorydestroy = category::find($id);
+        $categorydestroy -> delete();
+        return back()->with('agregar','El producto se ha agregado');
     }
 }
