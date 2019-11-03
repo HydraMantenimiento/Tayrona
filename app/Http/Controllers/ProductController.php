@@ -65,7 +65,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = productos::find($id);
+        $status = product_status::all();
+        return view('admin/productshow', compact('product','status'));
     }
 
     /**
@@ -80,8 +82,9 @@ class ProductController extends Controller
         $productactualizar = productos::findOrFail($id);
         $img = product_img::where('product_id', $id)->get();
         $category = category::all();
+        $status = product_status::all();
         $category_product = category_product::all();
-        return view('admin/producteditar', compact('productactualizar', 'img','category','category_product'));
+        return view('admin/producteditar', compact('productactualizar', 'img','category','category_product','status'));
     }
 
 

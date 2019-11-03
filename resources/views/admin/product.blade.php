@@ -37,9 +37,13 @@
                                     <td class="text-center">{{$pro->product_status->name}}</td>
                                     <td class="text-center">{{$pro->subcategory_id}}</td>
                                     <td class="td-actions text-center ">
-                                        <a href="{{Route('product.edit',$pro->id)}}"><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto">
+                                        <a>
+                                            <a href="{{ route('product.show', $pro->id ) }}" class="btn btn-info" data-toggle="tooltip" title="Vista del producto"><i class="fa fa-eye"></i></a>
+                                        </a>
+                                        <a href="{{Route('product.edit',$pro->id)}}"><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto" >
                                                 <i class="fa fa-fw fa-edit "></i>
-                                            </button></a>
+                                            </button>
+                                        </a>
                                         <form action="{{ Route('product.destroy', $pro->id) }}" method="POST"  class="d-inline btn-group">
                                             @method('DELETE')
                                             @csrf()

@@ -39,7 +39,12 @@
                             <label for="">estado</label>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input type="text" name="product_status_id" class="form-control" id="recipient-description" value="{{$productactualizar->product_status_id}}">
+                                    <select name="product_status_id" id="recipient-status" class="form-control" >
+                                        <option value="1" >{{$productactualizar->product_status->name}}</option>
+                                        @foreach($status as $status)
+                                            <option value="{{$status->id}}" >{{$status->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -49,15 +54,6 @@
                              <div class="form-group">
                                 <div class="col-sm-12">
                                     <input type="text" name="precio" class="form-control" id="recipient-precio" value="{{$productactualizar->precio}}">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="">subcategoria</label>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" name="subcategoria" class="form-control" id="recipient-precio" value="{{$productactualizar->subcategory_id}}">
                                 </div>
                             </div>
                         </div>
@@ -159,7 +155,9 @@
                                    <tr>
                                        <td class="text-center">{{$catego->category_id}}</td>
                                        <td class="td-actions text-center ">
-                                           <form action="" method="post"  class="d-inline btn-group">
+                                           <form action="{{ route('category_product.destroy',$catego->id ) }}" method="post"  class="d-inline btn-group">
+                                               @method('delete')
+                                               @csrf
                                                <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar categoria">
                                                    <i class="fa fa-fw fa-trash "></i>
                                                </button>

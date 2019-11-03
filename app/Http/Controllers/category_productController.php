@@ -85,6 +85,8 @@ class category_productController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destroy = category_product::find($id);
+        $destroy->delete();
+        return back();
     }
 }
