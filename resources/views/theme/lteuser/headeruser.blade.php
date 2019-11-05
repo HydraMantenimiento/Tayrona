@@ -1,6 +1,6 @@
     <header class="main-header bg-orange">
     <!-- Logo -->
-    <a href="{{route('dashboard')}}" class="logo bg-orange">
+    <a href="{{route('cliente')}}" class="logo bg-orange">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini "><b>T</b>A</span>
         <!-- logo for regular state and mobile devices -->
@@ -9,7 +9,7 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top bg-orange">
         <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <a href="#" class="sidebar-toggle bg-orange" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -36,7 +36,7 @@
                         </li>
                         </li>
                         <!-- Menu Footer-->
-                        <li class="user-footer " style="background: #222D32;">
+                        <li class="user-footer " style="background: #2D3E50;">
                             <div class="pull-right" >
                                 <a class="dropdown-item btn btn-default btn-flat"  href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

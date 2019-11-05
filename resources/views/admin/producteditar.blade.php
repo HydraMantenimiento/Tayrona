@@ -103,8 +103,8 @@
                                                     <i class="fa fa-fw fa-edit "></i>
                                                 </button></a>
                                             <form action="{{Route('product-img.destroy',$im->id)}}" method="post"  class="d-inline btn-group">
-                                                @csrf
                                                 @method('delete')
+                                                @csrf
                                                 <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar Imagen">
                                                     <i class="fa fa-fw fa-trash "></i>
                                                 </button>
@@ -257,7 +257,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modal">Modificar imagen</h5>
+                <h5 class="modal-title" id="modal">Modificar Imagen</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="close">
                     <spam aria-hidden="true">&times;</spam>
                 </button>
@@ -265,7 +265,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="{{asset('product-img.update')}}}" method="post"  enctype="multipart/form-data">
+                        <form action="{{route('product-img.update',$productactualizar->id)}}}" method="post"  enctype="multipart/form-data">
 
                             @csrf
 

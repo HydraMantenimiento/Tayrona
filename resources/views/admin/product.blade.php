@@ -8,10 +8,15 @@
             <div class="box box-success">
                 <div class="box-header with-border">
                     <h3 class="box-title">Productos</h3>
-                    <div class="box-tools pull-right">
-                        <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal" >
-                            <i class="fa fa-plus">Add New</i>
-                        </a>
+                    <div class="box-tools  ">
+                        <div class="pull-right btn-block">
+                            <a href="" class="btn btn-warning btn-sm add-new " type="button" >
+                                <i class="fa fa-book"> Reportes</i>
+                            </a>
+                            <a href="" class="btn btn-success btn-sm add-new " type="button"  data-toggle="modal" data-target="#modal" >
+                                <i class="fa fa-plus"> Nuevo Producto</i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <form action="" class="form-horizontal" method="post" autocomplete="off" id="form-general">

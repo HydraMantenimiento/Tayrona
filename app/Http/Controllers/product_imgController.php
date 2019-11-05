@@ -78,13 +78,9 @@ class product_imgController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request )
     {
-
-        $imgupdate = product_img::findOrFail($id);
-        $imgupdate->url=$request->avatar;
-        $imgupdate->save();
-        return $id;
+        //
     }
 
     /**
@@ -95,9 +91,9 @@ class product_imgController extends Controller
      */
     public function destroy($id)
     {
-        product_img::destroy($id);
-        //$imgdelete = product_img::find($id);
-        //$imgdelete->delete();
+        //product_img::destroy($id);
+        $imgdelete = product_img::find($id);
+        $imgdelete->delete();
         return back();
     }
 }

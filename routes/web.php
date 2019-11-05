@@ -21,7 +21,19 @@
         Route::resource('/admin/blog', 'BlogController');
         Route::resource('users', 'UserController');
 
+
+        //cliente-----*
         Route::get('cliente','HomeController@cliente')->name('cliente');
+
+        route::view('/perrouser','user/views/perrouser')->name('perrouser');
+        route::view('/gatouser','user/views/gatouser')->name('gatouser');
+        route::view('/otrosuser','user/views/otrosuser')->name('otrosuser');
+        route::view('/grominguser','user/views/grominguser')->name('grominguser');
+        route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
+        route::view('/bloguser','user/views/bloguser')->name('bloguser');
+        route::view('/descripcionuser','user/views/descripcionuser')->name('descripcionuser');
+
+
     });
 
 
@@ -32,7 +44,7 @@
 
 
     //vista de home menu rutas
-        route::view('/perro','visitante/home')->name('perro');
+    //route::view('/perro','visitante/home')->name('perro');
     route::view('/perro','visitante/perro')->name('perro');
     route::view('/gato','visitante/gato')->name('gato');
     route::view('/otros','visitante/otros')->name('otros');

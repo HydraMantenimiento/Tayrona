@@ -5,7 +5,7 @@
         </div>
         <div class="col-10">
             <nav class="navbar navbar-expand-lg navbar-dark bg-orange mx-0 px-0">
-                <a href="" class="navbar-brand pl-0 ml-0 navbar-expand-lg">Bienvenidos  </a>
+                <a href="" class="navbar-brand pl-0 ml-0 navbar-expand-lg">Donde las mascotas van </a>
                 <div class="container-search ">
                     <i class="fas fa-search text-white"></i>
                     <input type="text" class="barra-busqueda" placeholder="Buscar">
@@ -24,8 +24,9 @@
                     <div class="navbar-nav  pl-0 ml-0">
                         <a href="{{ __('perro')}}" class="nav-item nav-link active  pl-0 ml-0">Perros <i class="fas fa-bone"></i></a>
                         <a href="{{ route('gato') }}" class="nav-item nav-link  active">Gatos <i class="fas fa-paw"></i></a>
-                        <a href="{{ route('otros') }}" class="nav-item nav-link active">Otros <i class="fas fa-dove"></i></a>
+                        <a href="{{ route('otros') }}" class="nav-item nav-link active">Otras Mascotas <i class="fas fa-dove"></i></a>
                         <a href="{{ route('groming') }}" class="nav-item nav-link active">Groming <i class="fas fa-cut"></i></a>
+                        <a href="#" class="nav-item nav-link active">Veterinaria <i class="fas fa-cut"></i></a>
                         <a href="{{ route('blog') }}" class="nav-item nav-link active">Blog <i class="fab fa-blogger"></i></a>
                         <a href="{{ route('politicas') }}" class="nav-item nav-link active">Politicas <i class="fas fa-handshake"></i></a>
 
