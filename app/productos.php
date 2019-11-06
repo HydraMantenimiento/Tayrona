@@ -14,7 +14,6 @@ class productos extends Model
         return $this->belongsTo('App\category');
     }
 
-
     public function  subcategorys(){
         return $this->belongsTo('App\subcategorys');
     }

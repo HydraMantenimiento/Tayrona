@@ -79,8 +79,7 @@
                         <i class="fa fa-plus">    New Image</i>
                     </a>
                 </div>
-                <form action="" class="form-horizontal" method="post" autocomplete="off" id="form-general">
-                    @csrf
+
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead >
@@ -122,8 +121,6 @@
                         <div class="col lg 6">
                         </div>
                     </div>
-                </form>
-
             </div>
         </div>
     </div>
@@ -138,8 +135,7 @@
                         <i class="fa fa-plus">    New Category</i>
                     </a>
                 </div>
-                <form action="" class="form-horizontal" method="post" autocomplete="off" id="form-general">
-                    @csrf
+
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead >
@@ -155,8 +151,9 @@
                                    <tr>
                                        <td class="text-center">{{$catego->category_id}}</td>
                                        <td class="td-actions text-center ">
-                                           <form action="{{ route('category_product.destroy',$catego->id ) }}" method="post"  class="d-inline btn-group">
-                                               @method('delete')
+
+                                           <form action="{{ route('category_product.destroy', $catego->id ) }}" method="post"  class="d-inline btn-group">
+                                               @method('DELETE')
                                                @csrf
                                                <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar categoria">
                                                    <i class="fa fa-fw fa-trash "></i>
@@ -175,7 +172,7 @@
                         <div class="col lg 6">
                         </div>
                     </div>
-                </form>
+
 
 
             </div>
@@ -253,7 +250,7 @@
 
 
 <!-- Modal imagenes update-->
-<div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

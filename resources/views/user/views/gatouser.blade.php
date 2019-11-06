@@ -32,11 +32,10 @@
 
         .category_list .category_item{
             display: block;
-            width: 90%;
+            width: 100%;
             padding: 15px 0;
             margin-bottom: 20px;
             background: #1A2226;
-
             text-align: center;
             text-decoration: none;
             color: #fff;
@@ -48,13 +47,13 @@
         /* PRODUCTOS ============*/
 
         .products-list{
-            width: 60%;
+            width: 80%;
             display: flex;
             flex-wrap: wrap;
         }
 
         .products-list .product-item{
-            width: 22%;
+            width: 17%;
             margin-left: 3%;
             margin-bottom: 25px;
             box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.22);
@@ -153,47 +152,39 @@
     </style>
 
 <div class="container" style=" width: 100vw; height: 100vh;">
-
-
     <div class="row">
-
-            <div class="store-wrapper">
-                <div class="category_list">
-                    <a href="#" class="category_item" category="all">Todo</a>
-                    <a href="#" class="category_item" category="ordenadores">Alimentos</a>
-                    <a href="#" class="category_item" category="laptops">Juguetes</a>
-                    <a href="#" class="category_item" category="smartphones">Juguetes Comestibles</a>
-                    <a href="#" class="category_item" category="monitores">Accesorios</a>
-                    <a href="#" class="category_item" category="audifonos">Medicamentos</a>
+        <div class="store-wrapper">
+            <!--<div class="category_list">
+                <a href="#" class="category_item" category="all">Todo</a>
+                <a href="#" class="category_item" category="ordenadores">Alimentos</a>
+                <a href="#" class="category_item" category="laptops">Juguetes</a>
+                <a href="#" class="category_item" category="smartphones">Juguetes Comestibles</a>
+                <a href="#" class="category_item" category="monitores">Accesorios</a>
+                <a href="#" class="category_item" category="audifonos">Medicamentos</a>
+            </div>-->
+            <section class="products-list">
+                <div class="product-item" category="laptops">
+                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
+                    <a href="#">Laptop Hp</a>
                 </div>
-                <section class="products-list">
-                    <div class="product-item" category="laptops">
-                        <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                        <a href="#">Laptop Hp</a>
-                    </div>
-                    <div class="product-item" category="laptops">
-                        <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                        <a href="#">Laptop Hp</a>
-                    </div>
-                    <div class="product-item" category="laptops">
-                        <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                        <a href="#">Laptop Hp</a>
-                    </div>
-                    <div class="product-item" category="laptops">
-                        <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                        <a href="#">Laptop Hp</a>
-                    </div>
-                </section>
-        </div>
-        <!--<div class="col-sm-3 my-3">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
+                <div class="product-item" category="laptops">
+                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
+                    <a href="#">Laptop Hp</a>
                 </div>
-            </div>
-        </div>-->
-
+                <div class="product-item" category="laptops">
+                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
+                    <a href="#">Laptop Hp</a>
+                </div>
+                <div class="product-item" category="laptops">
+                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
+                    <a href="#">Laptop Hp</a>
+                </div>
+                <div class="product-item" category="laptops">
+                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
+                    <a href="#">Laptop Hp</a>
+                </div>
+            </section>
+         </div>
     </div>
     <div class="my-2">
         <div class="row">

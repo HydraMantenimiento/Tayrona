@@ -83,7 +83,7 @@ class ProductController extends Controller
         $img = product_img::where('product_id', $id)->get();
         $category = category::all();
         $status = product_status::all();
-        $category_product = category_product::all();
+        $category_product = category_product::where('product_id', $id)->get();
         return view('admin/producteditar', compact('productactualizar', 'img','category','category_product','status'));
     }
 
@@ -115,7 +115,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        var_dump($id);
+        die();
         $producteliminar = productos::find($id);
+
         $producteliminar->delete()  ;
         return back()->with ('eliminar','el producto ha sido eliminado');
     }

@@ -33,7 +33,7 @@
             </li>
             <li>
                 <a href="{{ route('category.index') }}">
-                    <i class="fa fa-book"></i> <span>categorias y sub categorias</span>
+                    <i class="fa fa-book"></i> <span>Categorias</span>
                 </a>
             </li>
             <li>
@@ -46,7 +46,7 @@
                     <i class="fa fa-circle-o text-aqua"></i> <span>Repoprtes</span>
                 </a>
             </li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Blog</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

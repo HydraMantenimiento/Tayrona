@@ -14,8 +14,7 @@
                             </a>
                         </div>
                     </div>
-                    <form action="" class="form-horizontal" method="post" autocomplete="off" id="form-general">
-                        @csrf
+
                         <div class="box-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead >
@@ -48,7 +47,6 @@
                             <div class="col lg 6">
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -66,8 +64,6 @@
                             </a>
                         </div>
                     </div>
-                    <form action="" class="form-horizontal" method="post" autocomplete="off" id="form-general">
-                        @csrf
                         <div class="box-body">
                             <table id="example2" class="table table-bordered table-striped">
                                 <thead >
@@ -100,7 +96,6 @@
                             <div class="col lg 6">
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

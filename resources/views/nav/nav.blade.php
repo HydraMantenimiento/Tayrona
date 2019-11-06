@@ -10,21 +10,36 @@
                     <i class="fas fa-search text-white"></i>
                     <input type="text" class="barra-busqueda" placeholder="Buscar">
                 </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav mr-0 pr-0">
-                <!-- esto es para que se muestre solo cuando no se a iniciado session -->
-                    <a href="{{ route('register') }}" class="btn text-white">Registrate <i class="fas fa-dog"></i></a>
-                    <a href="{{ route('login') }}" class="btn text-white">Login <i class="fas fa-cat"></i></a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav mr-0 pr-0">
+                        <!-- esto es para que se muestre solo cuando no se a iniciado session -->
+                        <a href="{{ route('register') }}" class="btn text-white">Registrate <i class="fas fa-dog"></i></a>
+                        <a href="{{ route('login') }}" class="btn text-white">Login <i class="fas fa-cat"></i></a>
+                    </div>
                 </div>
-            </div>
             </nav>
             <hr class="bg-white p-0 m-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-orange pl-0 ml-0">
                 <div class="collapse navbar-collapse  pl-0 ml-0" id="navbarNavAltMarkup">
                     <div class="navbar-nav  pl-0 ml-0">
-                        <a href="{{ __('perro')}}" class="nav-item nav-link active  pl-0 ml-0">Perros <i class="fas fa-bone"></i></a>
-                        <a href="{{ route('gato') }}" class="nav-item nav-link  active">Gatos <i class="fas fa-paw"></i></a>
-                        <a href="{{ route('otros') }}" class="nav-item nav-link active">Otras Mascotas <i class="fas fa-dove"></i></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'perros') }}" id="navbarDropdown" role="button" >
+                                PERROS  <i class="fas fa-bone"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'gatos') }}" id="navbarDropdown" role="button" >
+                                GATOS <i class="fas fa-paw"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  active" href="{{ route('vistascategorias', $name = 'otras mascotas') }}" id="navbarDropdown" role="button" >
+                                OTRAS MASCOTAS <i class="fas fa-dove"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="{{ route('otros') }}" class="dropdown-item">TODOS</a>
+                            </div>
+                        </li>
                         <a href="{{ route('groming') }}" class="nav-item nav-link active">Groming <i class="fas fa-cut"></i></a>
                         <a href="#" class="nav-item nav-link active">Veterinaria <i class="fas fa-cut"></i></a>
                         <a href="{{ route('blog') }}" class="nav-item nav-link active">Blog <i class="fab fa-blogger"></i></a>

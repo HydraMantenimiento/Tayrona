@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\category_product;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -33,6 +34,7 @@ class HomeController extends Controller
 
     public function home()
     {
+
         return view('Invited/home');
     }
 
