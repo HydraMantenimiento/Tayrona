@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Carrousel;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -24,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         if(Auth::user()->role_id == '1') {
            return  redirect()->route('dashboard');
         }else if(Auth::user()->role_id == '2') {
@@ -33,7 +35,8 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('Invited/home');
+        $carrousels = Carrousel::all();
+        return view('Invited/home', compact('carrousels'));
     }
 
     public function dashboard()

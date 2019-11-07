@@ -5,32 +5,22 @@
     <div class="bd-example">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                @for($i = 0; $i < count($carrousels); $i++ )
+                    <li data-target="#carouselExampleCaptions" data-slide-to="{{ $i }}" class="{{ $i == 0 ? 'active' :'' }} "></li>
+                @endfor
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('imagenes/g.png') }}" class="d-block w-100" alt="...">
+                <?php $i = 0 ?>
+                @foreach($carrousels as $carrousel)
+                <div class="carousel-item {{ $i == 0 ? 'active' :'' }} ">
+                    <img src="{{ asset($carrousel->img) }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h5>{{ $carrousel->title }}</h5>
+                        <p>{{ $carrousel->description }}</p>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('imagenes/g.png') }}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('imagenes/g.png') }}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
-                </div>
+                    <?php $i++ ?>
+                @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
