@@ -14,16 +14,16 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('perrouser') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
+                    <li><a href="{{ route('vis', $name = 'perros') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/perros/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/perros/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/perros/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/perros/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/perros/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
                 </ul>
             </li>
             <li class="treeview">
-                <a href="{{ route('gatouser') }}">
+                <a href="">
                     <i class="fa fa-circle-o text-aqua"></i>
                     <span>GATOS</span>
                     <span class="pull-right-container">
@@ -31,11 +31,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
+                    <li><a href="{{ route('vis', $name = 'gatos') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/gatos/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/gatos/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/gatos/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/gatos/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/gatos/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -47,11 +48,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
+                    <li><a href="{{ route('vis', $name = 'otras mascotas') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/otras mascotas/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/otras mascotas/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/otras mascotas/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/otras mascotas/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
+                    <li><a href="{{ url('checksubcategoryusers/otras mascotas/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
                 </ul>
             </li>
             <li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\descriptions_product;
 use Illuminate\Http\Request;
 
 class descriptions_productController extends Controller
@@ -32,9 +33,14 @@ class descriptions_productController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
-        //
+        $description = new descriptions_product;
+        $description->product_id = $request->productid;
+        $description->name = $request->name;
+        $description->description =$request->descripcion;
+        $description->save();
+        return back();
     }
 
     /**

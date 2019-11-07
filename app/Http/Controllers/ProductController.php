@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\category;
 use App\category_product;
+use App\descriptions_product;
 use App\product_img;
 use App\product_status;
 use App\subcategorys;
@@ -81,10 +82,11 @@ class ProductController extends Controller
 
         $productactualizar = productos::findOrFail($id);
         $img = product_img::where('product_id', $id)->get();
+        $descripcion = descriptions_product::where('product_id', $id)->get();
         $category = category::all();
         $status = product_status::all();
         $category_product = category_product::where('product_id', $id)->get();
-        return view('admin/producteditar', compact('productactualizar', 'img','category','category_product','status'));
+        return view('admin/producteditar', compact('productactualizar', 'img','category','category_product','status','descripcion'));
     }
 
 

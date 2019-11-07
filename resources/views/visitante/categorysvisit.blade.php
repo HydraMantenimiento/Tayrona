@@ -1,25 +1,16 @@
 
-@extends('theme.lteuser.masteruser')
+@extends('layouts.layout')
 
 @section('content')
 
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
+        .wrap{
+            max-width: 1250px;
+            width: 100%;
+            margin: auto;
         }
-
-        body{
-            background: #E0E4E5;
-            font-family: 'Open Sans', sans-serif;
-            /*overflow: hidden; -----> ocultar el scroll de desplazamiento*/
-        }
-
 
         .store-wrapper{
-            padding: 15px;
             display: flex;
             flex-wrap: wrap;
         }
@@ -32,10 +23,11 @@
 
         .category_list .category_item{
             display: block;
-            width: 100%;
+            width: 90%;
             padding: 15px 0;
             margin-bottom: 20px;
-            background: #1A2226;
+            background: #E84C3D;
+
             text-align: center;
             text-decoration: none;
             color: #fff;
@@ -44,16 +36,18 @@
         .category_list .ct_item-active{
             background: #2D3E50;
         }
+
         /* PRODUCTOS ============*/
 
         .products-list{
-            width: 80%;
+            width: 82%;
             display: flex;
             flex-wrap: wrap;
         }
 
+
         .products-list .product-item{
-            width: 17%;
+            width: 22%;
             margin-left: 3%;
             margin-bottom: 25px;
             box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.22);
@@ -81,7 +75,7 @@
             text-decoration: none;
         }
 
-        /* RESPONSIVE ================================*/
+        /* RESPONSIVE */
 
         @media screen and (max-width: 1100px){
             .products-list .product-item{
@@ -120,7 +114,7 @@
                 flex-direction: column;
             }
             .category_list .category_item{
-                width: 90%;
+                width: 100%;
                 margin-bottom: 10px;
             }
         }
@@ -129,7 +123,6 @@
 
             .products-list .product-item{
                 width: 47.5%;
-
             }
 
             .products-list .product-item:nth-child(3n+1){
@@ -143,66 +136,35 @@
         }
 
         @media screen and (max-width: 350px){
-            .products-list,
-            .product_item {
+            .products-list .product_item{
                 width: 100%;
                 margin-left: 0px;
             }
         }
+
     </style>
 
-<div class="container" style=" width: 100vw; height: 100vh;">
-    <div class="row">
+    <div class="wrap">
+        <h1></h1>
         <div class="store-wrapper">
-            <!--<div class="category_list">
+            <div class="category_list">
                 <a href="#" class="category_item" category="all">Todo</a>
-                <a href="#" class="category_item" category="ordenadores">Alimentos</a>
-                <a href="#" class="category_item" category="laptops">Juguetes</a>
-                <a href="#" class="category_item" category="smartphones">Juguetes Comestibles</a>
-                <a href="#" class="category_item" category="monitores">Accesorios</a>
-                <a href="#" class="category_item" category="audifonos">Medicamentos</a>
-            </div>-->
+                <a href="#" class="category_item" category="ordenadores">Ordenadores</a>
+                <a href="#" class="category_item" category="laptops">Laptops</a>
+                <a href="#" class="category_item" category="smartphones">Smartphones</a>
+                <a href="#" class="category_item" category="monitores">Monitores</a>
+                <a href="#" class="category_item" category="audifonos">Audifonos</a>
+            </div>
             <section class="products-list">
-                <div class="product-item" category="laptops">
-                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                    <a href="#">Laptop Hp</a>
-                </div>
-                <div class="product-item" category="laptops">
-                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                    <a href="#">Laptop Hp</a>
-                </div>
-                <div class="product-item" category="laptops">
-                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                    <a href="#">Laptop Hp</a>
-                </div>
-                <div class="product-item" category="laptops">
-                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                    <a href="#">Laptop Hp</a>
-                </div>
-                <div class="product-item" category="laptops">
-                    <img src="{{ asset('imagenes/medicamentos.jpg') }}" alt="" >
-                    <a href="#">Laptop Hp</a>
-                </div>
+                @foreach($query as $q)
+                    <div class="product-item" category="laptops">
+                        <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/comida-perro.png') }}" alt="" ></a>
+                        <a href="#">{{$q->name}}</a>
+                    </div>
+                @endforeach
             </section>
-         </div>
-    </div>
-    <div class="my-2">
-        <div class="row">
-            <nav>
-                <ul class="pagination" style="margin-left: 190%;">
-                    <li class="page-item"><a href="" class="page-link">previus</a></li>
-                    <li class="page-item"><a href="" class="page-link">1</a></li>
-                    <li class="page-item"><a href="" class="page-link">2</a></li>
-                    <li class="page-item"><a href="" class="page-link">3</a></li>
-                    <li class="page-item"><a href="" class="page-link">next</a></li>
-                </ul>
-            </nav>
         </div>
     </div>
+    {{$query -> links()}}
 </div>
-
-
-@endsection
-@section('scripts')
-
 @endsection

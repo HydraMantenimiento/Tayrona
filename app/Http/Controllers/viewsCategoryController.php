@@ -15,22 +15,25 @@ class viewsCategoryController extends Controller
             ->join('categorys', 'category_product.category_id', '=', 'categorys.id')
             ->where('categorys.name', $name)
             ->select('productos.*', 'categorys.name as categoria')
-            ->paginate(4);
+            ->paginate(8);
+        $name =  str_replace('%20', ' ', $name);
 
+        switch ($name){
+            case 'perros':
+                return view('visitante/categorysvisit', compact('query'));
+            break;
 
-        if ($name == 'perros'){
-            return view('visitante/perro', compact('query'));
-        }else{
-            if ($name == 'gatos'){
-                return view('visitante/gato', compact('query'));
+            case 'gatos':
+                if ($name == 'gatos'){
+                    return view('visitante/categorysvisit', compact('query'));
+                }
+            break;
 
-            }else{
-               if ($name == 'otras mascotas'){
-                   return $query;
-               }
-            }
+            case 'otras mascotas':
+                if ($name == 'otras mascotas'){
+                    return view('visitante/categorysvisit', compact('query'));
+                }
+            break;
         }
-
-
     }
 }

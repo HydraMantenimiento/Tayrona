@@ -153,7 +153,7 @@
                             <tr>
                                 @foreach($category_product as $catego)
                                    <tr>
-                                       <td class="text-center">{{$catego->category_id}}</td>
+                                       <td class="text-center">{{$catego->category->name}}</td>
                                        <td class="td-actions text-center ">
 
                                            <form action="{{ route('category_product.destroy', $catego->id ) }}" method="post"  class="d-inline btn-group">
@@ -186,7 +186,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">DESCRIPCIONES </h3>
                     <div class="box-tools pull-right">
-                        <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal2" >
+                        <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal5" >
                             <i class="fa fa-plus">    New Category</i>
                         </a>
                     </div>
@@ -195,6 +195,7 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead >
                             <tr >
+                                <th class="text-center">NOMBRE</th>
                                 <th class="text-center">DESCRIPCION</th>
                                 <th class="text-center" >ACCIONES</th>
                             </tr>
@@ -202,12 +203,13 @@
                             <tbody>
 
                             <tr>
-                            @foreach($category_product as $catego)
+                            @foreach($descripcion as $des)
                                 <tr>
-                                    <td class="text-center">{{$catego->category_id}}</td>
+                                    <td class="text-center">{{$des->name}}</td>
+                                    <td class="text-center">{{$des->description}}</td>
                                     <td class="td-actions text-center ">
 
-                                        <form action="{{ route('category_product.destroy', $catego->id ) }}" method="post"  class="d-inline btn-group">
+                                        <form action="{{ route('category_product.destroy', $des->id ) }}" method="post"  class="d-inline btn-group">
                                             @method('DELETE')
                                             @csrf
                                             <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar categoria">
@@ -337,7 +339,49 @@
 </div>
 
 <!--modal de agregar descripcion-->
+    <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal">Agregar Descripciones</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <spam aria-hidden="true">&times;</spam>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form action="{{route('description.store',$productactualizar->id)}}" method="post"  enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="productid" value="{{$productactualizar->id}}">
+                                <div class="col-md-pull-12">
+                                    <label for="inputEmail3" >Nombre Descripcion</label>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input type="text" name="name" class="form-control" id="recipient-name" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-pull-12">
+                                    <label for="">Descripcion</label>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <textarea name="descripcion" id="" cols="30" rows="10" class="form-control" ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer col-md-12">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                                    <button type="submit" class="btn btn-primary" >Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 

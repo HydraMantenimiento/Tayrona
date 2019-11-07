@@ -24,7 +24,9 @@ class productos extends Model
     public function category_product(){
         return $this->belongsTo('App\category_product');
     }
-
+    public function descriptions_product(){
+        return $this->belongsTo('App\descriptions_product');
+    }
     protected $dates = ['deleted_at'];
 
 }

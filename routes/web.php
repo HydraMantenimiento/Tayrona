@@ -24,11 +24,11 @@
 
         //cliente-----*
         Route::get('cliente','HomeController@cliente')->name('cliente');
+        Route::get('/checkcategoryuser/{name}','categoryusersController@checkcategoryuser')->name('vis');
+        Route::get('checksubcategoryusers/{name}/{subcate}','categoryusersController@checksubcategoryusers')->name('sub');
 
+        Route::resource('/description', 'descriptions_productController');
 
-        route::view('/gatouser','user/views/gatouser')->name('gatouser');
-        route::view('/perrouser','user/views/perrouser')->name('perrouser');
-        route::view('/otrosuser','user/views/otrosuser')->name('otrosuser');
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
         route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
         route::view('/bloguser','user/views/bloguser')->name('bloguser');
@@ -46,9 +46,7 @@
 
     //vista de home menu rutas
     route::get('/perro/{name}','viewsCategoryController@checkcategories')->name('vistascategorias');
-    //route::view('/perro/{name}','visitante/perro')->name('perro');
-   // route::view('/gato','visitante/gato')->name('gato');
-    route::view('/otros','visitante/otros')->name('otros');
+
     route::view('/groming','visitante/groming')->name('groming');
     route::view('/politicas','visitante/politicas')->name('politicas');
     route::view('/blog','visitante/blog')->name('blog');
