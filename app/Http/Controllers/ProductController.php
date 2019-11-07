@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\product_categorys;
+
+use App\category;
+use App\category_product;
 use App\product_img;
 use App\product_status;
+use App\subcategorys;
 use Illuminate\Http\Request;
 use App\productos;
 
@@ -18,10 +21,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = productos::paginate(4);
-        $categoria = product_categorys::all();
+        $product = productos::paginate(5);
         $status = product_status::all();
-        return  view('admin/product', compact('product','categoria', 'status') );
+        $category = category::all();
+        $subcategory = subcategorys::all();
+        $category_product = category_product::all();
+        return  view('admin/product', compact('product','status','category','subcategory','category_product') );
     }
 
     /**
@@ -44,7 +49,7 @@ class ProductController extends Controller
     {
         $productoagregar = new productos;
         $productoagregar->product_status_id  = $request->estado;
-        $productoagregar->product_categorys_id  = $request->categorias;
+        $productoagregar->subcategory_id  = $request->subcategorias;
         $productoagregar->name = $request->name;
         $productoagregar->descripcion = $request->descripcion;
         $productoagregar->precio = $request->precio;
@@ -60,7 +65,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = productos::find($id);
+        $status = product_status::all();
+        return view('admin/productshow', compact('product','status'));
     }
 
     /**
@@ -71,9 +78,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+
         $productactualizar = productos::findOrFail($id);
         $img = product_img::where('product_id', $id)->get();
-        return view('admin/producteditar', compact('productactualizar', 'img'));
+        $category = category::all();
+        $status = product_status::all();
+        $category_product = category_product::where('product_id', $id)->get();
+        return view('admin/producteditar', compact('productactualizar', 'img','category','category_product','status'));
     }
 
 
@@ -98,7 +109,7 @@ class ProductController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     *S
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

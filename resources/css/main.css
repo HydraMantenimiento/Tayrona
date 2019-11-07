@@ -15,7 +15,14 @@
 }
 
 .bg-dark{
-    background:#222D32 ;
+    background:#222D32 !important ;
 }
 
-
+.bg-dark{
+    background:#222D32 !important ;
+    color:white;
+    outline:#222D32 !important ;
+}
+.bg-dark:focus{
+    background:#222D32 !important ;
+}

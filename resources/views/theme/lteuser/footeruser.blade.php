@@ -3,5 +3,4 @@
         <b></b>
     </div>
     <strong><a href="https://adminlte.io"></a>.</strong>
-
 </footer>

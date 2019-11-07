@@ -17,13 +17,14 @@ class CreateProductosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_status_id');
             $table->foreign('product_status_id')->references('id')->on('product_status');
-            $table->unsignedBigInteger('product_categorys_id');
-            $table->foreign('product_categorys_id')->references('id')->on('product_categorys');
+            $table->unsignedBigInteger('subcategory_id');
+            $table->foreign('subcategory_id')->references('id')->on('subcategorys');
             $table->string('name');
             $table->string('descripcion');
             $table->string('precio');
             //$table->string('quantities');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

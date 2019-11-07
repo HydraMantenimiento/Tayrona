@@ -2,22 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\product_categorys;
-use App\sub_categorys;
+use App\subcategorys;
 use Illuminate\Http\Request;
 
-class product_categorysController extends Controller
+class subcategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $category = product_categorys::all();
-        return  view('admin/category', compact('category') );
-
+        return  view('admin/category');
     }
 
     /**
@@ -27,7 +19,7 @@ class product_categorysController extends Controller
      */
     public function create()
     {
-        //
+        return view('');
     }
 
     /**
@@ -36,12 +28,12 @@ class product_categorysController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request )
+    public function store(Request $request)
     {
-        $category = new product_categorys();
-        $category->name = $request->categorias;
-        $category->save();
-        return back()->with('agregar','la  categoria se ha agregado');
+        $subcategory = new subcategorys;
+        $subcategory -> name =$request ->subcategoria;
+        $subcategory->save();
+        return back()->with('agregar','El producto se ha agregado');
     }
 
     /**
@@ -63,8 +55,10 @@ class product_categorysController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -75,7 +69,7 @@ class product_categorysController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -86,8 +80,8 @@ class product_categorysController extends Controller
      */
     public function destroy($id)
     {
-        $categoryupdate = product_categorys::findOrFail($id);
-        $categoryupdate->delete();
-        return back()->with ('eliminar','la categoria ha sido eliminada');
+        $subdestroy = subcategorys::find($id);
+        $subdestroy -> delete();
+        return back()->with('agregar','El producto se ha agregado');
     }
 }

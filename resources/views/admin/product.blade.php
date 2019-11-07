@@ -8,14 +8,17 @@
             <div class="box box-success">
                 <div class="box-header with-border">
                     <h3 class="box-title">Productos</h3>
-                    <div class="box-tools pull-right">
-                        <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal" >
-                            <i class="fa fa-plus">Add New</i>
-                        </a>
+                    <div class="box-tools  ">
+                        <div class="pull-right btn-block">
+                            <a href="" class="btn btn-warning btn-sm add-new " type="button" >
+                                <i class="fa fa-book"> Reportes</i>
+                            </a>
+                            <a href="" class="btn btn-success btn-sm add-new " type="button"  data-toggle="modal" data-target="#modal" >
+                                <i class="fa fa-plus"> Nuevo Producto</i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <form action="" class="form-horizontal" method="post" autocomplete="off" id="form-general">
-                    @csrf
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead >
@@ -24,41 +27,46 @@
                                 <th class="text-center">DESCRIPCION</th>
                                 <th class="text-center">PRECIO</th>
                                 <th class="text-center">ESTADO</th>
-                                <th class="text-center" >CATEGORIAS</th>
+                                <th class="text-center" >SUBCATEGORIAS</th>
                                 <th class="text-center" >ACCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($product as $item)
+                            @foreach($product as $pro)
                                 <tr>
-                                    <td class="text-center">{{$item->name}}</td>
-                                    <td class="text-center">{{$item->descripcion}}</td>
-                                    <td class="text-center">{{$item->precio}}</td>
-                                    <td class="text-center">{{$item->product_status->name}}</td>
-                                    <td class="text-center">{{$item->product_categorys->name}}</td>
+                                    <td class="text-center">{{$pro->name}}</td>
+                                    <td class="text-center">{{$pro->descripcion}}</td>
+                                    <td class="text-center">{{$pro->precio}}</td>
+                                    <td class="text-center">{{$pro->product_status->name}}</td>
+                                    <td class="text-center">{{$pro->subcategory_id}}</td>
                                     <td class="td-actions text-center ">
-                                        <a href="{{Route('product.edit',$item->id)}}"><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto">
+                                        <a>
+                                            <a href="{{ route('product.show', $pro->id ) }}" class="btn btn-info" data-toggle="tooltip" title="Vista del producto"><i class="fa fa-eye"></i></a>
+                                        </a>
+                                        <a href="{{Route('product.edit',$pro->id)}}"><button  type="button" data-toggle="tooltip" class="btn btn-round btn-group btn-success btn-icon" title="Modificar producto" >
                                                 <i class="fa fa-fw fa-edit "></i>
-                                            </button></a>
-                                        <form action="{{Route('product.destroy',$item->id)}}" method="POST"  class="d-inline btn-group">
-                                            @csrf
+                                            </button>
+                                        </a>
+                                        <form action="{{ Route('product.destroy', $pro->id) }}" method="POST"  class="d-inline btn-group">
                                             @method('DELETE')
-                                            <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar producto">
+                                            @csrf()
+                                            <button   class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar producto">
                                                 <i class="fa fa-fw fa-trash "></i>
                                             </button>
+
                                         </form>
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+                        {{$product -> links()}}
                     </div>
                     <div class="box-footer">
                         <div class="col-lg-3"></div>
                         <div class="col lg 6">
                         </div>
                     </div>
-                </form>
             </div>
         </div>
     </div>
@@ -98,11 +106,11 @@
                             </div>
 
                                 <div class="form-group">
-                                    <label for="recipient-" class="col-form-label">categorias</label>
-                                    <select name="categorias" id="recipient-status" class="form-control" >
+                                    <label for="recipient-" class="col-form-label">Subcategorias</label>
+                                    <select name="subcategorias" id="recipient" class="form-control" >
                                         <option></option>
-                                        @foreach($categoria as $cat)
-                                            <option value="{{$cat->id}}" >{{$cat->name}}</option>
+                                        @foreach($subcategory as $sub)
+                                            <option value="{{$sub->id}}" >{{$sub->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

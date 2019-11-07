@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="{{  asset('iconos/logo-tayrona.png') }}">
         <title>@yield("title","Tayrona Pet Shop")</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -21,6 +22,8 @@
         <link rel="stylesheet" href="{{asset("assets/dropzone/dist/dropzone.css")}}">
 
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+
 
         @yield("style")
 
@@ -43,11 +46,12 @@
             <!--inicio aside-->
             @include("theme/lteuser/asideuser")
 
-            <div class="content-wrapper">
+           <div class="content-wrapper">
                 <section class="content">
                     @yield("content")
                 </section>
             </div>
+
             <!--inicio footer -->
             @include("theme/lteuser/footeruser")
         </div>

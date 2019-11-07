@@ -5,71 +5,16 @@
 
 <div class="container" style=" width: 100vw; height: 100vh;">
     <div class="row">
-        <div class="col-sm-3 my-3">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
+        @foreach($query as $q)
+            <div class="col-sm-3 my-3">
+                <div class="card btn btn-outline ">
+                    <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
+                    <div class="card-body">
+                        <p class="card-text">{{$q->name}}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-3 my-3">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 my-3">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 my-3">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 my-1">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 my-1">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 my-1">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 my-1">
-            <div class="card btn btn-outline " >
-                <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/gato-alimento.jpg') }}" alt="" class="card-img-top cimg" ></a>
-                <div class="card-body ">
-                    <p class="card-text">Nombre Productos</p>
-                </div>
-            </div>
-        </div>
-
+        @endforeach
     </div>
     <div class="my-2">
         <div class="row">

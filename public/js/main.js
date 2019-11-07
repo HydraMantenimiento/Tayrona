@@ -7,8 +7,8 @@ $(document).ready(function () {
         }, 2000);
 
         $("#img-modal").animate({
-            width: "180px",
-            height: "100px",
+            width: "280px",
+            height: "200px",
         }, 1000, ()  => {
             $("#img-modal").animate({
                 left: "0px",

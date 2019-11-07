@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Carrousel;
+use App\category_product;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -29,23 +31,27 @@ class HomeController extends Controller
         if(Auth::user()->role_id == '1') {
            return  redirect()->route('dashboard');
         }else if(Auth::user()->role_id == '2') {
-            return  redirect()->route('users');
+            return  redirect()->route('cliente');
         }
     }
 
     public function home()
     {
+
         $carrousels = Carrousel::all();
         return view('Invited/home', compact('carrousels'));
+
+
+        return view('Invited/home');
+
     }
 
     public function dashboard()
+{
+    return view('admin/dashboard');
+}
+    public function cliente()
     {
-        return view('admin/dashboard');
-    }
-
-    public function users()
-    {
-       return view('user/users');
+        return view('user/users');
     }
 }
