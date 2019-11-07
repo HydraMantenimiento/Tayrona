@@ -7,8 +7,7 @@
 @section('content')
 
 
-
- <!--<div class="container" style=" width: 100vw; height: 100vh;">
+<div class="container" style=" width: 100vw; height: 100vh;">
     <div class="row">
     <div class="col-sm-3 my-3">
             <div class="card btn btn-outline ">
@@ -88,5 +87,5 @@
             </nav>
         </div>
     </div>
-</div>-->
+</div>
 @endsection
