@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class productos extends Model
 {
+
+    use SoftDeletes;
+
     public function  product_status(){
         return $this->belongsTo('App\product_status');
     }
@@ -20,4 +24,7 @@ class productos extends Model
     public function category_product(){
         return $this->belongsTo('App\category_product');
     }
+
+    protected $dates = ['deleted_at'];
+
 }

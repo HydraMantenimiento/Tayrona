@@ -6,7 +6,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"></li>
             <li class="treeview">
-                <a href="{{ route('perrouser') }}">
+                <a href="#">
                     <i class="fa fa-circle-o text-aqua"></i>
                     <span>PERRO</span>
                     <span class="pull-right-container">
@@ -14,6 +14,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    <li><a href="{{ route('perrouser') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
                     <li><a href="#"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>

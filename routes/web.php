@@ -45,7 +45,7 @@
 
 
     //vista de home menu rutas
-route::get('/perro/{name}','viewsCategoryController@checkcategories')->name('vistascategorias');
+    route::get('/perro/{name}','viewsCategoryController@checkcategories')->name('vistascategorias');
     //route::view('/perro/{name}','visitante/perro')->name('perro');
    // route::view('/gato','visitante/gato')->name('gato');
     route::view('/otros','visitante/otros')->name('otros');

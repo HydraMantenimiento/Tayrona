@@ -1,10 +1,7 @@
 
 @extends('layouts.layout')
 
-<!-- style="width: 18%; height: 200px;"
--->
 @section('content')
-
 
 <div class="container" style=" width: 100vw; height: 100vh;">
     <div class="row">
@@ -18,8 +15,6 @@
                 </div>
             </div>
         @endforeach
-
-
     </div>
     <div class="my-2">
         <div class="row">

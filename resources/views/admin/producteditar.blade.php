@@ -1,8 +1,9 @@
 @extends('theme.lte.master')
 
 @section('content')
-<div class="row">
-    <div class="col-md-12">
+    <!-- actualizar producto-->
+    <div class="row">
+        <div class="col-md-12">
         <!-- Horizontal Form -->
         <div class="box">
             <div class="box-header with-border">
@@ -26,14 +27,7 @@
                                 </div>
                             </div>
                          </div>
-                        <div class="col-md-6">
-                            <label for="">Descripcion</label>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" name="descripcion" class="form-control" id="recipient-description" value="{{$productactualizar->descripcion}}">
-                                </div>
-                            </div>
-                        </div>
+
 
                         <div class="col-md-6">
                             <label for="">estado</label>
@@ -48,7 +42,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                              <label for="">Precio</label>
                              <div class="form-group">
@@ -57,6 +50,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <label for="">Descripcion</label>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <textarea name="descripcion" id="" cols="30" rows="10" class="form-control" >{{$productactualizar->descripcion}}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <!-- /.box-body -->
@@ -68,9 +70,10 @@
 
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-12">
+    </div>
+    <!-- tabla imagenes-->
+    <div class="row">
+        <div class="col-lg-12">
         <div class="box ">
             <div class="box-header with-border">
                 <h3 class="box-title">IMAGENES DEL PRODUCTO :  {{$productactualizar->name}}</h3>
@@ -124,9 +127,10 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-6">
+    </div>
+    <!-- tabla categorias-->
+    <div class="row">
+        <div class="col-lg-6">
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title">Categoria del producto:   {{$productactualizar->name}}</h3>
@@ -172,14 +176,65 @@
                         <div class="col lg 6">
                         </div>
                     </div>
+                 </div>
+             </div>
+        </div>
+        <!-- ingresar descripcion-->
+
+        <div class="col-lg-6">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">DESCRIPCIONES </h3>
+                    <div class="box-tools pull-right">
+                        <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal2" >
+                            <i class="fa fa-plus">    New Category</i>
+                        </a>
+                    </div>
+
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead >
+                            <tr >
+                                <th class="text-center">DESCRIPCION</th>
+                                <th class="text-center" >ACCIONES</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                            @foreach($category_product as $catego)
+                                <tr>
+                                    <td class="text-center">{{$catego->category_id}}</td>
+                                    <td class="td-actions text-center ">
+
+                                        <form action="{{ route('category_product.destroy', $catego->id ) }}" method="post"  class="d-inline btn-group">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar categoria">
+                                                <i class="fa fa-fw fa-trash "></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box-footer">
+                        <div class="col-lg-3"></div>
+                        <div class="col lg 6">
+                        </div>
+                    </div>
 
 
 
+                </div>
             </div>
         </div>
     </div>
 
-</div>
 
 
 <!-- Modal imagenes-->
@@ -250,7 +305,7 @@
 
 
 <!-- Modal imagenes update-->
-        <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -281,6 +336,7 @@
     </div>
 </div>
 
+<!--modal de agregar descripcion-->
 
 @endsection
 

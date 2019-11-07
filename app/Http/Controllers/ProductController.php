@@ -109,16 +109,13 @@ class ProductController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     *S
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        var_dump($id);
-        die();
         $producteliminar = productos::find($id);
-
         $producteliminar->delete()  ;
         return back()->with ('eliminar','el producto ha sido eliminado');
     }
