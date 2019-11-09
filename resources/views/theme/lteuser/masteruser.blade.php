@@ -18,10 +18,7 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
-        <!-- .dropzone-->
-        <link rel="stylesheet" href="{{asset("assets/dropzone/dist/dropzone.css")}}">
 
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
         <!-- platilla productos -->
         <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">
@@ -68,22 +65,18 @@
         <!-- AdminLTE App -->
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
 
-        <!--dropzone-->
-        <script src="{{asset("assets/dist/dropzone.js")}}"></script>
+
 
         <!-- platilla productos -->
         <script src="{{asset("desing/js/jquery.min.js")}}"></script>
+        <script src="{{asset("desing/js/js/bootstrap.min.js")}}"></script>
         <script src="{{asset("desing/js/slick.min.js")}}"></script>
         <script src="{{asset("desing/js/nouislider.min.js")}}"></script>
         <script src="{{asset("desing/js/jquery.zoom.min.js")}}"></script>
         <script src="{{asset("desing/js/main.js")}}"></script>
 
 
-        <script>
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            });
-        </script>
+
 
 
         @yield("script")
