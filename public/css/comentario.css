@@ -139,7 +139,7 @@ body {
 .comments-list .comment-box {
 	width: 680px;
 	float: right;
-	position: relative;  
+	position: relative;
 	-webkit-box-shadow: 1 3px 5px rgba(0,0,0,0.15);
 	-moz-box-shadow: 1px 3px 5px rgba(0,0,0,0.15);
 	box-shadow: 1px 3px 5px rgba(0,0,0,0.15);

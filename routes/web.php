@@ -1,6 +1,5 @@
 <?php
 
-
     //no tocar rutas
 
     Route::get('/', 'HomeController@home')->name('inicio');
@@ -17,18 +16,16 @@
         Route::resource('/category', 'categoryController');
         Route::resource('/subcategory', 'subcategoryController');
         Route::resource('/category_product', 'category_productController');
-
         Route::resource('/admin/blog', 'BlogController');
         Route::resource('users', 'UserController');
+        Route::get('admin-list-excel','reportsController@exportExcel')->name('reports.excel');
 
 
         //cliente-----*
         Route::get('cliente','HomeController@cliente')->name('cliente');
         Route::get('/checkcategoryuser/{name}','categoryusersController@checkcategoryuser')->name('vis');
         Route::get('checksubcategoryusers/{name}/{subcate}','categoryusersController@checksubcategoryusers')->name('sub');
-
-        Route::resource('/description', 'descriptions_productController');
-
+        Route::resource('/descriptions','descriptions_productController');
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
         route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
         route::view('/bloguser','user/views/bloguser')->name('bloguser');
@@ -37,15 +34,14 @@
 
     });
 
-
     Route::view('/blogAdmin','admin/blogAdmin')->name('blogAdmin');
     //FIN ADMINISTRADOR
 
-
-
-
     //vista de home menu rutas
     route::get('/perro/{name}','viewsCategoryController@checkcategories')->name('vistascategorias');
+
+
+   // route::view('/otros','visitante/otros')->name('otros');
 
     route::view('/groming','visitante/groming')->name('groming');
     route::view('/politicas','visitante/politicas')->name('politicas');

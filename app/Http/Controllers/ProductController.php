@@ -8,7 +8,7 @@ use App\category_product;
 use App\descriptions_product;
 use App\product_img;
 use App\product_status;
-use App\subcategorys;
+use App\Subcategory;
 use Illuminate\Http\Request;
 use App\productos;
 
@@ -25,7 +25,7 @@ class ProductController extends Controller
         $product = productos::paginate(5);
         $status = product_status::all();
         $category = category::all();
-        $subcategory = subcategorys::all();
+        $subcategory = Subcategory::all();
         $category_product = category_product::all();
         return  view('admin/product', compact('product','status','category','subcategory','category_product') );
     }
@@ -68,6 +68,7 @@ class ProductController extends Controller
     {
         $product = productos::find($id);
         $status = product_status::all();
+
         return view('admin/productshow', compact('product','status'));
     }
 
@@ -118,7 +119,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $producteliminar = productos::find($id);
-        $producteliminar->delete()  ;
+        $producteliminar->delete();
         return back()->with ('eliminar','el producto ha sido eliminado');
     }
 }

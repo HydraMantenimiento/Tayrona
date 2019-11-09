@@ -21,8 +21,7 @@ class CreateProductosTable extends Migration
             $table->foreign('subcategory_id')->references('id')->on('subcategorys');
             $table->string('name');
             $table->string('descripcion');
-            $table->string('precio');
-            //$table->string('quantities');
+            $table->decimal('precio');
             $table->timestamps();
             $table->softDeletes();
         });

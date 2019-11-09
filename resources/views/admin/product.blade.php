@@ -10,7 +10,7 @@
                     <h3 class="box-title">Productos</h3>
                     <div class="box-tools  ">
                         <div class="pull-right btn-block">
-                            <a href="" class="btn btn-warning btn-sm add-new " type="button" >
+                            <a href="{{route('reports.excel')}}" class="btn btn-warning btn-sm add-new " type="button" >
                                 <i class="fa fa-book"> Reportes</i>
                             </a>
                             <a href="" class="btn btn-success btn-sm add-new " type="button"  data-toggle="modal" data-target="#modal" >
@@ -38,7 +38,7 @@
                                     <td class="text-center">{{$pro->descripcion}}</td>
                                     <td class="text-center">{{$pro->precio}}</td>
                                     <td class="text-center">{{$pro->product_status->name}}</td>
-                                    <td class="text-center">{{$pro->subcategory_id}}</td>
+                                    <td class="text-center">{{$pro->subcategory->name}}</td>
                                     <td class="td-actions text-center ">
                                         <a>
                                             <a href="{{ route('product.show', $pro->id ) }}" class="btn btn-info" data-toggle="tooltip" title="Vista del producto"><i class="fa fa-eye"></i></a>
@@ -83,6 +83,7 @@
                     <div class="modal-body">
                         <form action="{{Route('product.store')}}" method="post">
                             @csrf
+
                             <div class="form-group">
                                 <label for="recipient-name"  class="col-form-label">Nombre</label>
                                 <input type="text" name="name" class="form-control" id="recipient-name">

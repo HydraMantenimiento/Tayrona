@@ -6,6 +6,9 @@
 -->
 @section('content')
     <style>
+        body{
+            background: #fff;
+        }
         .store-wrapper{
             display: flex;
             flex-wrap: wrap;
@@ -116,16 +119,60 @@
         }
     </style>
 
-    <div class="store-wrapper">
-        <section class="products-list">
-        @foreach($query as $q)
-                <div class="product-item" category="laptops">
-                    <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/comida-perro.png') }}" alt="" ></a>
-                    <a href="#">{{$q->name}}</a>
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- Products tab & slick -->
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="products-tabs">
+                                <!-- tab -->
+                                <div id="tab2" class="tab-pane fade in active">
+                                    <!--<div class="products-slick" data-nav="#slick-nav-2">-->
+                                        <!-- product -->
+                                        @foreach($query as $q)
+                                        <div class="col-md-3 col-xs-6">
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <img src="{{asset("desing/img/product06.png")}}" alt="">
+                                                    <div class="product-label">
+                                                        <span class="sale">-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-body">
+                                                    <p class="product-category">Category</p>
+                                                    <h3 class="product-name"><a href="#">{{$q->name}}</a></h3>
+                                                    <h4 class="product-price">${{$q->precio}} <del class="product-old-price">$990.00</del></h4>
+                                                    <div class="product-rating">
+                                                    </div>
+                                                    <div class="product-btns">
+                                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                        <button class="quick-view"><a href="{{ route('descripcionuser') }}"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="add-to-cart">
+                                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    <div id="slick-nav-2" class="products-slick-nav"></div>
+                                </div>
+                                <!-- /tab -->
+                            <!-- </div>-->
+                    </div>
                 </div>
-            @endforeach
-        </section>
-        {{$query -> links()}}
+            {{$query -> links()}}
+            <!-- /Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
     </div>
+
+
 
 @endsection

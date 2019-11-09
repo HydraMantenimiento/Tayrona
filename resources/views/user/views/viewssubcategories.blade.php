@@ -119,16 +119,65 @@
         }
     </style>
 
-    <div class="store-wrapper">
-        <section class="products-list">
-        @foreach($query as $q)
-                <div class="product-item" category="laptops">
-                    <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/comida-perro.png') }}" alt="" ></a>
-                    <a href="#">{{$q->name}}</a>
+
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- Products tab & slick -->
+                <div class="col-md-10">
+                    <div class="row">
+                        @foreach($query as $q)
+                            <div class="col-md-3">
+                                <div class="products-tabs">
+                                    <!-- tab -->
+                                    <div id="tab2" class="tab-pane fade in active">
+                                        <div class="products-slick" data-nav="#slick-nav-2">
+                                            <!-- product -->
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <img src="{{asset("desing/img/product06.png")}}" alt="">
+                                                    <div class="product-label">
+                                                        <span class="sale">-30%</span>
+                                                        <span class="new">NEW</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-body">
+                                                    <p class="product-category">Category</p>
+                                                    <h3 class="product-name"><a href="#">{{$q->name}}</a></h3>
+                                                    <h4 class="product-price">${{$q->precio}} <del class="product-old-price">${{$q->precio}}</del></h4>
+                                                    <div class="product-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <div class="product-btns">
+                                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                        <button class="quick-view"><a href="{{ route('descripcionuser') }}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
+                                                    </div>
+                                                </div>
+                                                <div class="add-to-cart">
+                                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="slick-nav-2" class="products-slick-nav"></div>
+                                    </div>
+                                    <!-- /tab -->
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
-            @endforeach
-        </section>
-        {{$query -> links()}}
+            {{$query -> links()}}
+            <!-- /Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
     </div>
 
 @endsection

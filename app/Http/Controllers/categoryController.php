@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\category;
-use App\subcategorys;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class categoryController extends Controller
@@ -11,7 +11,8 @@ class categoryController extends Controller
     public function index()
     {
         $categorias = category::all();
-        $subcategorias = subcategorys::all();
+        $subcategorias = Subcategory::all();
+
         return  view('admin/category', compact('categorias','subcategorias'));
     }
 

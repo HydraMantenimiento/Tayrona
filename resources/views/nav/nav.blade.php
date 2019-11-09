@@ -36,9 +36,6 @@
                             <a class="nav-link  active" href="{{ route('vistascategorias', $name = 'otras mascotas') }}" id="navbarDropdown" role="button" >
                                 OTRAS MASCOTAS <i class="fas fa-dove"></i>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a href="{{ route('otros') }}" class="dropdown-item">TODOS</a>
-                            </div>
                         </li>
                         <a href="{{ route('groming') }}" class="nav-item nav-link active">Groming <i class="fas fa-cut"></i></a>
                         <a href="#" class="nav-item nav-link active">Veterinaria <i class="fas fa-cut"></i></a>

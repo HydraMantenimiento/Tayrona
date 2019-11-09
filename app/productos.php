@@ -10,6 +10,8 @@ class productos extends Model
 
     use SoftDeletes;
 
+    protected $table='productos';
+
     public function  product_status(){
         return $this->belongsTo('App\product_status');
     }
@@ -18,8 +20,8 @@ class productos extends Model
         return $this->belongsTo('App\category');
     }
 
-    public function  subcategorys(){
-        return $this->belongsTo('App\subcategorys');
+    public function  subcategory(){
+        return $this->belongsTo('App\Subcategory');
     }
     public function category_product(){
         return $this->belongsTo('App\category_product');

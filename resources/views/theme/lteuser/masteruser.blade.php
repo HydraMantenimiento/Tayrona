@@ -23,17 +23,19 @@
 
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
+        <!-- platilla productos -->
+        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/nouislider.min.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/slick.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/slick-theme.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/style.css")}}">
 
 
         @yield("style")
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
         <!-- Google Font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     </head>
@@ -69,6 +71,12 @@
         <!--dropzone-->
         <script src="{{asset("assets/dist/dropzone.js")}}"></script>
 
+        <!-- platilla productos -->
+        <script src="{{asset("desing/js/jquery.min.js")}}"></script>
+        <script src="{{asset("desing/js/slick.min.js")}}"></script>
+        <script src="{{asset("desing/js/nouislider.min.js")}}"></script>
+        <script src="{{asset("desing/js/jquery.zoom.min.js")}}"></script>
+        <script src="{{asset("desing/js/main.js")}}"></script>
 
 
         <script>

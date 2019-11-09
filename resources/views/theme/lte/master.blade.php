@@ -21,6 +21,7 @@
         <!-- .dropzone-->
         <link rel="stylesheet" href="{{asset("assets/dropzone/dist/dropzone.css")}}">
 
+
         @yield("style")
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\subcategorys;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class subcategoryController extends Controller
@@ -30,7 +30,7 @@ class subcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $subcategory = new subcategorys;
+        $subcategory = new Subcategory;
         $subcategory -> name =$request ->subcategoria;
         $subcategory->save();
         return back()->with('agregar','El producto se ha agregado');
@@ -80,7 +80,7 @@ class subcategoryController extends Controller
      */
     public function destroy($id)
     {
-        $subdestroy = subcategorys::find($id);
+        $subdestroy = Subcategory::find($id);
         $subdestroy -> delete();
         return back()->with('agregar','El producto se ha agregado');
     }

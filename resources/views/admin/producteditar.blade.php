@@ -3,11 +3,11 @@
 @section('content')
     <!-- actualizar producto-->
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-7">
         <!-- Horizontal Form -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Producto: {{$productactualizar->name}}</h3>
+                <h3 class="box-title">Producto</h3>
                 <!--<div class="box-tools pull-right">
                     <a href="" class="btn btn-box btn-success btn-sm add-new" type="button"   data-target="#modal" data-toggle="modal"  data-toggle="tooltip"  title="Agregar imagenes">
                         <i class="fa fa-plus " ></i>
@@ -30,7 +30,7 @@
 
 
                         <div class="col-md-6">
-                            <label for="">estado</label>
+                            <label for="">Estado</label>
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     <select name="product_status_id" id="recipient-status" class="form-control" >
@@ -70,18 +70,16 @@
 
         </div>
     </div>
-    </div>
-    <!-- tabla imagenes-->
-    <div class="row">
-        <div class="col-lg-12">
-        <div class="box ">
-            <div class="box-header with-border">
-                <h3 class="box-title">IMAGENES DEL PRODUCTO :  {{$productactualizar->name}}</h3>
-                <div class="box-tools pull-right">
-                    <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal" >
-                        <i class="fa fa-plus">    New Image</i>
-                    </a>
-                </div>
+
+        <div class="col-lg-5">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Imagenes</h3>
+                    <div class="box-tools pull-right">
+                        <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal" >
+                            <i class="fa fa-plus">    New Image</i>
+                        </a>
+                    </div>
 
                     <div class="box-body">
                         <table id="example1" class="table table-bordered table-striped">
@@ -95,27 +93,27 @@
 
                             <tr>
 
-                                @foreach($img as $im)
-                                    <tr>
-                                        <td class="text-center">
-                                            <img src="{{asset($im->url)}}" alt="" style="width:100px ">
-                                        </td>
-                                        <td class="td-actions text-center ">
-                                            <a  type="button"  data-toggle="modal" data-target="#modal4"><button   class="btn btn-round btn-group btn-success btn-icon" data-toggle="tooltip" title="Modificar Imagen">
-                                                    <i class="fa fa-fw fa-edit "></i>
-                                                </button></a>
-                                            <form action="{{Route('product-img.destroy',$im->id)}}" method="post"  class="d-inline btn-group">
-                                                @method('delete')
-                                                @csrf
-                                                <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar Imagen">
-                                                    <i class="fa fa-fw fa-trash "></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                            @foreach($img as $im)
+                                <tr>
+                                    <td class="text-center">
+                                        <img src="{{asset($im->url)}}" alt="" style="width:100px; height: 100px; ">
+                                    </td>
+                                    <td class="td-actions text-center ">
+                                        <a  type="button"  data-toggle="modal" data-target="#modal4"><button   class="btn btn-round btn-group btn-success btn-icon" data-toggle="tooltip" title="Modificar Imagen">
+                                                <i class="fa fa-fw fa-edit "></i>
+                                            </button></a>
+                                        <form action="{{Route('product-img.destroy',$im->id)}}" method="post"  class="d-inline btn-group">
+                                            @method('delete')
+                                            @csrf
+                                            <button  type="submit" class="btn btn-round btn-danger btn-icon" data-toggle="tooltip" title="Eliminar Imagen">
+                                                <i class="fa fa-fw fa-trash "></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
                                 @endforeach
 
-                            </tr>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -124,16 +122,17 @@
                         <div class="col lg 6">
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
-    </div>
+
     <!-- tabla categorias-->
     <div class="row">
         <div class="col-lg-6">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Categoria del producto:   {{$productactualizar->name}}</h3>
+                <h3 class="box-title">Categorias del Producto</h3>
                 <div class="box-tools pull-right">
                     <a href="" class="btn btn-block btn-success btn-sm add-new" type="button"  data-toggle="modal" data-target="#modal2" >
                         <i class="fa fa-plus">    New Category</i>
@@ -351,7 +350,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form action="{{route('description.store',$productactualizar->id)}}" method="post"  enctype="multipart/form-data">
+                            <form action="{{route('descriptions.store',$productactualizar->id)}}" method="post"  enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="productid" value="{{$productactualizar->id}}">
                                 <div class="col-md-pull-12">
