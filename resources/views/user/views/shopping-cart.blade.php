@@ -41,7 +41,8 @@
                      <b>Account:</b> 968-34567
                  </div>-->
             </div>
-            <form action="">
+            <form action="{{ route('pay') }}" method="POST" id="paymentForm">
+                @csrf
                 <div class="row">
                     <div class="col-xs-12 table-responsive">
                         <table class="table table-striped">
@@ -71,38 +72,51 @@
 
                 <div class="row">
                     <div class="col-xs-6">
-                        <p class="lead">Payment Methods:</p>
-                        <div class="form-group">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="">
-                                @foreach($PaymentPlatforms as $PaymentPlatform)
-                                    <label class="btn btn-outline-secondary rounded m-2 p-1">
-                                        <input
-                                            type="radio"
-                                            name="payment_platform"
-                                            value="{{ $PaymentPlatform->id }}"
-                                            required
-                                        >
-                                        <img src="{{ asset($PaymentPlatform->image) }}" class="img-thumbnail">
-                                    </label>
-                                @endforeach
-                            </div>
-                            @foreach($PaymentPlatforms as $PaymentPlatform)
-                                <div>
-                                    @includeIf('components.'.strtolower($PaymentPlatform->name. '-collapse'))
-                                </div>
-                            @endforeach
-                        </div>
-                        <br>
-                        <p class="text-muted well well-sm no-shadow" >
-                            <label>Tipo Moneda</label>
-                            <select class="custom-select" name="currency" style="margin-top: 3px;"required >
-                                @foreach($currencies as $currency)
-                                    <option value="{{ $currency->iso }}">
-                                        {{ $currency->iso }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </p>
+                       <div class="col">
+                           <p class="lead">Payment Methods:</p>
+                           <div class="form-group" id="toggler">
+                               <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                   @foreach($PaymentPlatforms as $PaymentPlatform)
+                                       <label
+                                           class="btn btn-outline-secondary rounded m-2 p-1"
+                                           data-target="#{{ $PaymentPlatform->name }}collapse"
+                                           data-toggle="collapse"
+                                           style="outline:none;"
+                                       >
+                                           <input
+                                               type="radio"
+                                               name="payment_platform"
+                                               value="{{ $PaymentPlatform->id }}"
+                                               required
+                                           >
+                                           <img src="{{ asset($PaymentPlatform->image) }}" class="img-thumbnail">
+                                       </label>
+                                   @endforeach
+                               </div>
+                               @foreach($PaymentPlatforms as $PaymentPlatform)
+                                   <div
+                                       id="{{ $PaymentPlatform->name }}collapse"
+                                       class="collapse"
+                                       data-toggle="collapse"
+                                       data-parent="#toggler"
+
+                                   >
+                                       @includeIf('components.'.strtolower($PaymentPlatform->name. '-collapse'))
+                                   </div>
+                               @endforeach
+                           </div>
+                           <br>
+                           <p class="text-muted well well-sm no-shadow" >
+                               <label>Tipo Moneda</label>
+                               <select class="custom-select" name="currency" required >
+                                   @foreach($currencies as $currency)
+                                       <option value="{{ $currency->iso }}">
+                                           {{ $currency->iso }}
+                                       </option>
+                                   @endforeach
+                               </select>
+                           </p>
+                       </div>
                     </div>
                     <div class="col-xs-6">
                         <p class="lead">Amount Due {{ date("d-m-Y ") }}</p>
@@ -111,11 +125,11 @@
                             <table class="table">
                                 <tr>
                                     <th style="width:50%">Subtotal:</th>
-                                    <td>{{$totalPrice}}</td>
+                                    <td><input value="{{$totalPrice}}" style=" border: 0; outline:none; background: none;" disabled></td>
                                 </tr>
                                 <tr>
                                     <th>Total:</th>
-                                    <td>{{$totalPrice}}</td>
+                                    <td><input type="text" name="total"  value="{{$totalPrice}}" style=" border: 0; outline:none; background: none;" readonly></td>
                                 </tr>
                             </table>
                         </div>
@@ -124,7 +138,7 @@
                 <div class="row no-print">
                     <div class="col-xs-12">
                         <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
-                        <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
+                        <button type="submit" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
                         </button>
                         <button type="button" id="payButton" class="btn btn-primary pull-right" style="margin-right: 5px;">
                             <i class="fa fa-download"></i> Generate PDF

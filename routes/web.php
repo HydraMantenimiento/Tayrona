@@ -40,6 +40,19 @@
             'uses' => 'CartproductsController@getCart',
             'as'   => 'product.shoppingCart'
         ]);
+        Route::post(
+            '/payments/pay',
+            'PaymentController@pay'
+        )->name('pay');
+        Route::get(
+            '/payments/approval',
+            'PaymentController@approval'
+        )->name('approval');
+        Route::post(
+            '/payments/cancelled',
+            'PaymentController@cancelled'
+        )->name('cancelled');
+
 
     });
 
