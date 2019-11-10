@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Cartproduct;
+use App\Currency;
+use App\PaymentPlatform;
 use App\productos;
 use Illuminate\Http\Request;
 use Session;
@@ -19,12 +21,19 @@ class CartproductsController extends Controller
         return redirect()->route('cliente');
     }
     public function getCart(){
+        $currencies = Currency::all();
+        $PaymentPlatforms = PaymentPlatform::all();
         if (!session::has('cartproduct'))
         {
             return view('user/views/shopping-cart');
         }
         $oldCart = session::get('cartproduct');
         $Cart = new Cartproduct($oldCart);
-        return view('user/views/shopping-cart',['product'=>$Cart->items, 'totalPrice'=>$Cart->totalPrice ]);
+        return view('user/views/shopping-cart',[
+            'product'    => $Cart->items,
+            'totalPrice' => $Cart->totalPrice,
+            'currencies' => $currencies,
+            'PaymentPlatforms' => $PaymentPlatforms
+        ]);
     }
 }
