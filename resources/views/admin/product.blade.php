@@ -94,7 +94,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="recipient-precio" class="col-form-label">Valor</label>
-                                <input type="text" name="precio" class="form-control" id="recipient-precio">
+                                <input type="decimal" name="precio" class="form-control" id="recipient-precio">
                             </div>
                             <div class="form-group">
                                 <label for="recipient-" class="col-form-label">Estado</label>

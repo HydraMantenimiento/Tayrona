@@ -18,23 +18,21 @@
 
         <div class="navbar-custom-menu ">
             <ul class="nav navbar-nav ">
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-shopping-cart "></i>
+                <li>
+                    <a href="{{ route('product.shoppingCart') }}">
+                        <i class="fa fa-shopping-basket "></i>
                         <span class="label label-warning text-black">
-
                             @if( session('cartproduct'))
                                 {{ session('cartproduct')->totalQty }}
                             @endif
-
                         </span>
                     </a>
-                    <ul class="dropdown-menu">
+                   <!-- <ul class="dropdown-menu">
                         <li class="header">You have 4 messages</li>
                         <li>
-                            <!-- inner menu: contains the actual data -->
+
                             <ul class="menu">
-                                <li><!-- start message -->
+                                <li>
                                     <a href="#">
                                         <div class="pull-left">
                                             <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="img-circle" alt="User Image">
@@ -46,11 +44,11 @@
                                         <p>Why not buy a new awesome theme?</p>
                                     </a>
                                 </li>
-                                <!-- end message -->
+
                             </ul>
                         </li>
                         <li class="footer"><a href="#">See All Messages</a></li>
-                    </ul>
+                    </ul>-->
                 </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu ">

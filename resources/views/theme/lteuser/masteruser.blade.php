@@ -66,7 +66,6 @@
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
 
 
-
         <!-- platilla productos -->
         <script src="{{asset("desing/js/jquery.min.js")}}"></script>
         <script src="{{asset("desing/js/bootstrap.min.js")}}"></script>
@@ -74,10 +73,6 @@
         <script src="{{asset("desing/js/nouislider.min.js")}}"></script>
         <script src="{{asset("desing/js/jquery.zoom.min.js")}}"></script>
         <script src="{{asset("desing/js/main.js")}}"></script>
-
-
-
-
 
         @yield("script")
 

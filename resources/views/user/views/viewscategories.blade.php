@@ -2,8 +2,6 @@
 
 @extends('theme.lteuser.masteruser')
 
-<!-- style="width: 18%; height: 200px;"
--->
 @section('content')
     <style>
         body{
@@ -162,7 +160,7 @@
                                                 </div>
                                                 <div class="add-to-cart">
                                                     <button class="add-to-cart-btn">
-                                                        <a href="{{ route('product.addToCart',['id'=>$producto->id ]) }}">
+                                                        <a href="{{ route('product.addToCart',['id'=>$producto->id]) }}">
                                                             <i class="fa fa-shopping-cart"></i> add to cart
                                                         </a>
                                                     </button>
@@ -184,7 +182,5 @@
         </div>
         <!-- /container -->
     </div>
-
-
 
 @endsection

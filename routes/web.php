@@ -36,7 +36,10 @@
             'uses' => 'CartproductsController@getAddToCart',
             'as'   => 'product.addToCart'
         ]);
-
+        Route::get('/shopping-cart',[
+            'uses' => 'CartproductsController@getCart',
+            'as'   => 'product.shoppingCart'
+        ]);
 
     });
 

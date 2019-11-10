@@ -15,9 +15,16 @@ class CartproductsController extends Controller
         $cart = new Cartproduct($oldCart);
         $cart->add($product, $product->id);
         $request->session()->put('cartproduct',$cart);
-
         //dd($request->session()->get('cartproduct'));  //esto es para comprobar que si envie los datos
         return redirect()->route('cliente');
-
+    }
+    public function getCart(){
+        if (!session::has('cartproduct'))
+        {
+            return view('user/views/shopping-cart');
+        }
+        $oldCart = session::get('cartproduct');
+        $Cart = new Cartproduct($oldCart);
+        return view('user/views/shopping-cart',['product'=>$Cart->items, 'totalPrice'=>$Cart->totalPrice ]);
     }
 }
