@@ -29,7 +29,13 @@
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
         route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
         route::view('/bloguser','user/views/bloguser')->name('bloguser');
-        route::view('/descripcionuser','user/views/descripcionuser')->name('descripcionuser');
+        route::get('/descripcionuser/{producto}','descriptions_productController@index')->name('descripcionuser');
+
+        /* carro de compras*/
+        Route::get('/add-to-car/{id}',[
+            'uses' => 'CartproductsController@getAddToCart',
+            'as'   => 'product.addToCart'
+        ]);
 
 
     });

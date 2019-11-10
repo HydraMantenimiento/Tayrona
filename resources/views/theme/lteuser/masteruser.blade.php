@@ -57,7 +57,7 @@
         <!-- jQuery 3 -->
         <script src="{{asset("assets/$theme/bower_components/jquery/dist/jquery.min.js")}}"></script>
         <!-- Bootstrap 3.3.7 -->
-        <script src="{{asset("assets/$theme/bower_components/bootstrap/dist/js/bootstrap.min.js")}}/"></script>
+
         <!-- SlimScroll -->
         <script src="{{asset("assets/$theme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js")}}"></script>
         <!-- FastClick -->
@@ -69,7 +69,7 @@
 
         <!-- platilla productos -->
         <script src="{{asset("desing/js/jquery.min.js")}}"></script>
-        <script src="{{asset("desing/js/js/bootstrap.min.js")}}"></script>
+        <script src="{{asset("desing/js/bootstrap.min.js")}}"></script>
         <script src="{{asset("desing/js/slick.min.js")}}"></script>
         <script src="{{asset("desing/js/nouislider.min.js")}}"></script>
         <script src="{{asset("desing/js/jquery.zoom.min.js")}}"></script>

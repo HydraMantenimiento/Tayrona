@@ -12,6 +12,7 @@ use App\Subcategory;
 use Illuminate\Http\Request;
 use App\productos;
 
+
 class ProductController extends Controller
 {
 

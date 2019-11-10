@@ -7,6 +7,8 @@ use App\Carrousel;
 use App\category_product;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
+
 
 class HomeController extends Controller
 {

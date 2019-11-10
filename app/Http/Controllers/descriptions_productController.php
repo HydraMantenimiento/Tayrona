@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\descriptions_product;
+use App\productos;
 use Illuminate\Http\Request;
 
 class descriptions_productController extends Controller
@@ -12,9 +13,11 @@ class descriptions_productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $producto = productos::find($id);
+        $descripcion = descriptions_product::where('product_id', $id)->get();
+        return view('user/views/descripcionuser', compact('producto','descripcion'));
     }
 
     /**

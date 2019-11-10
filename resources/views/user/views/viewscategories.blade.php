@@ -132,7 +132,7 @@
                                 <div id="tab2" class="tab-pane fade in active">
                                     <!--<div class="products-slick" data-nav="#slick-nav-2">-->
                                         <!-- product -->
-                                        @foreach($query as $q)
+                                        @foreach($query as $producto)
                                         <div class="col-md-3 col-xs-6">
                                             <div class="product">
                                                 <div class="product-img">
@@ -143,17 +143,29 @@
                                                 </div>
                                                 <div class="product-body">
                                                     <p class="product-category">Category</p>
-                                                    <h3 class="product-name"><a href="#">{{$q->name}}</a></h3>
-                                                    <h4 class="product-price">${{$q->precio}} <del class="product-old-price">$990.00</del></h4>
+                                                    <h3 class="product-name"><a href="#">{{$producto->name}}</a></h3>
+                                                    <h4 class="product-price">${{$producto->precio}} <del class="product-old-price">$990.00</del></h4>
                                                     <div class="product-rating">
                                                     </div>
                                                     <div class="product-btns">
-                                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                                        <button class="quick-view"><a href="{{ route('descripcionuser') }}"><i class="fa fa-eye"></i></a><span class="tooltipp">quick view</span></button>
+                                                        <button class="add-to-wishlist">
+                                                            <i class="fa fa-heart-o"></i>
+                                                            <span class="tooltipp">add to wishlist</span>
+                                                        </button>
+                                                        <button class="quick-view" >
+                                                            <a href="{{ route('descripcionuser',$producto->id) }}">
+                                                                <i class="fa fa-eye"></i>
+                                                                <span class="tooltipp">quick view</span>
+                                                            </a>
+                                                        </button>
                                                     </div>
                                                 </div>
                                                 <div class="add-to-cart">
-                                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                                    <button class="add-to-cart-btn">
+                                                        <a href="{{ route('product.addToCart',['id'=>$producto->id ]) }}">
+                                                            <i class="fa fa-shopping-cart"></i> add to cart
+                                                        </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
