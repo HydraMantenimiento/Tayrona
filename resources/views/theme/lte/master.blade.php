@@ -18,8 +18,10 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
-        <!-- .dropzone-->
-        <link rel="stylesheet" href="{{asset("assets/dropzone/dist/dropzone.css")}}">
+        <link rel="stylesheet" href="https://cdn.datatables.net/v/bs/dt-1.10.20/datatables.min.css">
+
+        <script src="{{ asset('js/ckeditor.js') }}" ></script>
+        <script src="{{ asset('js/sample.js') }}" ></script>
 
 
         @yield("style")
@@ -51,6 +53,7 @@
             <!--inicio footer -->
             @include("theme/$theme/footer")
         </div>
+
         <!-- jQuery 3 -->
         <script src="{{asset("assets/$theme/bower_components/jquery/dist/jquery.min.js")}}"></script>
         <!-- Bootstrap 3.3.7 -->
@@ -61,16 +64,60 @@
         <script src="{{asset("assets/$theme/bower_components/fastclick/lib/fastclick.js")}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
+        <script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"></script>
 
-        <!--dropzone-->
-        <script src="{{asset("assets/dist/dropzone.js")}}"></script>
+
+        <script src="https://cdn.datatables.net/v/bs/dt-1.10.20/datatables.min.js"></script>
+
+
 
 
 
         <script>
+
+            $(document).ready( function () {
+
+
+                    $('.table').DataTable( {
+
+                        "language": {
+                            "decimal":        ".",
+                            "emptyTable":     "No hay datos para mostrar",
+                            "info":           "del _START_ al _END_ (_TOTAL_ total)",
+                            "infoEmpty":      "del 0 al 0 (0 total)",
+                            "infoFiltered":   "(filtrado de todas las _MAX_ entradas)",
+                            "infoPostFix":    "",
+                            "thousands":      "'",
+                            "lengthMenu":     "Mostrar _MENU_ entradas",
+                            "loadingRecords": "Cargando...",
+                            "processing":     "Procesando...",
+                            "search":         "Buscar:",
+                            "zeroRecords":    "No hay resultados",
+                            "paginate": {
+                                "first":      "Primero",
+                                "last":       "Último",
+                                "next":       "Siguiente",
+                                "previous":   "Anterior"
+                            },
+                            "aria": {
+                                "sortAscending":  ": ordenar de manera Ascendente",
+                                "sortDescending": ": ordenar de manera Descendente ",
+                            }
+                        }
+
+                    } );
+
+
+            });
+
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
             });
+
+            initSample();
+
+
+
         </script>
 
 

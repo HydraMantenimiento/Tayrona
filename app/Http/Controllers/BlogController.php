@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
+use App\BlogCategory;
+use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -13,7 +16,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('admin/blog/index');
+        $blogs = Blog::all();
+        return view('admin/blog/index', compact('blogs'));
     }
 
     /**
@@ -23,7 +27,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        $categorys = BlogCategory::all();
+        return view('admin/blog/create', compact('categorys'));
     }
 
     /**
@@ -32,9 +37,14 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogRequest $request)
     {
-        //
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->body = $request->body;
+        $blog->category_blog_id= $request->category_blog_id;
+        $blog->save();
+        return redirect()->route('blog.index')->with('alert','El blog fue creado correctamente.');
     }
 
     /**
@@ -56,7 +66,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categorys = BlogCategory::all();
+        $blog = Blog::find($id);
+        return view('admin/blog/edit', compact('categorys', 'blog'));
     }
 
     /**
@@ -66,9 +78,14 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BlogRequest $request, $id)
     {
-        //
+        $blog =Blog::find($id);
+        $blog->title = $request->title;
+        $blog->body = $request->body;
+        $blog->category_blog_id= $request->category_blog_id;
+        $blog->save();
+        return redirect()->route('blog.index')->with('alert','El blog fue modificado correctamente.');
     }
 
     /**
@@ -79,6 +96,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::find($id);
+        $blog->delete();
+        return redirect()->route('blog.index')->with('alert','El blog fue eliminado correctamente.');
     }
 }
