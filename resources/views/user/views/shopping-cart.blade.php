@@ -110,7 +110,7 @@
                                <label>Tipo Moneda</label>
                                <select class="custom-select" name="currency" required >
                                    @foreach($currencies as $currency)
-                                       <option value="{{ $currency->iso }}">
+                                       <option value="{{ $currency->iso }}" required>
                                            {{ $currency->iso }}
                                        </option>
                                    @endforeach
@@ -129,7 +129,7 @@
                                 </tr>
                                 <tr>
                                     <th>Total:</th>
-                                    <td><input type="text" name="total"  value="{{$totalPrice}}" style=" border: 0; outline:none; background: none;" readonly></td>
+                                    <td><input required type="text" name="value"  value="{{$totalPrice}}" style=" border: 0; outline:none; background: none;" readonly></td>
                                 </tr>
                             </table>
                         </div>

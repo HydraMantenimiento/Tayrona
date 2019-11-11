@@ -8,9 +8,8 @@ class CurrenciesTableSeeder extends Seeder
     public function run()
     {
         $currencies =[
-            'cop',
-            'eur',
             'usd',
+            'eur',
         ];
 
         foreach ($currencies as $currency){
