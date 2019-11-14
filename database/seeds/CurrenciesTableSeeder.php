@@ -8,6 +8,7 @@ class CurrenciesTableSeeder extends Seeder
     public function run()
     {
         $currencies =[
+
             'usd',
             'eur',
         ];

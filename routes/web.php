@@ -23,6 +23,7 @@
 
         //cliente-----*
         Route::get('cliente','HomeController@cliente')->name('cliente');
+
         Route::get('/checkcategoryuser/{name}','categoryusersController@checkcategoryuser')->name('vis');
         Route::get('checksubcategoryusers/{name}/{subcate}','categoryusersController@checksubcategoryusers')->name('sub');
         Route::resource('/descriptions','descriptions_productController');
@@ -32,26 +33,12 @@
         route::get('/descripcionuser/{producto}','descriptions_productController@index')->name('descripcionuser');
 
         /* carro de compras*/
-        Route::get('/add-to-car/{id}',[
-            'uses' => 'CartproductsController@getAddToCart',
-            'as'   => 'product.addToCart'
-        ]);
-        Route::get('/shopping-cart',[
-            'uses' => 'CartproductsController@getCart',
-            'as'   => 'product.shoppingCart'
-        ]);
-        Route::post(
-            '/payments/pay',
-            'PaymentController@pay'
-        )->name('pay');
-        Route::get(
-            '/payments/approval',
-            'PaymentController@approval'
-        )->name('approval');
-        Route::post(
-            '/payments/cancelled',
-            'PaymentController@cancelled'
-        )->name('cancelled');
+        Route::get('/add-to-car/{id}',['uses' => 'CartproductsController@getAddToCart', 'as'   => 'product.addToCart']);
+        Route::get('/shopping-cart',['uses' => 'CartproductsController@getCart', 'as'   => 'product.shoppingCart']);
+
+        Route::post('/payments/pay', 'PaymentController@pay')->name('pay');
+        Route::get('/payments/approval', 'PaymentController@approval')->name('approval');
+        Route::post('/payments/cancelled', 'PaymentController@cancelled')->name('cancelled');
 
 
     });

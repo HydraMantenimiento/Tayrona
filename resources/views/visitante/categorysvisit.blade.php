@@ -156,15 +156,49 @@
                 <a href="#" class="category_item" category="audifonos">Audifonos</a>
             </div>
             <section class="products-list">
-                @foreach($query as $q)
-                    <div class="product-item" category="laptops">
-                        <a href="{{ route('descripcion') }}"><img src="{{ asset('imagenes/comida-perro.png') }}" alt="" ></a>
-                        <a href="#">{{$q->name}}</a>
+                <div class="container">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="products-tabs">
+                                <div id="tab2" class="tab-pane fade in active">
+                                    @foreach($query as $producto)
+                                        <div class="col-md-3 col-xs-6">
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <img src="{{asset("desing/img/product06.png")}}" alt="">
+                                                    <div class="product-label">
+                                                        <span class="sale">-30%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="product-body">
+                                                    <p class="product-category">Category</p>
+                                                    <h3 class="product-name"><a href="#">{{$producto->name}}</a></h3>
+                                                    <h4 class="product-price">${{$producto->precio}} <del class="product-old-price">$990.00</del></h4>
+                                                    <div class="product-rating">
+                                                    </div>
+                                                    <div class="product-btns">
+
+                                                        <button class="quick-view" >
+                                                            <a href="{{ route('descripcion',$producto->id) }}">
+                                                                <i class="fa fa-eye"></i>
+                                                                <span class="tooltipp">Ver producto</span>
+                                                            </a>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div id="slick-nav-2" class="products-slick-nav"></div>
+                            </div>
+                        </div>
                     </div>
-                @endforeach
+                    {{$query -> links()}}
+                </div>
             </section>
         </div>
     </div>
-    {{$query -> links()}}
 </div>
+
 @endsection

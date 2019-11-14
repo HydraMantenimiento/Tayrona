@@ -18,6 +18,15 @@
         <script src="{{ asset('js/all.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
 
+
+        <!-- platilla productos -->
+        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/nouislider.min.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/slick.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/slick-theme.css")}}">
+        <link rel="stylesheet" href="{{asset("desing/css/style.css")}}">
+
     </head>
     <body>
         <div class="container-modal">

@@ -33,13 +33,6 @@
                         Email: john.doe@example.com
                     </address>
                 </div>
-                <!-- <div class="col-sm-4 invoice-col">
-                     <b>Invoice #007612</b><br>
-                     <br>
-                     <b>Order ID:</b> 4F3S8J<br>
-                     <b>Payment Due:</b> 2/22/2014<br>
-                     <b>Account:</b> 968-34567
-                 </div>-->
             </div>
             <form action="{{ route('pay') }}" method="POST" id="paymentForm">
                 @csrf
@@ -53,6 +46,7 @@
                                     <th>Qty</th>
                                     <th>Precio Producto</th>
                                     <th>Subtotal</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             @foreach($product as $products)
@@ -63,6 +57,7 @@
                                     <td>{{ $products['qty'] }}</td>
                                     <td>{{ $products['item']['precio'] }}</td>
                                     <td>{{ $products['precio'] }}</td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                             @endforeach
@@ -74,37 +69,35 @@
                     <div class="col-xs-6">
                        <div class="col">
                            <p class="lead">Payment Methods:</p>
-                           <div class="form-group" id="toggler">
-                               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                   @foreach($PaymentPlatforms as $PaymentPlatform)
-                                       <label
-                                           class="btn btn-outline-secondary rounded m-2 p-1"
-                                           data-target="#{{ $PaymentPlatform->name }}collapse"
-                                           data-toggle="collapse"
-                                           style="outline:none;"
-                                       >
-                                           <input
-                                               type="radio"
-                                               name="payment_platform"
-                                               value="{{ $PaymentPlatform->id }}"
-                                               required
+                               <div class="form-group" id="toggler">
+                                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                       @foreach($PaymentPlatforms as $paymentPlatform)
+                                           <label
+                                               class="btn btn-outline-secondary rounded m-2 p-1"
+                                               data-target="#{{ $paymentPlatform->name }}Collapse"
+                                               data-toggle="collapse"
+                                               style="outline:none;"
                                            >
-                                           <img src="{{ asset($PaymentPlatform->image) }}" class="img-thumbnail">
-                                       </label>
+                                               <input
+                                                   type="radio"
+                                                   name="payment_platform"
+                                                   value="{{ $paymentPlatform->id }}"
+                                                   required
+                                               >
+                                               <img class="img-thumbnail" src="{{ asset($paymentPlatform->image) }}">
+                                           </label>
+                                       @endforeach
+                                   </div>
+                                   @foreach($PaymentPlatforms as $paymentPlatform)
+                                       <div
+                                           id="{{$paymentPlatform->name}}Collapse"
+                                           class="collapse"
+                                           data-parent="#toggler"
+                                       >
+                                           @includeIf('components.' . strtolower($paymentPlatform->name) . '-collapse')
+                                       </div>
                                    @endforeach
                                </div>
-                               @foreach($PaymentPlatforms as $PaymentPlatform)
-                                   <div
-                                       id="{{ $PaymentPlatform->name }}collapse"
-                                       class="collapse"
-                                       data-toggle="collapse"
-                                       data-parent="#toggler"
-
-                                   >
-                                       @includeIf('components.'.strtolower($PaymentPlatform->name. '-collapse'))
-                                   </div>
-                               @endforeach
-                           </div>
                            <br>
                            <p class="text-muted well well-sm no-shadow" >
                                <label>Tipo Moneda</label>
@@ -119,7 +112,7 @@
                        </div>
                     </div>
                     <div class="col-xs-6">
-                        <p class="lead">Amount Due {{ date("d-m-Y ") }}</p>
+                        <p class="lead">Valor</p>
 
                         <div class="table-responsive">
                             <table class="table">

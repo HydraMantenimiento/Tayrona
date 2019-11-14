@@ -29,7 +29,6 @@
                         <!-- User image -->
                         <li class="user-header">
                             <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="img-circle" alt="User Image">
-
                             <p>
                                 {{ Auth::user()->name }} - Web Developer
                                 <small>{{ Auth::user()->created_at }}</small>
@@ -50,7 +49,6 @@
                                 </form>
                             </div>
                         </li>
-
                     </ul>
                 </li>
             </ul>

@@ -22,26 +22,14 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-orange pl-0 ml-0">
                 <div class="collapse navbar-collapse  pl-0 ml-0" id="navbarNavAltMarkup">
                     <div class="navbar-nav  pl-0 ml-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'perros') }}" id="navbarDropdown" role="button" >
-                                PERROS  <i class="fas fa-bone"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'gatos') }}" id="navbarDropdown" role="button" >
-                                GATOS <i class="fas fa-paw"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link  active" href="{{ route('vistascategorias', $name = 'otras mascotas') }}" id="navbarDropdown" role="button" >
-                                OTRAS MASCOTAS <i class="fas fa-dove"></i>
-                            </a>
-                        </li>
+
+                        <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'perros') }}" id="navbarDropdown" role="button" >PERROS  <i class="fas fa-bone"></i></a>
+                        <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'gatos') }}" id="navbarDropdown" role="button" >GATOS <i class="fas fa-paw"></i></a>
+                        <a class="nav-link  active" href="{{ route('vistascategorias', $name = 'otras mascotas') }}" id="navbarDropdown" role="button" >OTRAS MASCOTAS <i class="fas fa-dove"></i></a>
                         <a href="{{ route('groming') }}" class="nav-item nav-link active">Groming <i class="fas fa-cut"></i></a>
                         <a href="#" class="nav-item nav-link active">Veterinaria <i class="fas fa-cut"></i></a>
                         <a href="{{ route('blog') }}" class="nav-item nav-link active">Blog <i class="fab fa-blogger"></i></a>
                         <a href="{{ route('politicas') }}" class="nav-item nav-link active">Politicas <i class="fas fa-handshake"></i></a>
-
                     </div>
                 </div>
             </nav>

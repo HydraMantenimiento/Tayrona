@@ -20,12 +20,32 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
+
+    'currency_conversion' => [
+        'base_uri' => env('CURRENCY_CONVERSION_BASE_URI'),
+        'api_key' => env('CURRENCY_CONVERSION_API_KEY'),
+    ],
+
     'paypal'=>[
       'base_uri'        => env('PAYPAL_BASE_URI'),
       'client_id'       => env('PAYPAL_CLIENT_ID'),
       'client_secret'   => env('PAYPAL_CLIENT_SECRET'),
       'class'           =>App\Services\PayPalService::class,
     ],
+    'mercadopago' => [
+        'base_uri' => env('MERCADOPAGO_BASE_URI'),
+        'key' => env('MERCADOPAGO_KEY'),
+        'secret' => env('MERCADOPAGO_SECRET'),
+        'class' => App\Services\MercadoPagoService::class,
+        'base_currency' => 'cop',
+    ],
+    'stripe' => [
+        'base_uri' => env('STRIPE_BASE_URI'),
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+        'class' => App\Services\StripeService::class,
+    ],
+
 
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
