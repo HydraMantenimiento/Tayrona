@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\BlogCategory;
+use App\Http\Requests\BlogCategoryRequest;
 use Illuminate\Http\Request;
 
-class blogCategoyController extends Controller
+class BlogCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,9 @@ class blogCategoyController extends Controller
      */
     public function index()
     {
-        //
+        $categorys = BlogCategory::all();
+        return view('admin/blog_category/index', compact('categorys'));
+
     }
 
     /**
@@ -23,7 +27,7 @@ class blogCategoyController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/blog_category/create');
     }
 
     /**
@@ -32,9 +36,12 @@ class blogCategoyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogCategoryRequest  $request)
     {
-        //
+        $category = new BlogCategory();
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('blogCategory.index')->with('alert', 'La categoria fue guadada correctamente.');
     }
 
     /**
@@ -56,7 +63,8 @@ class blogCategoyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = BlogCategory::find($id);
+        return view('admin/blog_category/edit', compact('category'));
     }
 
     /**
@@ -66,9 +74,12 @@ class blogCategoyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BlogCategoryRequest $request, $id)
     {
-        //
+        $category = BlogCategory::find($id);
+        $category->name = $request->name;
+        $category->save();
+        return redirect()->route('blogCategory.index')->with('alert', 'La categoria fue actualizada correctamente.');
     }
 
     /**
@@ -79,6 +90,9 @@ class blogCategoyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = BlogCategory::find($id);
+        $category->delete();
+
+        return redirect()->route('blogCategory.index')->with('alert', 'La categoria fue eliminada correctamente.');
     }
 }

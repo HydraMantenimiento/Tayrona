@@ -19,6 +19,7 @@ class CreateBlogsTable extends Migration
             $table->foreign('category_blog_id')->references('id')->on('blog_categorys');
             $table->string('title');
             $table->text('body');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

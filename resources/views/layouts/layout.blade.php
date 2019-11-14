@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="{{asset("desing/css/slick-theme.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/style.css")}}">
 
+
     </head>
     <body>
         <div class="container-modal">
