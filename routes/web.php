@@ -4,12 +4,14 @@
 
     Route::get('/', 'HomeController@home')->name('inicio');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/products', 'HomeController@products')->name('products');
 
     //Verificacion de email
     Auth::routes(['verify' => true]);
     Route::group(['middleware' => 'verified', 'auth'], function () {
 
         Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
         Route::resource('/product', 'ProductController');
 
         Route::resource('/product-img', 'Product_imgController');

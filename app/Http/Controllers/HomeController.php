@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Carrousel;
 use App\category_product;
+use App\productos;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -55,5 +56,11 @@ class HomeController extends Controller
     public function cliente()
     {
         return view('user/users');
+    }
+
+    public function products()
+    {
+        $products = productos::all();
+        echo  json_encode($products);
     }
 }
