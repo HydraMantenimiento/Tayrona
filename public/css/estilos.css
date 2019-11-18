@@ -307,3 +307,28 @@ input[type="radio"]:checked ~ label {
     background: #571C7C !important;
     color:white !important;
 }
+
+.nav-content{
+    width: 100%;
+    margin-top: 5px;
+    height: auto;
+    display: flex;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 10px;
+
+}
+
+.nav-img{
+
+}
+
+.nav-title{
+    color:white;
+    font-size: 14px;
+    margin-left: 10px;
+}
