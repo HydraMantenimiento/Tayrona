@@ -20,8 +20,8 @@
         <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
 
 
-        <!-- platilla productos -->
-        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">
+        <!-- platilla productos
+        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">-->
         <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/nouislider.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/slick.css")}}">
@@ -47,6 +47,31 @@
 
            <div class="content-wrapper">
                 <section class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box-body">
+                                @if (isset($errors) && $errors->any())
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                                            @foreach ($errors->all() as $error)
+                                                {{ $error }}
+                                            @endforeach
+                                    </div>
+                                @endif
+
+                                @if (session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                                            @foreach (session()->get('success') as $message)
+                                              {{ $message }}
+                                            @endforeach
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                     @yield("content")
                 </section>
             </div>

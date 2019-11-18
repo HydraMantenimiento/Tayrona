@@ -42,7 +42,6 @@ class PayPalService
 
     public function handlePayment(Request $request)
     {
-
         $order = $this->createOrder($request->value, $request->currency);
 
         $orderLinks = collect($order->links);
@@ -67,12 +66,12 @@ class PayPalService
             $currency = $payment->currency_code;
 
             return redirect()
-                ->route('cliente')
+                ->route('client')
                 ->withSuccess(['payment' => "Thanks, {$name}. We received your {$amount}{$currency} payment."]);
         }
 
         return redirect()
-            ->route('cliente')
+            ->route('product.shoppingCart')
             ->withErrors('We cannot capture your payment. Try again, please');
     }
 

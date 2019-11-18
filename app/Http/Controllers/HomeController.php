@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Carrousel;
 use App\category_product;
+use App\Currency;
+use App\PaymentPlatform;
 use App\productos;
 use Illuminate\Http\Request;
 use Auth;
@@ -50,7 +52,13 @@ class HomeController extends Controller
 }
     public function cliente()
     {
-        return view('user/users');
+        $currencies = Currency::all();
+        $paymentPlatforms = PaymentPlatform::all();
+
+        return view('user/users')->with([
+            'currencies' => $currencies,
+            'paymentPlatforms' => $paymentPlatforms,
+        ]);
     }
 
     public function products()

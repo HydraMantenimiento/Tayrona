@@ -1,1 +1,1 @@
-<small> se enviara ala pagina requerida</small>
+<small>You will be redirected to the PayPal checkout page</small>

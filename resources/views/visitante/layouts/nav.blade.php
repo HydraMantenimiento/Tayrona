@@ -1,9 +1,20 @@
-<div class="container-fluid bg-orange z-depth-1 ">
-    <div class="row">
 
-        <div class="col-2 p-2">
-            <a href="{{ route('inicio') }}" class="logo"><img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="100%" height="90px"></a>
+    <div class="container-fluid bg-orange z-depth-1" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#navbar-1">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
+
+        <div class="row">
+            <div class="col-2 p-2">
+                <a href="{{ route('inicio') }}" class="logo"><img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="100%" height="90px"></a>
+            </div>
+
+
         <div class="col-10">
             <nav class="navbar navbar-expand-lg navbar-dark bg-orange mx-0 px-0">
                 <a href="" class="navbar-brand pl-0 ml-0 navbar-expand-lg">Donde las mascotas van </a>
@@ -129,7 +140,8 @@
                         </div>
                     </div>
                 </a>
+
             </div>
         </div>
     </div>
-</div>
+    </div>

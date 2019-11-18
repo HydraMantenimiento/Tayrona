@@ -31,12 +31,17 @@ class PaymentController extends Controller
         return $paymentPlatform->handlePayment($request);
     }
     public function approval(){
-        $paymentPlatform = resolve(PayPalService::class);
-        return $paymentPlatform->handleApproval();
+
+        if (session()->has('paymentPlatformId')) {
+            $paymentPlatform = $this->paymentPlatformResolver
+                ->resolveService(session()->get('paymentPlatformId'));
+
+            return $paymentPlatform->handleApproval();
+        }
+
+        return redirect()->route('home')->withErrors('We cannot retrieve your payment platform. Try again, plase.');
     }
     public function cancelled(){
-        return redirect()
-            ->route()
-            ->withErrors('you cancelled the payment');
+        return redirect()->route('product.shoppingCart')->withErrors('you cancelled the payment');
     }
 }
