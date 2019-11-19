@@ -1,5 +1,4 @@
-@extends('layouts.layout')
-
+@extends('visitante.layouts.layout')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/veterinaria.css') }}">
 
@@ -10,201 +9,10 @@
     <div class="preloader" style="display: none;"></div>
     <!-- /.preloader -->
 
-
-    <!-- Main Header -->
-    <header class="main-header">
-
-        <div class="page-header-mobile-info">
-            <div class="page-header-mobile-info-content">
-                <div class="header-info clearfix">
-                    <ul class="info-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>660 Broklyn Street, 88 New York </span>
-                        </li>
-                        <li>
-                            <i class="fa fa-phone"></i>
-                            <span>666 888 0000, Fax: +21 000 333</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-clock"></i>
-                            <span>Mon - Fri 9:00 am - 6:00 pm</span>
-                        </li>
-                    </ul>
-                    <ul class="social-style-one">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="toggle-box clearfix">
-                <div class="page-header-mobile-info-toggle"></div>
-                <div class="link"><a href="contact.html" class="theme-btn">Appointment</a></div>
-            </div>
-        </div>
-
-        <div class="header-top">
-            <div class="container">
-                <div class="header-info clearfix">
-                    <ul class="info-list pull-right">
-                        <li>
-                            <i class="flaticon-mail"></i>
-                            <strong><a href="mailto:example@gmail.com">example@gmail.com</a></strong>
-                            Email address
-                        </li>
-                        <li>
-                            <i class="flaticon-phone-call"></i>
-                            <strong><a href="tel:+886668880000">666 888 0000</a></strong>
-                            Phone line
-                        </li>
-                        <li>
-                            <i class="flaticon-clock"></i>
-                            <strong>Mon - Fri 9:00 am - 6:00 pm</strong>
-                            Working hours
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="header-bottom">
-            <div class="container">
-                <div class="clearfix">
-                    <div class="logo-box">
-                        <figure class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></figure>
-                    </div>
-                    <div class="nav-outer clearfix">
-                        <div class="menu-area">
-                            <nav class="main-menu navbar-expand-lg">
-                                <div class="navbar-header">
-                                    <!-- Toggle Button -->
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <div class="navbar-collapse collapse clearfix">
-                                    <ul class="navigation clearfix">
-                                        <li class="dropdown"><a href="#">Home</a>
-                                            <ul style="display: none;">
-                                                <li><a href="index.html">Home Page 01</a></li>
-                                                <li><a href="index-2.html">Home Page 02</a></li>
-                                                <li class="dropdown"><a href="#">Header Styles</a>
-                                                    <ul style="display: none;">
-                                                        <li><a href="index.html">Header Style 01</a></li>
-                                                        <li><a href="index-2.html">Header Style 02</a></li>
-                                                    </ul>
-                                                    <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                            </ul>
-                                            <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                        <li class="current dropdown"><a href="#">About</a>
-                                            <ul style="display: none;">
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="error.html">Error Page</a></li>
-                                            </ul>
-                                            <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                        <li class="dropdown"><a href="#">Services</a>
-                                            <ul style="display: none;">
-                                                <li><a href="service.html">Our Services</a></li>
-                                                <li><a href="single-service-1.html">Pets Full Grooming</a></li>
-                                                <li><a href="single-service-2.html">Health Checkups</a></li>
-                                                <li><a href="single-service-3.html">Styling Your Pets</a></li>
-                                                <li><a href="single-service-4.html">Bath, Dry &amp; Brush</a></li>
-                                                <li><a href="single-service-5.html">Cleaning &amp; Plucking</a></li>
-                                                <li><a href="single-service-6.html">Coat Handler Pets</a></li>
-                                            </ul>
-                                            <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li class="dropdown"><a href="#">News</a>
-                                            <ul style="display: none; height: 104px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-                                                <li><a href="blog.html">Our News</a></li>
-                                                <li><a href="blog-single.html">Single News</a></li>
-                                            </ul>
-                                            <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                        <ul class="social-style-one">
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Sticky Header-->
-        <div class="sticky-header">
-            <div class="container clearfix">
-                <figure class="logo-box"><a href="index.html"><img src="images/small-logo.png" alt=""></a></figure>
-                <div class="menu-area">
-                    <nav class="main-menu navbar-expand-lg">
-                        <div class="navbar-header">
-                            <!-- Toggle Button -->
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="navbar-collapse collapse clearfix">
-                            <ul class="navigation clearfix">
-                                <li class="dropdown"><a href="#">Home</a>
-                                    <ul style="display: none; height: 155px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-                                        <li><a href="index.html">Home Page 01</a></li>
-                                        <li><a href="index-2.html">Home Page 02</a></li>
-                                        <li class="dropdown"><a href="#">Header Styles</a>
-                                            <ul style="display: none;">
-                                                <li><a href="index.html">Header Style 01</a></li>
-                                                <li><a href="index-2.html">Header Style 02</a></li>
-                                            </ul>
-                                            <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                    </ul>
-                                    <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                <li class="current dropdown"><a href="#">About</a>
-                                    <ul style="display: none; height: 104px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="error.html">Error Page</a></li>
-                                    </ul>
-                                    <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                <li class="dropdown"><a href="#">Services</a>
-                                    <ul style="display: none;">
-                                        <li><a href="service.html">Our Services</a></li>
-                                        <li><a href="single-service-1.html">Pets Full Grooming</a></li>
-                                        <li><a href="single-service-2.html">Health Checkups</a></li>
-                                        <li><a href="single-service-3.html">Styling Your Pets</a></li>
-                                        <li><a href="single-service-4.html">Bath, Dry &amp; Brush</a></li>
-                                        <li><a href="single-service-5.html">Cleaning &amp; Plucking</a></li>
-                                        <li><a href="single-service-6.html">Coat Handler Pets</a></li>
-                                    </ul>
-                                    <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li class="dropdown"><a href="#">News</a>
-                                    <ul style="display: none; height: 104px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-                                        <li><a href="blog.html">Our News</a></li>
-                                        <li><a href="blog-single.html">Single News</a></li>
-                                    </ul>
-                                    <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div><!-- sticky-header end -->
-    </header>
-    <!-- End Main Header -->
-
-
     <!-- page-title -->
-    <section class="page-title centred" style="background-image: url(images/background/page-title.jpg);">
+    <section class="page-title centred" style="background-image: url('imagenes/baño.jpg');">
         <div class="container">
-            <h1>About Us</h1>
+            <h1>SOBRE NOSOTROS</h1>
         </div>
     </section>
     <!-- page-title end -->
@@ -215,8 +23,8 @@
         <div class="container">
             <div class="content-box clearfix">
                 <ul class="bread-crumb">
-                    <li><a href="index.html">Homepage</a></li>
-                    <li>About Us</li>
+                    <li><a >SOBRE</a></li>
+                    <li>NOSOTROS</li>
                 </ul>
             </div>
         </div>
@@ -234,8 +42,8 @@
                 </div>
                 <div class="lower-content centred">
                     <div class="sec-title">
-                        <div class="top-title">Few Words About Poopet Company</div>
-                        <h1>Pet Grooming &amp; Care Center</h1>
+                        <div class="top-title">Pocas palabras sobre la empresa</div>
+                        <h1>Centro de aseo &amp; cuidado de mascotas</h1>
                     </div>
                     <div class="text">
                         <p>There are many variations of passages of available but the majority have suffered alteration in some form, by injected hu randomised words which don look even slightly believable. If you are going to use a passage of you need to be sure there lipsim is simply free text now isn't anything embarr assing hidden in the middle of text.</p>
@@ -252,10 +60,6 @@
         <div class="container">
             <div class="clients-outer">
                 <ul class="clients-carousel owl-carousel owl-loaded owl-drag">
-
-
-
-
 
                     <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1728px, 0px, 0px); transition: all 0s ease 0s; width: 2880px;"><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
                                     <figure class="image-box"><a href="#"><img src="images/clients/clients-1.png" alt=""></a></figure>

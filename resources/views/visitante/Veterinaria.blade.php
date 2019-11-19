@@ -1,3 +1,5 @@
+@extends('visitante.layouts.layout')
+
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/veterinaria.css') }}">
