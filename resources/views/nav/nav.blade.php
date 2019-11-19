@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-<<<<<<< HEAD
+
         <div class="row">
             <div class="col-2 p-2">
                 <a href="{{ route('inicio') }}" class="logo"><img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="100%" height="90px"></a>
@@ -26,7 +26,7 @@
                             <a href="{{ route('register') }}" class="btn text-white">Registrate <i class="fas fa-dog"></i></a>
                             <a href="{{ route('login') }}" class="btn text-white">Login <i class="fas fa-cat"></i></a>
                         </div>
-=======
+
         <div class="col-10">
             <nav class="navbar navbar-expand-lg navbar-dark bg-orange mx-0 px-0">
                 <a href="" class="navbar-brand pl-0 ml-0 navbar-expand-lg">Donde las mascotas van </a>
@@ -87,7 +87,6 @@
                         <!-- esto es para que se muestre solo cuando no se a iniciado session -->
                         <a href="{{ route('register') }}" class="btn text-white">Registrate <i class="fas fa-dog"></i></a>
                         <a href="{{ route('login') }}" class="btn text-white">Login <i class="fas fa-cat"></i></a>
->>>>>>> df83cff50b09b23038091f5eca3eee0628281231
                     </div>
                 </nav>
                 <hr class="bg-white p-0 m-0">
@@ -100,6 +99,7 @@
                             <a class="nav-link  active" href="{{ route('vistascategorias', $name = 'otras mascotas') }}" id="navbarDropdown" role="button" >OTRAS MASCOTAS <i class="fas fa-dove"></i></a>
                             <a href="{{ route('groming') }}" class="nav-item nav-link active">Grooming <i class="fas fa-cut"></i></a>
                             <a href="{{ route('Veterinaria') }}" class="nav-item nav-link active">Veterinaria <i class="fas fa-user-md"></i></a>
+                            <a href="{{ route('about') }}" class="nav-item nav-link active">About <i class="fas fa-user-md"></i></a>
                             <a href="{{ route('blog') }}" class="nav-item nav-link active">Blog <i class="fab fa-blogger"></i></a>
                             <a href="{{ route('politicas') }}" class="nav-item nav-link active">Politicas <i class="fas fa-handshake"></i></a>
                         </div>
