@@ -1,9 +1,6 @@
-@extends('layouts.layout')
-
+@extends('visitante.layouts.layout')
 
 @section('content')
-
-
 <div class="container" style=" width: 100vw;  height: 100vh;">
     <div class="row">
         <div class="my-3 con">

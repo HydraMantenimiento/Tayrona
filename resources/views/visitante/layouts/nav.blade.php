@@ -13,6 +13,7 @@
             <div class="col-2 p-2">
                 <a href="{{ route('inicio') }}" class="logo"><img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="100%" height="90px"></a>
             </div>
+<<<<<<< HEAD:resources/views/nav/nav.blade.php
             <div class="col-10 ">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-orange mx-0 px-0">
                     <a href="" class="navbar-brand pl-0 ml-0 navbar-expand-lg">Donde las mascotas van </a>
@@ -26,6 +27,9 @@
                             <a href="{{ route('register') }}" class="btn text-white">Registrate <i class="fas fa-dog"></i></a>
                             <a href="{{ route('login') }}" class="btn text-white">Login <i class="fas fa-cat"></i></a>
                         </div>
+=======
+
+>>>>>>> d8ab2dde9e0ae0c49266bbe3a01ff52c8b7db81e:resources/views/visitante/layouts/nav.blade.php
 
         <div class="col-10">
             <nav class="navbar navbar-expand-lg navbar-dark bg-orange mx-0 px-0">
@@ -88,6 +92,7 @@
                         <a href="{{ route('register') }}" class="btn text-white">Registrate <i class="fas fa-dog"></i></a>
                         <a href="{{ route('login') }}" class="btn text-white">Login <i class="fas fa-cat"></i></a>
                     </div>
+<<<<<<< HEAD:resources/views/nav/nav.blade.php
                 </nav>
                 <hr class="bg-white p-0 m-0">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-orange pl-0 ml-0">
@@ -102,12 +107,74 @@
                             <a href="{{ route('about') }}" class="nav-item nav-link active">About <i class="fas fa-user-md"></i></a>
                             <a href="{{ route('blog') }}" class="nav-item nav-link active">Blog <i class="fab fa-blogger"></i></a>
                             <a href="{{ route('politicas') }}" class="nav-item nav-link active">Politicas <i class="fas fa-handshake"></i></a>
+=======
+                </div>
+            </nav>
+            <hr class="bg-white p-0 m-0">
+            <div class="nav-content">
+                <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'perros') }}"  >
+                    <div class="nav-item">
+                        <div class="nav-img">
+                            <h5><i class="fas fa-bone"></i></h5>
+                        </div>
+                        <div class="nav-title">
+                            PERROS
                         </div>
                     </div>
-                </nav>
+                </a>
+                <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'perros') }}" >
+                    <div class="nav-item">
+                        <div class="nav-img">
+                                <img src="{{ asset('assets/img/Cat-icon_30345.ico') }}" alt="" width="40px">
+                        </div>
+                        <div class="nav-title">
+                            GATOS
+                        </div>
+                    </div>
+                </a>
+                <a class="nav-link  active" href="{{ route('vistascategorias', $name = 'otras mascotas') }}" >
+                    <div class="nav-item">
+                        <div class="nav-img">
+                            <img src="{{ asset('assets/img/pet-animal-pets-fish-gold_108547.ico') }}" alt="" width="40px">
+                        </div>
+                        <div class="nav-title">
+                            OTRAS MASCOTAS
+>>>>>>> d8ab2dde9e0ae0c49266bbe3a01ff52c8b7db81e:resources/views/visitante/layouts/nav.blade.php
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ route('groming') }}" class="nav-link  active">
+                    <div class="nav-item">
+                        <div class="nav-img">
+                            <img src="{{ asset('assets/img/cuttingscissors_corte_1578.ico') }}" alt="" width="40px">
+                        </div>
+                        <div class="nav-title">
+                             GROMING
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ route('blog') }}" class="nav-link active">
+                    <div class="nav-item">
+                        <div class="nav-img">
+                            <img src="{{ asset('assets/img/article_blog_sign_icon-icons.com_51086.ico') }}" alt="" width="40px">
+                        </div>
+                        <div class="nav-title">
+                            BLOG
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ route('politicas') }}" class="nav-link active">
+                    <div class="nav-item">
+                        <div class="nav-img">
+                            <img src="{{ asset('assets/img/wpsofficedoc_103611.ico') }}" alt="" width="40px">
+                        </div>
+                        <div class="nav-title">
+                            POLITICAS
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
     </div>
-
-
-
+    </div>

@@ -42,13 +42,8 @@ class HomeController extends Controller
 
     public function home()
     {
-
         $carrousels = Carrousel::all();
-        return view('Invited/home', compact('carrousels'));
-
-
-        return view('Invited/home');
-
+        return view('visitante/home', compact('carrousels'));
     }
 
     public function dashboard()

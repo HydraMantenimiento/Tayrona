@@ -1,5 +1,5 @@
 
-@extends('layouts.layout')
+@extends('visitante.layouts.layout')
 
 @section('content')
 

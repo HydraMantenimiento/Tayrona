@@ -268,11 +268,6 @@ input[type="radio"]:checked ~ label {
 }
 /* .segundo{clear:left;} */
 
-<<<<<<< HEAD
-
-
-
-=======
 .content-search {
     position: relative;
 }
@@ -315,4 +310,16 @@ input[type="radio"]:checked ~ label {
     background: #571C7C !important;
     color:white !important;
 }
->>>>>>> df83cff50b09b23038091f5eca3eee0628281231
+
+.nav-content{
+    display: flex;
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+.nav-title{
+    color:white;
+    margin-left:  5px;
+    font-size: 14px!important;
+}

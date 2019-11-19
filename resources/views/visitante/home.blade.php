@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('visitante.layouts.layout')
 
 @section('content')
 
@@ -21,6 +21,17 @@
                 </div>
                     <?php $i++ ?>
                 @endforeach
+                    @if(count($carrousels)  == 0)
+                        @for($i = 0; $i < 3; $i++)
+                            <div class="carousel-item {{ $i == 0 ? 'active' :'' }} ">
+                                <img src="holder.js/500x600" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>TITULO</h5>
+                                    <p></p>
+                                </div>
+                            </div>
+                        @endfor
+                    @endif
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
