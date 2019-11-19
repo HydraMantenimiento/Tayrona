@@ -60,38 +60,39 @@
         <div class="container">
             <div class="clients-outer">
                 <ul class="clients-carousel owl-carousel owl-loaded owl-drag">
-
                     <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1728px, 0px, 0px); transition: all 0s ease 0s; width: 2880px;"><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-1.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-2.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-3.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-4.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-5.png" alt=""></a></figure>
-                                </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-1.png" alt=""></a></figure>
-                                </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-2.png" alt=""></a></figure>
-                                </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-3.png" alt=""></a></figure>
-                                </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-4.png" alt=""></a></figure>
-                                </li></div><div class="owl-item active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-5.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-1.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-2.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-3.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-4.png" alt=""></a></figure>
-                                </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
-                                    <figure class="image-box"><a href="#"><img src="images/clients/clients-5.png" alt=""></a></figure>
-                                </li></div></div></div><div class="owl-nav disabled"><div class="owl-prev"><span class="fa fa-angle-left"></span></div><div class="owl-next"><span class="fa fa-angle-right"></span></div></div><div class="owl-dots disabled"><div class="owl-dot active"><span></span></div></div></ul>
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-1.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-2.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-3.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-4.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-5.png" alt=""></a></figure>
+                        </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-1.png" alt=""></a></figure>
+                        </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-2.png" alt=""></a></figure>
+                        </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-3.png" alt=""></a></figure>
+                        </li></div><div class="owl-item" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-4.png" alt=""></a></figure>
+                        </li></div><div class="owl-item active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-5.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-1.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-2.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-3.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned active" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-4.png" alt=""></a></figure>
+                        </li></div><div class="owl-item cloned" style="width: 162px; margin-right: 30px;"><li class="slide-item">
+                            <figure class="image-box"><a href="#"><img src="images/clients/clients-5.png" alt=""></a></figure>
+                        </li></div></div></div><div class="owl-nav disabled"><div class="owl-prev"><span class="fa fa-angle-left"></span></div><div class="owl-next"><span class="fa fa-angle-right"></span></div></div><div class="owl-dots disabled"><div class="owl-dot active"><span></span></div>
+                    </div>
+                </ul>
             </div>
         </div>
     </section>
@@ -102,8 +103,8 @@
     <section class="team-style-two alternate-2 centred">
         <div class="container">
             <div class="sec-title">
-                <div class="top-title">Pet Care Staff</div>
-                <h1>Meet Our Groomers</h1>
+                <div class="top-title">Personal de cuidado de mascotas</div>
+                <h1>Conoce a nuestros peluqueros</h1>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 staff-column">
@@ -204,182 +205,6 @@
     <!-- testimonial-section end -->
 
 
-    <!-- faq-section -->
-    <section class="faq-section gray-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 inner-column">
-                    <div class="inner-content">
-                        <div class="sec-title">
-                            <div class="top-title">Recent Question Answers</div>
-                            <h1>We’ll Take Care of your Pets Friends</h1>
-                        </div>
-                        <figure class="image-box wow fadeInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;"><img src="images/resource/faq-image.jpg" alt=""></figure>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 faq-column">
-                    <div class="faq-content">
-                        <!--Accordion Box-->
-                        <ul class="accordion-box">
-                            <!--Block-->
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                    <h4>How to take care of your pets</h4>
-                                </div>
-                                <div class="acc-content" style="display: none;">
-                                    <div class="content">
-                                        <div class="text">Aliquam erat volutpat In id ferme ntum augue ut pelle ntes que leo. Maecenas at arcu risus onec commodo ales ex scele risque laoreet nibh hendrerit idn aliquet magna nec lobort maxi etiam rhoncus leo a dolor ipsum conval.</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!--Block-->
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                    <h4>Get bathing in our vet bath</h4>
-                                </div>
-                                <div class="acc-content current" style="display: none;">
-                                    <div class="content">
-                                        <div class="text">Aliquam erat volutpat In id ferme ntum augue ut pelle ntes que leo. Maecenas at arcu risus onec commodo ales ex scele risque laoreet nibh hendrerit idn aliquet magna nec lobort maxi etiam rhoncus leo a dolor ipsum conval.</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!--Block-->
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                    <h4>Your pet is in good hands with us</h4>
-                                </div>
-                                <div class="acc-content" style="display: none;">
-                                    <div class="content">
-                                        <div class="text">Aliquam erat volutpat In id ferme ntum augue ut pelle ntes que leo. Maecenas at arcu risus onec commodo ales ex scele risque laoreet nibh hendrerit idn aliquet magna nec lobort maxi etiam rhoncus leo a dolor ipsum conval.</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!--Block-->
-                            <li class="accordion block active-block">
-                                <div class="acc-btn active">
-                                    <div class="icon-outer"><i class="fas fa-plus"></i></div>
-                                    <h4>The best care takers of any kind of pets</h4>
-                                </div>
-                                <div class="acc-content" style="display: block;">
-                                    <div class="content">
-                                        <div class="text">Aliquam erat volutpat In id ferme ntum augue ut pelle ntes que leo. Maecenas at arcu risus onec commodo ales ex scele risque laoreet nibh hendrerit idn aliquet magna nec lobort maxi etiam rhoncus leo a dolor ipsum conval.</div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul><!--End Accordion Box-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- faq-section end -->
-
-
-    <!-- cta-section -->
-    <section class="cta-section centred">
-        <div class="container">
-            <div class="inner-box">
-                <h1>Poopet is here to Support Every<br>Aspect of your Pet’s Life</h1>
-                <div class="text">Looking for proessional groomer or trainer?</div>
-                <a href="contact.html" class="theme-btn">Contact with us</a>
-            </div>
-        </div>
-    </section>
-    <!-- cta-section end -->
-
-
-    <!-- main-footer -->
-    <footer class="main-footer gray-bg">
-        <div class="footer-top">
-            <div class="container">
-                <div class="top-content clearfix">
-                    <figure class="footer-logo"><a href="index.html"><img src="images/footer-logo.png" alt=""></a></figure>
-                    <ul class="social-style-one">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="widget-section">
-                <div class="row">
-                    <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                        <div class="footer-widget links-widget">
-                            <h3 class="widget-title">Explore</h3>
-                            <div class="widget-content">
-                                <ul class="link">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                        <div class="footer-widget links-widget">
-                            <h3 class="widget-title">Links</h3>
-                            <div class="widget-content">
-                                <ul class="link">
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">Help</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Terms of Use</a></li>
-                                    <li><a href="#">Site Map</a></li>
-                                    <li><a href="#">Location</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-12 footer-column">
-                        <div class="footer-widget contact-widget">
-                            <h3 class="widget-title">Contact</h3>
-                            <div class="widget-content">
-                                <div class="text">660 Broklyn Street,<br>88 New York U.S.A
-                                    <a href="mailto:example@gmail.com">example@gmail.com</a>
-                                    <a href="mailto:info@gmail.com">info@gmail.com</a>
-                                </div>
-                                <div class="phone"><a href="tel:+886668880000">666 888 0000</a></div>
-                                <div class="phone"><a href="tel:+88333555999">333 555 999</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12 col-sm-12 footer-column">
-                        <div class="footer-widget about-widget">
-                            <h3 class="widget-title">About</h3>
-                            <div class="widget-content">
-                                <div class="text">Etiam rhoncu sit amet adip scing simply thin sed ipsum dolor sit amet adip dine scing not avilable in the martket lorem ipsum sem neque.</div>
-                                <div class="subscribe-form">
-                                    <form action="#" method="post">
-                                        <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email address" required="">
-                                            <button type="submit"><i class="fa fa-angle-right"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom centred black-bg">
-            <div class="container">
-                <div class="copyright">© Copyrights 2019. All rights reserved.</div>
-            </div>
-        </div>
-    </footer>
-    <!-- main-footer end -->
 
 
 
@@ -402,10 +227,6 @@
     <script src="js/bxslider.js"></script>
     <script src="js/appear.js"></script>
 
-    <!-- main-js -->
-    <script src="js/script.js"></script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google Traductor de Google"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texto original</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Sugiere una traducción mejor</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
 
 
-
-    <div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body>
 @endsection
