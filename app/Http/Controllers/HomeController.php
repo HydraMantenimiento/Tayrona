@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 
 use App\Carrousel;
 use App\category_product;
+<<<<<<< HEAD
 use App\Currency;
 use App\PaymentPlatform;
+=======
+use App\productos;
+>>>>>>> df83cff50b09b23038091f5eca3eee0628281231
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -63,5 +67,11 @@ class HomeController extends Controller
             'currencies' => $currencies,
             'paymentPlatforms' => $paymentPlatforms,
         ]);
+    }
+
+    public function products()
+    {
+        $products = productos::all();
+        echo  json_encode($products);
     }
 }
