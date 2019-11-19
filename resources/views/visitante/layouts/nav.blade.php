@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="{{ route('blog') }}" class="nav-link active">
+                    <a href="{{ route('mostrarblog.index') }}" class="nav-link active">
                         <div class="nav-item">
                             <div class="nav-img">
                                 <img src="{{ asset('assets/img/article_blog_sign_icon-icons.com_51086.ico') }}" alt="" width="40px">

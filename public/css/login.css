@@ -1,0 +1,55 @@
+.bg-jaiber {
+     background: #fe7a00 !important;
+ }
+.text-jaiber {
+    color: #fe7a00 !important;
+}
+.btn-jaiber {
+    color: #fff;
+    background-color: #fe7a00 !important;
+    border-color: #fe7a00 !important;
+}
+.form-control:focus {
+    color: #000 !important;
+    background-color: #fff;
+    border-color: #fe7a00 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(2, 254, 122, 0) !important;
+}
+.btn-jaiber:focus, .btn-jaiber.focus {
+    box-shadow: 0 0 0 0.2rem rgba(2, 254, 122, 0) !important;
+}
+
+.img-logo{
+    height: 380px;
+    width: 50%;
+    float: left;
+    padding: 0px;
+    background-image: url("../img/login.gif");
+    background-repeat: no-repeat;
+    background-size: 350px 380px;
+}
+
+.form{
+    width: 50%;
+    float:right;
+}
+.btn-return{
+    top:75px;
+    right: 20px;
+    color: #fe7a00;
+    position: absolute;
+}
+.btn-return:hover {
+    color: #fe7a00;
+}
+
+@media (max-width: 1200px) {
+    .img-logo{
+        display: none;
+    }
+
+    .form{
+        width: 100%;
+    }
+}

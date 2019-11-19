@@ -60,7 +60,7 @@
     route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
     route::view('/about','visitante/about')->name('about');
     route::view('/politicas','visitante/politicas')->name('politicas');
-    route::view('/blog','visitante/blog')->name('blog');
+Route::resource('/mostrarblog','MostrarblogController');
     #route::view('/descripcion','visitante/descripcion')->name('descripcion');
     route::get('/descripcion', 'ProductController@descriptionProduct');
 

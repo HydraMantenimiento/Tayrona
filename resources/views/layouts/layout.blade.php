@@ -36,8 +36,8 @@
             </div>
             <img src="{{ asset('iconos/logo-tayrona.png') }}" alt=""  id="img-modal">
         </div>
-        @include('nav.nav')
+
         @yield('content')
-        @include("nav.footer")
+
     </body>
 </html>
