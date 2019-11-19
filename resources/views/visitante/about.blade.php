@@ -42,10 +42,15 @@
                 <div class="lower-content centred">
                     <div class="sec-title">
                         <div class="top-title">Pocas palabras sobre la empresa</div>
-                        <h1>Centro de aseo &amp; cuidado de mascotas</h1>
+                        <h1>Comercializamos alimentos todas las marcas, medicamentos y accesorios para mascotas.</h1>
                     </div>
                     <div class="text">
-                        <p>There are many variations of passages of available but the majority have suffered alteration in some form, by injected hu randomised words which don look even slightly believable. If you are going to use a passage of you need to be sure there lipsim is simply free text now isn't anything embarr assing hidden in the middle of text.</p>
+                        <p>
+                            Somos una marca pensada en dar soluciones a las necesidades de tu mascota, buscando ofrecer un servicio de calidad contribuyendo con la felicidad de tu mascota.
+                            Contamos con un amplio portafolio de productos y servicios para su mascota alimentos, accesorios y medicamentos de alta calidad y excelencia.
+                            Queremos consolidarnos como líderes en el mercado ofreciéndoles a nuestros clientes un excelente servicio y atención personalizada para tu mascota.
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -84,8 +89,8 @@
                     <div class="team-block-one wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 200ms; animation-name: fadeInUp;">
                         <figure class="image-box"><a href="#"><img src="{{asset('imagenes/service-details-2.jpg')}}" alt="" style="height: 212px;"></a></figure>
                         <div class="lower-content">
-                            <h3><a href="#">Mike Albert</a></h3>
-                            <span class="designation">Groomer</span>
+                            <h3><a href="#">Luis  Parra</a></h3>
+                            <span class="designation">boss</span>
                             <ul class="social-style-one">
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -200,5 +205,15 @@
         <span class="fa fa-arrow-up"></span>
     </button>
     -->
+
+
+    <!-- jequery plugins-->
+    <script src="<?php echo e(asset('js/vistas_visitante/popper.min.js')); ?>js/jquery.js"></script>
+    <script src="<?php echo e(asset('js/vistas_visitante/js/owl.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/vistas_visitante/js/wow.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/vistas_visitante/js/validation.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/vistas_visitante/js/jquery.fancybox.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/vistas_visitante/js/bxslider.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/vistas_visitante/js/appear.js')); ?>"></script>
 
 @endsection

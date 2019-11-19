@@ -142,7 +142,6 @@
 
     </style>
 
-
     <div class="wrap">
         <div class="store-wrapper">
             <div class="category_list">
