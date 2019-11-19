@@ -61,7 +61,8 @@
     route::view('/about','visitante/about')->name('about');
     route::view('/politicas','visitante/politicas')->name('politicas');
     route::view('/blog','visitante/blog')->name('blog');
-    route::view('/descripcion','visitante/descripcion')->name('descripcion');
+    #route::view('/descripcion','visitante/descripcion')->name('descripcion');
+    route::get('/descripcion', 'ProductController@descriptionProduct');
 
 
 
