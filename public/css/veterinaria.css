@@ -61,9 +61,9 @@
 @import url('../fontawesome-free/css/all.css');
 @import url('../css/flaticon.css');
 @import url('../css/owl.css');
-    /*  @import url(../css/bootstrap.css);
-     @import url(../css/jquery.fancybox.min.css);
-     @import url(../css/animate.css);*/
+   /*@import url(../css/bootstrap.css);*/
+ @import url('../css/jquery.fancybox.min.css');
+ @import url('../css/animate.css');
 
 
 
@@ -357,14 +357,14 @@ img{
     font-family: 'flaticon';
     font-size: 190px;
     line-height: 150px;
-    color: #f2f9fa;
+    color: #cac8c9;
     left: 50%;
     margin-left: -95px;
     top: -25px;
 }
 
 .sec-title.alternate-color:before {
-    color: #eaefec;
+    color: #cac8c9;
 }
 
 .sec-title .top-title{
@@ -1834,7 +1834,7 @@ img{
     font-family: 'flaticon';
     font-size: 80px;
     color: #ffffff;
-    background: #9dc638;
+    background: #62297d;
     left: 50%;
     top: 0px;
     margin-left: -65px;
@@ -2369,7 +2369,7 @@ img{
     width: 212px;
     height: 212px;
     border-radius: 50%;
-    background: #e72636;
+    background: #62297d;
 }
 
 .team-block-one .image-box img{
