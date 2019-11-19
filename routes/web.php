@@ -20,7 +20,7 @@
         Route::resource('/category_product', 'category_productController');
         Route::resource('/admin/blog', 'BlogController');
         Route::resource('/admin/blogCategory', 'BlogCategoryController');
-
+        Route :: resource ('/descriptions' , 'descriptions_productController' );
         Route::resource('users', 'UserController');
         Route::get('admin-list-excel','reportsController@exportExcel')->name('reports.excel');
 
@@ -44,7 +44,6 @@
         Route::post('/payments/pay', 'PaymentController@pay')->name('pay');
         Route::get('/payments/approval', 'PaymentController@approval')->name('approval');
         Route::post('/payments/cancelled', 'PaymentController@cancelled')->name('cancelled');
-
 
     });
 

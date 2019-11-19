@@ -173,7 +173,7 @@
                                              </div>
                                              <div class="product-btns">
                                                  <button class="quick-view" >
-                                                     <a href="{{ route('descripcionuser',$producto->id) }}">
+                                                     <a href="{{ route('descripcion',$producto->id) }}">
                                                          <i class="fa fa-eye"></i>
                                                          <span class="tooltipp">quick view</span>
                                                      </a>
