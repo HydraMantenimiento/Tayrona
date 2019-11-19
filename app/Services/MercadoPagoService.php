@@ -85,7 +85,7 @@ class MercadoPagoService
 
     public function createPayment($value, $currency, $cardNetwork, $cardToken, $email, $installments = 1)
     {
-
+//'
         return $this->makeRequest(
             'POST',
             '/v1/payments',

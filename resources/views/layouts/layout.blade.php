@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{ asset('css/all.css') }}">
         <link rel="stylesheet" href="{{ asset('css/imagenes.css') }}">
         <link rel="stylesheet" href="{{ asset('css/COMENTARIO.css') }}">
+
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
         <title>@yield('title','Tayrona Pet Shop')</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
@@ -19,8 +20,8 @@
         <script src="{{ asset('js/main.js') }}"></script>
 
 
-        <!-- platilla productos -->
-        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">
+        <!-- platilla productos
+        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">-->
         <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/nouislider.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/slick.css")}}">

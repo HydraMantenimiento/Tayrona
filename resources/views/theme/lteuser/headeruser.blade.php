@@ -19,14 +19,7 @@
         <div class="navbar-custom-menu ">
             <ul class="nav navbar-nav ">
                 <li>
-                    <a href="{{ route('product.shoppingCart') }}">
-                        <i class="fa fa-shopping-basket "></i>
-                        <span class="label label-warning text-black">
-                            @if( session('cartproduct'))
-                                {{ session('cartproduct')->totalQty }}
-                            @endif
-                        </span>
-                    </a>
+
                    <!-- <ul class="dropdown-menu">
                         <li class="header">You have 4 messages</li>
                         <li>

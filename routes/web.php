@@ -28,10 +28,11 @@
 
         Route::get('/checkcategoryuser/{name}','categoryusersController@checkcategoryuser')->name('vis');
         Route::get('checksubcategoryusers/{name}/{subcate}','categoryusersController@checksubcategoryusers')->name('sub');
-        Route::resource('/descriptions','descriptions_productController');
+
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
         route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
         route::view('/bloguser','user/views/bloguser')->name('bloguser');
+
         route::get('/descripcionuser/{producto}','descriptions_productController@index')->name('descripcionuser');
 
         /* carro de compras*/
@@ -49,12 +50,13 @@
     //FIN ADMINISTRADOR
 
     //vista de home menu rutas
-    route::get('/perro/{name}','viewsCategoryController@checkcategories')->name('vistascategorias');
+    route::get('vistascategorias/{name}/{subcategory?}','viewsCategoryController@checkcategories')->name('vistascategorias');
 
 
    // route::view('/otros','visitante/otros')->name('otros');
 
     route::view('/groming','visitante/groming')->name('groming');
+    route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
     route::view('/politicas','visitante/politicas')->name('politicas');
     route::view('/blog','visitante/blog')->name('blog');
     route::view('/descripcion','visitante/descripcion')->name('descripcion');
