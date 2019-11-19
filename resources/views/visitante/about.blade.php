@@ -37,7 +37,7 @@
             <div class="inner-content">
                 <div class="video-gallery wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
                     <figure class="image-box"><img src="{{asset('imagenes/baño.jpg')}}" alt=""></figure>
-                    <a href="https://www.youtube.com/watch?v=8PnwumgBufE&amp;t=28s" class="overlay-link lightbox-image" data-caption=""><i class="fa flaticon-play-button"></i></a>
+                    <a href="{{asset('video/video.mp4')}}" class="overlay-link lightbox-image" data-caption=""><i class="flaticon-play-button"></i></a>
                 </div>
                 <div class="lower-content centred">
                     <div class="sec-title">
@@ -200,7 +200,5 @@
         <span class="fa fa-arrow-up"></span>
     </button>
     -->
-
-
 
 @endsection
