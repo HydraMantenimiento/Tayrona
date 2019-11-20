@@ -29,7 +29,7 @@
                   </div>
 
                   <div class="col-4 py-5">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63636.91572116687!2d-74.1620053!3d4.5386026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f98de4b594ecd%3A0x41c9d6b340c08ca8!2sTayrona%20Pet%20Shop!5e0!3m2!1ses-419!2sco!4v1574203295187!5m2!1ses-419!2sco" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63636.91572116687!2d-74.1620053!3d4.5386026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f98de4b594ecd%3A0x41c9d6b340c08ca8!2sTayrona%20Pet%20Shop!5e0!3m2!1ses-419!2sco!4v1574203295187!5m2!1ses-419!2sco" width="300" height="160" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                   </div>
               </div>
           </div>

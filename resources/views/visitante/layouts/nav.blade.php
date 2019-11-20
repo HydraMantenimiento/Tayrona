@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-2 p-2">
-                <a href="{{ route('inicio') }}" class="logo"><img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="100%" height="90px"></a>
+                <a href="{{ route('inicio') }}" class="logo"><img src="{{ asset('iconos/tayrona.png') }}" alt="" width="100%" height="90px"></a>
             </div>
             <div class="col-10">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-orange mx-0 px-0">

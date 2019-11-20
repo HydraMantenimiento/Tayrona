@@ -57,15 +57,12 @@
     route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
     route::view('/about','visitante/about')->name('about');
     route::view('/politicas','visitante/politicas')->name('politicas');
-<<<<<<< HEAD
+
     route::view('/blog','visitante/blog')->name('blog');
     route::view('/descripcion','visitante/descripcion')->name('descripcion');
     #route::get('/descripcion', 'ProductController@descriptionProduct');
-=======
-Route::resource('/mostrarblog','MostrarblogController');
-    #route::view('/descripcion','visitante/descripcion')->name('descripcion');
-    route::get('/descripcion', 'ProductController@descriptionProduct');
->>>>>>> 722d7e69502f6421f85497d6a7e9a67d24963d79
+    Route::resource('/mostrarblog','MostrarblogController');
+
 
 
 

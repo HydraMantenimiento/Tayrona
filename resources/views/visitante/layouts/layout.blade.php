@@ -22,7 +22,7 @@
        <!--<div class="container-modal">
             <div class="modal-img">
             </div>
-            <img src="{{ asset('iconos/logo-tayrona.png') }}" alt=""  id="img-modal">
+            <img src="{{ asset('iconos/tayrona.png') }}" alt=""  id="img-modal">
         </div>-->
         @include('visitante.layouts.nav')
         @yield('content')
