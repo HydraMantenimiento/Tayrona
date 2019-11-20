@@ -42,6 +42,22 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        <style>
+            .appwhatsapp{
+                position: fixed;
+                right: 26px;
+                bottom: 50px;
+                width: 60px;
+                z-index: 1000;
+            }
+            .appwhatsapp img{
+                width: 100%;
+                height: auto;
+            }
+        </style>
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=3143256396&text=Hola!&nbsp;me&nbsp;pueden&nbsp;apoyar?" class="appwhatsapp">
+            <img src="{{'fonts/whatsapp.png'}}" alt="">
+        </a>
 @endsection
 
 

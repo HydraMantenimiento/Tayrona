@@ -77,11 +77,11 @@
                         <div class="lower-content">
                             <h3><a href="#">Reena Scot</a></h3>
                             <span class="designation">Groomer</span>
-                            <ul class="social-style-one">
+                           <!-- <ul class="social-style-one">
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
+                            </ul>-->
                         </div>
                     </div>
                 </div>

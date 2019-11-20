@@ -13,7 +13,6 @@
         Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
         Route::resource('/product', 'ProductController');
-
         Route::resource('/product-img', 'Product_imgController');
         Route::resource('/category', 'categoryController');
         Route::resource('/subcategory', 'subcategoryController');
@@ -30,11 +29,9 @@
 
         Route::get('/checkcategoryuser/{name}','categoryusersController@checkcategoryuser')->name('vis');
         Route::get('checksubcategoryusers/{name}/{subcate}','categoryusersController@checksubcategoryusers')->name('sub');
-
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
         route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
         route::view('/bloguser','user/views/bloguser')->name('bloguser');
-
         route::get('/descripcionuser/{producto}','descriptions_productController@index')->name('descripcionuser');
 
         /* carro de compras*/
@@ -61,8 +58,8 @@
     route::view('/about','visitante/about')->name('about');
     route::view('/politicas','visitante/politicas')->name('politicas');
     route::view('/blog','visitante/blog')->name('blog');
-    #route::view('/descripcion','visitante/descripcion')->name('descripcion');
-    route::get('/descripcion', 'ProductController@descriptionProduct');
+    route::view('/descripcion','visitante/descripcion')->name('descripcion');
+    #route::get('/descripcion', 'ProductController@descriptionProduct');
 
 
 
