@@ -58,12 +58,12 @@
 
 /* use style sheet */
 
-@import url('../fontawesome-free/css/all.css');
-@import url('../css/flaticon.css');
-@import url('../css/owl.css');
-   /*@import url(../css/bootstrap.css);*/
- @import url('../css/jquery.fancybox.min.css');
- @import url('../css/animate.css');
+@import url('../../fontawesome-free/css/all.css');
+@import url('flaticon.css');
+@import url('owl.css');
+@import url('../bootstrap.css');
+@import url('jquery.fancybox.min.css');
+@import url('animate.css');
 
 
 
@@ -1975,7 +1975,7 @@ img{
 .main-footer .footer-top:before{
     position: absolute;
     content: '';
-    background: url('../imagenes/animal-image-2.png');
+    background: url('../../imagenes/animal-image-2.png');
     width: 100%;
     height: 445px;
     left: 0px;
@@ -2905,12 +2905,12 @@ img{
     position: absolute;
     left: 60px;
     top: 0px;
-    width: 130px;
-    height: 130px;
-    line-height: 130px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     text-align: center;
     overflow: hidden;
-    font-size: 40px;
+    font-size: 30px;
     color: #ffffff;
     background: #61287d;
     border-bottom-left-radius: 80px;
@@ -3341,7 +3341,7 @@ img{
 .service-sidebar .sidebar-appointment .widget-content:before{
     position: absolute;
     content: '';
-    background-image: url('../imagenes/animal-image-2.png');
+    background-image: url('../../imagenes/animal-image-2.png');
     width: 100%;
     height: 219px;
     left: 0px;

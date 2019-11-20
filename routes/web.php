@@ -60,7 +60,6 @@
 
     route::view('/blog','visitante/blog')->name('blog');
     route::view('/descripcion','visitante/descripcion')->name('descripcion');
-    #route::get('/descripcion', 'ProductController@descriptionProduct');
     Route::resource('/mostrarblog','MostrarblogController');
 
 

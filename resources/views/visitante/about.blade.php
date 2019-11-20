@@ -1,9 +1,8 @@
 @extends('visitante.layouts.layout')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/veterinaria.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitante/veterinaria.css') }}">
 
-    <body class="boxed_wrapper" cz-shortcut-listen="true">
-
+<body class="boxed_wrapper" cz-shortcut-listen="true">
     <!-- .preloader -->
     <div class="preloader" style="display: none;"></div>
     <!-- /.preloader -->
@@ -15,8 +14,6 @@
         </div>
     </section>
     <!-- page-title end -->
-
-
     <!-- page-info -->
     <section class="page-info">
         <div class="container">
@@ -77,11 +74,6 @@
                         <div class="lower-content">
                             <h3><a href="#">Reena Scot</a></h3>
                             <span class="designation">Groomer</span>
-                           <!-- <ul class="social-style-one">
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>-->
                         </div>
                     </div>
                 </div>
@@ -91,11 +83,6 @@
                         <div class="lower-content">
                             <h3><a href="#">Luis  Parra</a></h3>
                             <span class="designation">boss</span>
-                            <ul class="social-style-one">
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -105,11 +92,6 @@
                         <div class="lower-content">
                             <h3><a href="#">Sarah Eve</a></h3>
                             <span class="designation">Groomer</span>
-                            <ul class="social-style-one">
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -119,11 +101,11 @@
                         <div class="lower-content">
                             <h3><a href="#">Reena Scot</a></h3>
                             <span class="designation">Groomer</span>
-                            <ul class="social-style-one">
+                            <!--<ul class="social-style-one">
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
+                            </ul>-->
                         </div>
                     </div>
                 </div>
@@ -135,68 +117,7 @@
 
     <!-- testimonial-section -->
     <section class="testimonial-section centred" style="background-image: url('imagenes/testimonial-bg.jpg');">
-        <!--<div class="container">
-            <div class="inner-content">
-                <div class="testimonial-carousel owl-theme owl-carousel owl-loaded owl-drag">
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2088px, 0px, 0px); transition: all 0s ease 0s; width: 4872px;">
-                        <div class="owl-item cloned" style="width: 690px; margin-right: 6px;"><div class="testimonial-content">
-                            <h2>If you pick up a starving dog and make him prosperous he will not bite you. This is the principal difference between a dog and man.</h2>
-                            <span>- Mark Twain</span>
-                            </div>
-                                </div>
-                                    <div class="owl-item cloned" style="width: 690px; margin-right: 6px;"><div class="testimonial-content">
-                                    <h2>If you pick up a starving dog and make him prosperous he will not bite you. This is the principal difference between a dog and man.</h2>
-                                    <span>- Mark Twain</span>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 690px; margin-right: 6px;"><div class="testimonial-content">
-                                <h2>If you pick up a starving dog and make him prosperous he will not bite you. This is the principal difference between a dog and man.</h2>
-                                <span>- Mark Twain</span>
-                                </div>
-                            </div>
-                            <div class="owl-item active" style="width: 690px; margin-right: 6px;"><div class="testimonial-content">
-                                <h2>If you pick up a starving dog and make him prosperous he will not bite you. This is the principal difference between a dog and man.</h2>
-                                <span>- Mark Twain</span>
-                            </div>
-                            </div>
-                                <div class="owl-item" style="width: 690px; margin-right: 6px;"><div class="testimonial-content">
-                                    <h2>If you pick up a starving dog and make him prosperous he will not bite you. This is the principal difference between a dog and man.</h2>
-                                    <span>- Mark Twain</span>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 690px; margin-right: 6px;"><div class="testimonial-content">
-                                <h2>If you pick up a starving dog and make him prosperous he will not bite you. This is the principal difference between a dog and man.</h2>
-                                <span>- Mark Twain</span>
-                            </div>
-                            </div><div class="owl-item cloned" style="width: 690px; margin-right: 6px;"><div class="testimonial-content">
-                                <h2>If you pick up a starving dog and make him prosperous he will not bite you. This is the principal difference between a dog and man.</h2>
-                                <span>- Mark Twain</span>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-nav disabled">
-                        <div class="owl-prev">
-                            <span class="fa fa-angle-left"></span>
-                        </div>
-                        <div class="owl-next">
-                            <span class="fa fa-angle-right"></span>
-                        </div>
-                    </div>
-                    <div class="owl-dots">
-                        <div class="owl-dot">
-                            <span></span>
-                        </div>
-                        <div class="owl-dot active">
-                            <span></span>
-                        </div>
-                        <div class="owl-dot">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
+
     </section>
 
 
@@ -208,12 +129,14 @@
 
 
     <!-- jequery plugins-->
-    <script src="<?php echo e(asset('js/vistas_visitante/popper.min.js')); ?>js/jquery.js"></script>
-    <script src="<?php echo e(asset('js/vistas_visitante/js/owl.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/vistas_visitante/js/wow.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/vistas_visitante/js/validation.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/vistas_visitante/js/jquery.fancybox.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/vistas_visitante/js/bxslider.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/vistas_visitante/js/appear.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/visitante/popper.min.js')); ?>js/jquery.js"></script>
+    <script src="<?php echo e(asset('js/visitante/owl.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/visitante/wow.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/visitante/validation.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/visitante/jquery.fancybox.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/visitante/bxslider.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/visitante/appear.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/visitante/scrpt.js')); ?>"></script>
 
 @endsection
+

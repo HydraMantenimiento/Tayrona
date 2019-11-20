@@ -1,7 +1,7 @@
 @extends('visitante.layouts.layout')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/veterinaria.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/visitante/veterinaria.css') }}">
 
     <body class="boxed_wrapper">
     <!-- page-title -->
