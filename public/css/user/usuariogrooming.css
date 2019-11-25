@@ -1,54 +1,4 @@
 
-    /* Css For Poopet */
-
-    /************ TABLE OF CONTENTS ***************
-1. Fuentes
-2. Restablecer
-3. Global
-4. Encabezado principal
-5. Control deslizante principal
-6. Sección de bienvenida
-7. Sección de servicio
-9. Takecare Section
-8. Sección de la galería
-10. Sección del equipo
-11. Sección de clientes
-12. Sobre la sección
-14. Sección de noticias
-15. Sección de testimonios
-16. Sección de contacto
-19. Pie de página principal
-20. Pie de página
-21. Encabezado estilo dos
-22. Slider Style Two
-23. Sobre el estilo dos
-24. Team Style Two
-25. Sección Chooseus
-26. Sección de salud
-27. Sección de precios
-28. Sección del mapa de Google
-29. Sección Cta
-30. Acerca de la página
-31. Título de la página
-32. Información de la página
-33. Sobre el estilo tres
-34. Sección de preguntas frecuentes
-35. Sección de error
-36. Página de servicio
-37. Sección de la página de servicio
-38. Página de servicio único
-39. Contenido de servicio único
-40. Página de la galería
-41. Nuestro blog / página de blog
-42. Blog Grid
-43. Blog-Single
-44. Página de contacto
-45. Sección de contacto
-46. Google Map
-
-
-**********************************************/
-
 
     /* use font link */
 
@@ -57,13 +7,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo:400,400i,700,700i');
 
 /* use style sheet */
-
-@import url('../../fontawesome-free/css/all.css');
-@import url('flaticon.css');
-@import url('owl.css');
-@import url('../bootstrap.css');
-@import url('jquery.fancybox.min.css');
-@import url('animate.css');
 
 
 
@@ -90,7 +33,7 @@
 
  ***/
 
-
+/*
 body {
     font-size:16px;
     color:#615e5d;
@@ -102,7 +45,7 @@ body {
     background-repeat:no-repeat;
     background-position:center top;
     -webkit-font-smoothing: antialiased;
-}
+}*/
 
 @media (min-width:1200px) {
     .container {
@@ -252,7 +195,7 @@ img{
 }
 
 .theme-btn:hover{
-    background: #e72636;
+    background: #fe7a00;
     color: #ffffff;
     transform: translateY(-3px);
 }
@@ -1507,7 +1450,7 @@ img{
 }
 
 .team-section .content-box h2 a:hover{
-    color: #e72636;
+    color: #61287d;
 }
 
 .team-section .content-box .text p{
@@ -1777,7 +1720,7 @@ img{
 }
 
 .news-block-one .lower-content h3 a:hover{
-    color: #e72636;
+    color: #61287d;
 }
 
 .news-block-one .lower-content .text p{
@@ -1793,14 +1736,14 @@ img{
     font-weight: 400;
     line-height: 28px;
     background: #f2f1f0;
-    color: #e72636;
+    color: #61287d;
     padding: 13px 40px 12px 40px;
     text-transform: uppercase;
     border-radius: 30px;
 }
 
 .news-block-one .lower-content .link a:hover {
-    background: #e72636;
+    background: #61287d;
     color: #ffffff;
     transform: translateY(-3px);
 }
@@ -2289,12 +2232,12 @@ img{
     padding: 154px 0px 160px 0px;
 }
 
-.main-slider.slider-style-two .slider-btn .theme-btn{
-    background: #e72636;
+.main-slider.slider-style-two .slider-btn .theme-btn {
+    background: #61287d;
 }
 
 .main-slider.slider-style-two .slider-btn .theme-btn:hover{
-    background: #61287d;
+    background: #fe7a00;
 }
 
 
@@ -2406,7 +2349,7 @@ img{
 }
 
 .team-block-one .lower-content h3 a:hover{
-    color: #e72636;
+    color: #fe7a00;
 }
 
 .team-block-one .lower-content span{
@@ -2451,12 +2394,12 @@ img{
 .chooseus-section .inner-box .link .theme-btn{
     padding: 23px 70px;
     border-radius: 40px;
-    background: #e72636;
+    background: #fe7a00;
 }
 
 .chooseus-section .inner-box .link .theme-btn:hover{
     background: #ffffff;
-    color: #e72636;
+    color: #61287d;
 }
 
 .chooseus-block-one{
@@ -2787,7 +2730,7 @@ img{
 .page-title h1{
     position: relative;
     display: block;
-    font-size: 70px;
+    font-size: 65px;
     line-height: 70px;
     font-weight: 700;
     color: #ffffff;
@@ -3384,10 +3327,12 @@ img{
     padding: 12px 36px 11px 36px;
     border-radius: 40px;
     text-align: center;
+    overflow: hidden;
 }
 
 .service-sidebar .sidebar-appointment .widget-content a:hover{
     background: #fe7a00;
+    overflow: hidden;
 }
 
 .gallery-page-section{
@@ -3681,7 +3626,7 @@ img{
 
 .blog-single-content .comments-form-area .form-group input:focus,
 .blog-single-content .comments-form-area .form-group textarea:focus{
-    border: 3px solid #e72636;
+    border: 3px solid #fe7a00;
 }
 
 .blog-single-content .comments-form-area .form-group textarea{
@@ -3761,6 +3706,7 @@ img{
     border-bottom: 2px solid #ffffff;
     margin-bottom: 43px;
     padding-bottom: 41px;
+
 }
 
 .blog-sidebar .sidebar-post{
@@ -3793,7 +3739,7 @@ img{
 }
 
 .blog-sidebar .sidebar-post .post .text a:hover{
-    color: #e72636;
+    color: #fe7a00;
 }
 
 .blog-sidebar .sidebar-post .post{

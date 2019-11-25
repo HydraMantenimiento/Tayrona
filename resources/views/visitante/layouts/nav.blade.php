@@ -87,7 +87,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'perros') }}" >
+                    <a class="nav-link  active" href="{{ route('vistascategorias',$name = 'gatos') }}" >
                         <div class="nav-item">
                             <div class="nav-img">
                                 <img src="{{ asset('assets/img/Cat-icon_30345.ico') }}" alt="" width="40px">

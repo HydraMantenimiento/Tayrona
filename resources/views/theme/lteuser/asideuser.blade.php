@@ -14,12 +14,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('vis', $name = 'perros') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
+                    <li><a href="{{ route('visistacategoriauser', $category = 'perros') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -31,12 +31,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('vis', $name = 'gatos') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
+                    <li><a href="{{ route('visistacategoriauser', $category = 'gatos') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -48,26 +48,27 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('vis', $name = 'otras mascotas') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
-                    <li><a href="{{ url('checksubcategoryusers/'.$name.'/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
+                    <li><a href="{{ route('visistacategoriauser', $category = 'otras mascotas') }}"><i class="fa fa-circle-o"></i>TODOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/alimentos') }}"><i class="fa fa-circle-o"></i>ALIMENTOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/accesorios') }}"><i class="fa fa-circle-o"></i>ACCESORIOS</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/aseo') }}"><i class="fa fa-circle-o"></i>PRODUCTOS PARA ASEO</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/juguetes') }}"><i class="fa fa-circle-o"></i>JUGUETES</a></li>
+                    <li><a href="{{ url('visistacategoriauser/'.$category.'/drogueria') }}"><i class="fa fa-circle-o"></i>DROGUERÍA</a></li>
                 </ul>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('grominguser') }}">
+
                     <i class="fa fa-circle-o text-aqua"></i> <span>Gromming</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('veterinariauser') }}">
                     <i class="fa fa-circle-o text-aqua"></i> <span>Veterinaria</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('bloguser') }}">
                     <i class="fa fa-circle-o text-aqua"></i> <span>Blog</span>
                 </a>
             </li>

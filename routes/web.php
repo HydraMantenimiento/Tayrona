@@ -1,7 +1,6 @@
 <?php
 
-    //no tocar rutas
-
+    //rutas home
     Route::get('/', 'HomeController@home')->name('inicio');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/products', 'HomeController@products')->name('products');
@@ -27,16 +26,18 @@
         //cliente-----*
         Route::get('cliente','HomeController@cliente')->name('cliente');
 
-        Route::get('/checkcategoryuser/{name}','categoryusersController@checkcategoryuser')->name('vis');
-        Route::get('checksubcategoryusers/{name}/{subcate}','categoryusersController@checksubcategoryusers')->name('sub');
+        Route::get('visistacategoriauser/{category}/{subcategory?}','categoryusersController@checkcategoryuser')->name('visistacategoriauser');
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
         route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
         route::view('/bloguser','user/views/bloguser')->name('bloguser');
+        route::view('/blogview','user/views/blogview')->name('blogview');
         route::get('/descripcionuser/{producto}','descriptions_productController@index')->name('descripcionuser');
 
         /* carro de compras*/
         Route::get('/add-to-car/{id}',['uses' => 'CartproductsController@getAddToCart', 'as'   => 'product.addToCart']);
         Route::get('/shopping-cart',['uses' => 'CartproductsController@getCart', 'as'   => 'product.shoppingCart']);
+
+
 
         Route::post('/payments/pay', 'PaymentController@pay')->name('pay');
         Route::get('/payments/approval', 'PaymentController@approval')->name('approval');
@@ -47,17 +48,13 @@
     Route::view('/blogAdmin','admin/blogAdmin')->name('blogAdmin');
     //FIN ADMINISTRADOR
 
-    //vista de home menu rutas
+
+    //rutas visitantes
     route::get('vistascategorias/{name}/{subcategory?}','viewsCategoryController@checkcategories')->name('vistascategorias');
-
-
-   // route::view('/otros','visitante/otros')->name('otros');
-
     route::view('/groming','visitante/groming')->name('groming');
     route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
     route::view('/about','visitante/about')->name('about');
     route::view('/politicas','visitante/politicas')->name('politicas');
-
     route::view('/blog','visitante/blog')->name('blog');
     route::view('/descripcion','visitante/descripcion')->name('descripcion');
     Route::resource('/mostrarblog','MostrarblogController');

@@ -1,94 +1,155 @@
-@extends('layouts.layout')
+@extends('theme.lteuser.masteruser')
 
 
 @section('content')
+    <link rel="stylesheet" href="{{ asset('css/user/usuariogrooming.css') }}">
+    <body class="boxed_wrapper" cz-shortcut-listen="true">
 
-
-<div class="container "style="">
-    <div class="row">
-        <div class="ultimos-blog ml-4 my-4" style=" width:300px; height:auto; border-right:  solid #571C7C; ">
-            <h3 class="titulo-blog" style=" text-align:center;">Ultimos Blogs</h3>
-            <div class="blog-ultimos my-2" style="  background: ; width:90%; height:60px; border-bottom: solid;  border-width: 1px;">
-                <div class="row">
-                    <div class="img-2 my-2 ml-3" style="  width:20%; height:45px; "><img src="{{ asset('imagenes/m.jpg') }}" alt="" style=" width:auto; height:45px; "></div>
-                    <div class="my-2 ml-4" style=" background:; width:180px; height:45px; "><p class="ml-2">Titulo Blog</p></div>
-                </div>
-            </div>
-            <div class="blog-ultimos my-2" style="  background: ; width:90%; height:60px; border-bottom: solid;  border-width: 1px;">
-                <div class="row">
-                    <div class="img-2 my-2 ml-3" style=" background:; width:20%; height:45px; "><img src="{{ asset('imagenes/m.jpg') }}" alt="" style=" width:auto; height:45px; "></div>
-                    <div class="my-2 ml-4" style=" background:; width:180px; height:45px; "><p class="ml-2">Titulo Blog</p></div>
-                </div>
-            </div>
-            <div class="blog-ultimos my-2" style="  background: ; width:90%; height:60px; border-bottom: solid;  border-width: 1px;">
-                <div class="row">
-                    <div class="img-2 my-2 ml-3" style=" background:; width:20%; height:45px; "><img src="{{ asset('imagenes/m.jpg') }}" alt="" style=" width:auto; height:45px; "></div>
-                    <div class="my-2 ml-4" style=" background:; width:180px; height:45px; "><p class="ml-2">Titulo Blog</p></div>
-                </div>
-            </div>
-            <div class="blog-ultimos my-2" style="  background: ; width:90%; height:60px; border-bottom: solid;  border-width: 1px;">
-                <div class="row">
-                    <div class="img-2 my-2 ml-3" style=" background:; width:20%; height:45px; "><img src="{{ asset('imagenes/m.jpg') }}" alt="" style=" width:auto; height:45px; "></div>
-                    <div class="my-2 ml-4" style=" background:; width:180px; height:45px; "><p class="ml-2">Titulo Blog</p></div>
-                </div>
-            </div>
-            <div class="blog-ultimos my-2" style="  background: ; width:90%; height:60px; border-bottom: solid;  border-width: 1px;">
-                <div class="row">
-                    <div class="img-2 my-2 ml-3" style=" background:; width:20%; height:45px; "><img src="{{ asset('imagenes/m.jpg') }}" alt="" style=" width:auto; height:45px; "></div>
-                    <div class="my-2 ml-4" style=" background:; width:180px; height:45px; "><p class="ml-2">Titulo Blog</p></div>
-                </div>
-            </div>
-
+    <div class="preloader" style="display: none;"></div>
+    <section class="page-title centred" style="background-image: url('imagenes/page-title.jpg');">
+        <div class="container">
+            <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuestras noticias</font></font></h1>
         </div>
-        <div class="blog  ml-5 my-4" style=" width:65%; height:500px; ">
-            <div class="titulo" style=" width:100%; height:50px; ">
-                <CENTER>
-                    <H1>TITULO</H1>
-                </CENTER>
-            </div>
-            <hr>
-            <div class="titulo" style=" width:100%; height:75%; ">
-                <div class="img-blog" style=" width:40%; height:37%; margin-left:2%; ">
-                    <img src="{{ asset('imagenes/m.jpg') }}" alt="" class="" style=" width:270PX; height:150PX; " >
-                </div>
-                <div>
-                    <p class="primero ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, ipsum dolorum deleniti eaque quae exercitationem dolor culpa distinctio! Dolore hic asperiores at ratione eos amet accusamus praesentium ducimus. Autem, perferendis!</p>
-                </div>
-                <p class="segundo ml-1 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, excepturi! Quam libero ut maiores praesentium illo, in delectus vel harum quae sapiente corrupti expedita nobis nihil magnam explicabo beatae ipsum!</p>
-            </div>
-            <div class="titulo" style=" border-color:purple;  border-width: 1px; width:100%; height:25px; ">
-                <CENTER>
-                    <p>ver mas</p>
-                </CENTER>
+    </section>
+
+    <section class="page-info">
+        <div class="container">
+            <div class="content-box ">
+                <ul class="bread-crumb">
+                    <li><a href="#">Home</a></li>
+                    <li>Noticias</li>
+                </ul>
             </div>
         </div>
-    </div>
-    <hr class="p-0 m-0">
-    <div class="comments-container">
-		<ul id="comments-list" class="comments-list">
-			<li>
-				<div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="{{ asset('imagenes/m1.jpg') }}" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name "><a href="">jaiber vargas</a></h6>
-							<span>hace 20 minutos</span>
-							<i class="fa fa-reply ji"></i>
-							<i class="fa fa-heart ji"></i>
-						</div>
-						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-						</div>
-					</div>
+    </section>
+    <!-- page-info -->
+
+
+    <!-- news-section -->
+    <section class="news-section blog-grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                    <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="date">09<br />Mar</div>
+                        <figure class="image-box"><a href="{{ route('blogview') }}"><img src="{{asset('imagenes/news-3.png')}}" alt="" style="height: 387px; width:370px;"></a></figure>
+                        <div class="lower-content">
+                            <ul class="info-box">
+                                <li>Mike Hardson</li>
+                                <li>3 Comments</li>
+                            </ul>
+                            <h3><a href="{{ route('blogview') }}">Don’t worry your pets are in good hands</a></h3>
+                            <div class="text">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                            </div>
+                            <div class="link"><a href="{{ route('blogview') }}">Read more</a></div>
+                        </div>
+                    </div>
                 </div>
-            </li>
-		</ul>
-	</div>
-    <p class="my-2 vermas" ><link rel="stylesheet" href="">ver mas</link></p>
+                <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                    <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="date">09<br />Mar</div>
+                        <figure class="image-box"><a href="{{ route('blogview') }}"><img src="{{asset('imagenes/news-3.png')}}" alt="" style="height: 387px; width:370px;"></a></figure>
+                        <div class="lower-content">
+                            <ul class="info-box">
+                                <li>Mike Hardson</li>
+                                <li>3 Comments</li>
+                            </ul>
+                            <h3><a href="{{ route('blogview') }}">Don’t worry your pets are in good hands</a></h3>
+                            <div class="text">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                            </div>
+                            <div class="link"><a href="{{ route('blogview') }}">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                    <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="date">09<br />Mar</div>
+                        <figure class="image-box"><a href="{{ route('blogview') }}"><img src="{{asset('imagenes/news-3.png')}}" alt="" style="height: 387px; width:370px;"></a></figure>
+                        <div class="lower-content">
+                            <ul class="info-box">
+                                <li>Mike Hardson</li>
+                                <li>3 Comments</li>
+                            </ul>
+                            <h3><a href="{{ route('blogview') }}">Don’t worry your pets are in good hands</a></h3>
+                            <div class="text">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                            </div>
+                            <div class="link"><a href="{{ route('blogview') }}">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                    <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="date">09<br />Mar</div>
+                        <figure class="image-box"><a href="{{ route('blogview') }}"><img src="{{asset('imagenes/news-3.png')}}" alt="" style="height: 387px; width:370px;"></a></figure>
+                        <div class="lower-content">
+                            <ul class="info-box">
+                                <li>Mike Hardson</li>
+                                <li>3 Comments</li>
+                            </ul>
+                            <h3><a href="{{ route('blogview') }}">Don’t worry your pets are in good hands</a></h3>
+                            <div class="text">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                            </div>
+                            <div class="link"><a href="{{ route('blogview') }}">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                    <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="date">09<br />Mar</div>
+                        <figure class="image-box"><a href="{{ route('blogview') }}"><img src="{{asset('imagenes/news-3.png')}}" alt="" style="height: 387px; width:370px;"></a></figure>
+                        <div class="lower-content">
+                            <ul class="info-box">
+                                <li>Mike Hardson</li>
+                                <li>3 Comments</li>
+                            </ul>
+                            <h3><a href="{{ route('blogview') }}">Don’t worry your pets are in good hands</a></h3>
+                            <div class="text">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                            </div>
+                            <div class="link"><a href="{{ route('blogview') }}">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                    <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="date">09<br />Mar</div>
+                        <figure class="image-box"><a href="{{ route('blogview') }}"><img src="{{asset('imagenes/news-3.png')}}" alt="" style="height: 387px; width:370px;"></a></figure>
+                        <div class="lower-content">
+                            <ul class="info-box">
+                                <li>Mike Hardson</li>
+                                <li>3 Comments</li>
+                            </ul>
+                            <h3><a href="{{ route('blogview') }}">Don’t worry your pets are in good hands</a></h3>
+                            <div class="text">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                            </div>
+                            <div class="link"><a href="{{ route('blogview') }}">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 message-btn ">
+                <a href="{{ route('bloguser') }}" ><button class="theme-btn col-md-3">ver mas</button></a>
+            </div>
+        </div>
+    </section>
+    <!-- news-section end -->
 
-</div>
 
 
+
+    <!-- jequery plugins-->
+    <script src="{{asset('js/visitante/popper.min.js')}}"></script>
+    <script src="{{asset('js/visitante/owl.js')}}"></script>
+    <script src="{{asset('js/visitante/wow.js')}}"></script>
+    <script src="{{asset('js/visitante/validation.js')}}"></script>
+    <script src="{{asset('js/visitante/jquery.fancybox.js')}}"></script>
+    <script src="{{asset('js/visitante/bxslider.js')}}"></script>
+    <script src="{{asset('js/visitante/appear.js')}}"></script>
+
+    <script src="{{asset('js/visitante/script.js')}}"></script>
 @endsection
