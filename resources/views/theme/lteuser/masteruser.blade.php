@@ -20,8 +20,8 @@
         <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
 
 
-        <!-- platilla productos
-        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">-->
+        <!-- platilla productos-->
+        <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/nouislider.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/slick.css")}}">

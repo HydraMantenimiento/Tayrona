@@ -58,12 +58,12 @@
 
 /* use style sheet */
 
-@import url('../fontawesome-free/css/all.css');
-@import url('../css/flaticon.css');
-@import url('../css/owl.css');
-   /*@import url(../css/bootstrap.css);*/
- @import url('../css/jquery.fancybox.min.css');
- @import url('../css/animate.css');
+@import url('../../fontawesome-free/css/all.css');
+@import url('flaticon.css');
+@import url('owl.css');
+@import url('../bootstrap.css');
+@import url('jquery.fancybox.min.css');
+@import url('animate.css');
 
 
 
@@ -239,7 +239,7 @@ img{
     font-size: 20px;
     font-family: 'Passion One', Cursive;
     padding: 20px 40px;
-    background: #9dc638;
+    background: #61287d;
     line-height: 26px;
     color: #ffffff;
     font-weight: 400;
@@ -519,7 +519,7 @@ img{
     top: 7px;
     font-weight: 400;
     font-size: 25px;
-    color: #9dc638;
+    color: #61287d;
     line-height: 30px;
 }
 
@@ -561,7 +561,7 @@ img{
 }
 
 .social-style-one li:first-child a{
-    background: #9dc638;
+    background: #61287d;
 }
 
 .social-style-one li:nth-child(2) a{
@@ -1270,7 +1270,7 @@ img{
 }
 
 .takecare-section .sec-title .top-title{
-    color: #9dc638;
+    color: #61287d;
 }
 
 .takecare-section .sec-title{
@@ -1282,7 +1282,7 @@ img{
 }
 
 .takecare-section .sec-title .top-title:before{
-    background: #9dc638;
+    background: #61287d;
 }
 
 .takecare-section .sec-title:before{
@@ -1335,7 +1335,7 @@ img{
 
 .takecare-section .inner-content li:hover .icon-box:before {
     transform: scale(1);
-    background: #9dc638;
+    background: #61287d;
 }
 
 .takecare-section .inner-content li h2{
@@ -1354,7 +1354,7 @@ img{
 }
 
 .takecare-section .inner-content li h2 a:hover{
-    color: #9dc638;
+    color: #61287d;
 }
 
 .takecare-section .inner-content li .text{
@@ -1698,7 +1698,7 @@ img{
     position: absolute;
     top: 0px;
     left: 40px;
-    background: #9dc638;
+    background: #61287d;
     width: 92px;
     height: 92px;
     padding: 14px 10px 30px 10px;
@@ -1718,7 +1718,7 @@ img{
     position: relative;
     display: block;
     overflow: hidden;
-    background: #9dc638;
+    background: #61287d;
     border-radius: 10px;
 }
 
@@ -1866,7 +1866,7 @@ img{
     position: relative;
     display: block;
     font-size: 20px;
-    color: #9dc638;
+    color: #61287d;
     font-weight: 700;
 }
 
@@ -1975,7 +1975,7 @@ img{
 .main-footer .footer-top:before{
     position: absolute;
     content: '';
-    background: url('../imagenes/animal-image-2.png');
+    background: url('../../imagenes/animal-image-2.png');
     width: 100%;
     height: 445px;
     left: 0px;
@@ -2216,7 +2216,7 @@ img{
     line-height: 20px;
     font-family: 'Arvo', Cursive;
     font-weight: 700;
-    color: #9dc638;
+    color: #61287d;
 }
 
 .main-header.header-style-two .header-top .link a:hover{
@@ -2294,7 +2294,7 @@ img{
 }
 
 .main-slider.slider-style-two .slider-btn .theme-btn:hover{
-    background: #9dc638;
+    background: #61287d;
 }
 
 
@@ -2433,11 +2433,11 @@ img{
 }
 
 .chooseus-section .sec-title .top-title{
-    color: #9dc638;
+    color: #61287d;
 }
 
 .chooseus-section .sec-title .top-title:before{
-    background: #9dc638;
+    background: #61287d;
 }
 
 .chooseus-section .sec-title h1{
@@ -2477,7 +2477,7 @@ img{
     left: 0px;
     top: 11px;
     font-size: 60px;
-    color: #9dc638;
+    color: #61287d;
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
@@ -2905,12 +2905,12 @@ img{
     position: absolute;
     left: 60px;
     top: 0px;
-    width: 130px;
-    height: 130px;
-    line-height: 130px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     text-align: center;
     overflow: hidden;
-    font-size: 40px;
+    font-size: 30px;
     color: #ffffff;
     background: #61287d;
     border-bottom-left-radius: 80px;
@@ -3035,7 +3035,7 @@ img{
     height: 51px;
     line-height: 51px;
     font-size: 13px;
-    background: #9dc638;
+    background: #61287d;
     color: #ffffff;
     border-radius: 50%;
     text-align: center;
@@ -3255,12 +3255,12 @@ img{
 .service-details .content-style-three .list li:before{
     position: absolute;
     content: "\f058";
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
     font-size: 14px;
     color: #FE7A00;
     left: 0px;
     top: 0px;
-    font-weight: 700;
 }
 
 .service-details .content-style-three p{
@@ -3341,7 +3341,7 @@ img{
 .service-sidebar .sidebar-appointment .widget-content:before{
     position: absolute;
     content: '';
-    background-image: url('../imagenes/animal-image-2.png');
+    background-image: url('../../imagenes/animal-image-2.png');
     width: 100%;
     height: 219px;
     left: 0px;
@@ -3596,7 +3596,7 @@ img{
     position: absolute;
     top: 0px;
     left: 10px;
-    background: #9dc638;
+    background: #61287d;
     width: 45px;
     height: 49px;
     padding: 7px 5px 15px 5px;
@@ -3641,7 +3641,7 @@ img{
 
 .blog-single-content .comments-area .comment .comment-inner a:hover{
     color: #ffffff;
-    background: #9dc638;
+    background: #61287d;
 }
 
 .blog-single-content .comments-area .comment .comment-inner .text{
@@ -3737,7 +3737,7 @@ img{
 }
 
 .blog-sidebar .sidebar-search .form-group input:focus{
-    border: 3px solid #9dc638;
+    border: 3px solid #61287d;
 }
 
 .blog-sidebar .sidebar-search .form-group button{
@@ -3746,7 +3746,7 @@ img{
     right: 10px;
     color: #ffffff;
     font-size: 16px;
-    background: #9dc638;
+    background: #61287d;
     text-align: center;
     width: 51px;
     height: 51px;
@@ -3865,7 +3865,7 @@ img{
 
 .blog-sidebar .sidebar-tags .tag-list li a:hover{
     color: #ffffff;
-    background: #9dc638;
+    background: #61287d;
 }
 
 .google-map-section.alternate-2{
@@ -3898,7 +3898,7 @@ img{
 
 .page-header-mobile-info .toggle-box .link .theme-btn:hover{
     background: #ffffff;
-    color: #ff7c4e;
+    color: #fe7a00;
     transform: translateY(0px);
 }
 
@@ -3973,7 +3973,7 @@ img{
     left: 0px;
     top: -2px;
     font-size: 16px;
-    color: #f5af4d;
+    color: #fe7a00;
     line-height: 30px;
 }
 
@@ -4012,5 +4012,5 @@ img{
 
 .page-header-mobile-info .social-style-one li a:hover{
     background: #ffffff !important;
-    color: #ff7c4e;
+    color: #fe7a00;
 }

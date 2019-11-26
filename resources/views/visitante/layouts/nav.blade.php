@@ -27,6 +27,7 @@
                         </div>
                         <div class="item-search w-100 text-center" v-if="data.length == 0">
                             <span class="d-block ">No hay ningun produto.</span>
+
                         </div>
                     </div>
                 </div>

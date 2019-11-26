@@ -19,30 +19,6 @@
         <div class="navbar-custom-menu ">
             <ul class="nav navbar-nav ">
                 <li>
-
-                   <!-- <ul class="dropdown-menu">
-                        <li class="header">You have 4 messages</li>
-                        <li>
-
-                            <ul class="menu">
-                                <li>
-                                    <a href="#">
-                                        <div class="pull-left">
-                                            <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="img-circle" alt="User Image">
-                                        </div>
-                                        <h4>
-                                            Support Team
-                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
-                    </ul>-->
-                </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -63,6 +39,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer " style="background: #2D3E50;">
                             <div class="pull-right" >
+
                                 <a class="dropdown-item btn btn-default btn-flat"  href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
