@@ -9,8 +9,11 @@
                 </div>
                 <div class="form py-5 px-3 d-flex align-items-center" style="height: 100%;">
                     <div style="width: 100%">
+                        <div>
+                            <img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" class="d-block img-fluid">
+                        </div>
                         <h3 class="mb-3">Login</h3>
-                        <a href="" class="btn-return">< Regresar</a>
+                        <a href="{{ url('/') }}" class="btn-return"><i class="fas fa-chevron-left"></i> Regresar</a>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">

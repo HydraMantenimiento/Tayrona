@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\category_product;
+use App\product_img;
 use App\productos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -102,5 +103,10 @@ class viewsCategoryController extends Controller
                 }
                 break;
         }
+    }
+    static public function  productImg($id)
+    {
+        $img = product_img::find($id, ['url']);
+        return $img;
     }
 }

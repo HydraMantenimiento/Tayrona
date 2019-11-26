@@ -61,8 +61,8 @@
     route::view('/about','visitante/about')->name('about');
     route::view('/politicas','visitante/politicas')->name('politicas');
 Route::resource('/mostrarblog','MostrarblogController');
-    #route::view('/descripcion','visitante/descripcion')->name('descripcion');
-    route::get('/descripcion', 'ProductController@descriptionProduct');
+    route::view('/descripcion','visitante/descripcion')->name('descripcion');
+   #route::get('/descripcion', 'ProductController@descriptionProduct');
 
 
 

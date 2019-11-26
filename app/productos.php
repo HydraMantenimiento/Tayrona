@@ -12,6 +12,9 @@ class productos extends Model
 
     protected $table='productos';
 
+    protected $dates = ['deleted_at'];
+
+
     public function  product_status(){
         return $this->belongsTo('App\product_status');
     }
@@ -29,6 +32,10 @@ class productos extends Model
     public function descriptions_product(){
         return $this->belongsTo('App\descriptions_product');
     }
-    protected $dates = ['deleted_at'];
+
+    public function product_imgs()
+    {
+        return $this->hasMany('App\product_img');
+    }
 
 }

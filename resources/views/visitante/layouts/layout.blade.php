@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
         <link rel="stylesheet" href="{{ asset('css/all.css') }}">
-
-
     <!-- platilla productos-->
         <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/nouislider.min.css")}}">

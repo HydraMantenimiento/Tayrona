@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/all.css') }}">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
 
 
@@ -81,5 +82,6 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('js/all.js') }}"></script>
 </body>
 </html>

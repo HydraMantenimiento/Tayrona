@@ -2,148 +2,114 @@
 @extends('visitante.layouts.layout')
 
 @section('content')
-
     <style>
+        .content{
+            position: relative;
+        }
+        .close-menu {
+            display: block;
+            width: 100%;
+            float: left;
+        }
+        .close-menu .btn{
+            float: right;
+            border-radius: 30px;
+           margin: 20px 10px;
+        }
         .wrap{
-            max-width: 100%;
+            padding-top: 0px;
+            width: 260px;
+            background: #fafafa;
+            display: block;
+            float: left;
+            height: 860px;
+            transition: 1s;
+        }
+        .category_item{
+            display: block;
+            padding:15px 30px;
             width: 100%;
-            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid  #eeeeee;
+        }
+        .category_title {
+            padding:10px 20px;
+            transition: 5s;
         }
 
-        .store-wrapper{
+        .category_item:hover{
+            background: #FC7D3F;
+            color:white;
+            transition: 1s;
+        }
+        .product_list{
+
+        }
+        .content-product{
             display: flex;
+            justify-content:flex-start;
             flex-wrap: wrap;
         }
 
-        .category_list{
-            display: flex;
-            flex-direction: column;
-            width: 12%;
+        .item-product{
+            width: 23%;
+            display: block;
+            margin: 10px 0.5%;
         }
 
-        .category_list .category_item{
-            display: block;
+        .menu-secundary{
             width: 100%;
-            padding: 15px 0;
-            margin-bottom: 10px;
-            background: #FE7A00;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
+            padding: 10px 20px;
         }
 
-        .category_list .ct_item-active{
-            background: #2D3E50;
+        @media only screen and (max-width: 960px){
+            .item-product {
+                width: 32%;
+            }
+            .wrap{
+                top:0px;
+                z-index: 20;
+                position: absolute;
+                left: -260px;
+            }
+
         }
 
-        /* PRODUCTOS ============*/
-
-        .products-list{
-            width: 88%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .products-list .product-item{
-            width: 22%;
-            margin-left: 3%;
-            margin-bottom: 25px;
-            box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.22);
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            align-self: flex-start;
-
-            transition: all .4s;
-        }
-
-        .products-list .product-item img{
-            width: 90%;
-        }
-
-        .products-list .product-item a{
-            display: block;
-            width: 90%;
-            padding: 8px 0;
-            background: #2D3E50;
-
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        /* RESPONSIVE */
-
-        @media screen and (max-width: 1100px){
-            .products-list .product-item{
-                width: 30.3%;
+        @media only screen and (max-width: 720px) {
+            .item-product {
+                width: 48%;
             }
         }
 
-        @media screen and (max-width: 900px){
-            .category_list,
-            .products-list{
+        @media only screen and (max-width: 576px) {
+
+            .item-product{
                 width: 100%;
             }
 
-            .category_list{
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .category_list .category_item{
-                align-self: flex-start;
-                width: 15%;
-                font-size: 14px;
-            }
-
-            .products-list .product-item{
-                margin-left: 4.5%;
-            }
-
-            .products-list .product-item:nth-child(3n+1){
-                margin-left: 0px;
+            .content-product{
+                overflow-y: auto;
             }
         }
 
-        @media screen and (max-width: 700px){
-            .category_list{
-                flex-direction: column;
-            }
-            .category_list .category_item{
-                width: 100%;
-                margin-bottom: 10px;
-            }
-        }
 
-        @media screen and (max-width: 600px){
 
-            .products-list .product-item{
-                width: 47.5%;
-            }
-
-            .products-list .product-item:nth-child(3n+1){
-                margin-left: 4.5%;
-            }
-
-            .products-list .product-item:nth-child(2n+1){
-                margin-left: 0px;
-            }
-
-        }
-
-        @media screen and (max-width: 350px){
-            .products-list .product_item{
-                width: 100%;
-                margin-left: 0px;
-            }
-        }
 
     </style>
-
-    <div class="wrap">
+    <div class="content">
+    <div class="menu-secundary d-block d-lg-none">
+        <button class="btn shadow btn-open">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    <div class="wrap shadow">
+        <div class="close-menu d-block d-lg-none">
+            <button class="btn"><i class="fas fa-chevron-left"></i></button>
+        </div>
         <div class="store-wrapper">
+            <div class="category_title pt-lg-5">
+                <h6>Subcategorias</h6>
+            </div>
             <div class="category_list">
                 <a href="{{ url('vistascategorias/'.$name.'/alimentos') }}" class="category_item" category="all">Alimentos</a>
                 <a href="{{ url('vistascategorias/'.$name.'/accesorios') }}" class="category_item" category="ordenadores">Accesorios</a>
@@ -151,43 +117,45 @@
                 <a href="{{ url('vistascategorias/'.$name.'/juguetes') }}" class="category_item" category="smartphones">Juguetes</a>
                 <a href="{{ url('vistascategorias/'.$name.'/drogueria') }}" class="category_item" category="monitores">Drogueria</a>
             </div>
-            <section class="products-list" >
-                <div class="container">
-                    <div class="products-tabs">
-                         <div class="row">
-                             @foreach($query as $producto)
-                                 <div class="col-md-3 col-xs-6">
-                                     <div class="product">
-                                         <div class="product-img">
-                                             <img src="{{asset("desing/img/product06.png")}}" alt="">
-                                             <div class="product-label">
-                                                 <span class="sale">-30%</span>
-                                             </div>
-                                         </div>
-                                         <div class="product-body">
-                                             <p class="product-category">Category</p>
-                                             <h3 class="product-name"><a href="#">{{$producto->name}}</a></h3>
-                                             <h4 class="product-price">${{$producto->precio}} <del class="product-old-price">$990.00</del></h4>
-                                             <div class="product-rating">
-                                             </div>
-                                             <div class="product-btns">
-                                                 <button class="quick-view" >
-                                                     <a href="{{ route('descripcion',$producto->id) }}">
-                                                         <i class="fa fa-eye"></i>
-                                                         <span class="tooltipp">quick view</span>
-                                                     </a>
-                                                 </button>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             @endforeach
-                         </div>
-                    </div>
-                    {{$query -> links()}}
-                </div>
-            </section>
         </div>
     </div>
 
+    <div class="product_list">
+    <div class="container-fluid ">
+            <div class="row">
+                <div class="col-12 d-block">
+                    <div class="content-product">
+                    @foreach($query as $producto)
+                    <div class="item-product">
+                        <div class="card ">
+                            <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url) }}" class="card-img-top p-1 "  alt="..." height="250px">
+                            <div class="card-body">
+                                <small class="card-text  text-center font-lato font-weight-bold m-0 p-0 d-block" style="font-size:14px;">{{ $producto->name }}</small>
+                                <p class="card-title text-danger text-center p-0 m-0" style="font-size: 14px;">$ {{ number_format($producto->precio, '0' , '.', '.') }}</p>
+                            </div>
+                            <div class="card-footer bg-white d-flex py-3 justify-content-center">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    </div>
+                </div>
+        </div>
+        {{$query -> links()}}
+    </div>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.btn-open').click(function () {
+                $('.wrap').css({ 'left' : '0px' })
+            });
+           $('.close-menu').click(function () {
+               $('.wrap').css({ 'left' : '-260px' })
+           });
+        });
+    </script>
 @endsection

@@ -66,6 +66,16 @@
   color: white;
 }
 
+@media screen and (max-width: 957px) {
+  .barra-busqueda{
+    width: calc(100vw - 30px);
+    box-sizing: border-box;
+  }
+  .navbar-adapter{
+    padding-left:0px ;
+  }
+}
+
 .buttons {
   display: flex;
 }
