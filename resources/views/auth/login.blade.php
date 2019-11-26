@@ -10,7 +10,7 @@
                 <div class="form py-5 px-3 d-flex align-items-center" style="height: 100%;">
                     <div style="width: 100%">
                         <h3 class="mb-3">Login</h3>
-                        <a href="" class="btn-return">< Regresar</a>
+                        <a href="{{route('inicio')}}" class="btn-return">x</a>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">

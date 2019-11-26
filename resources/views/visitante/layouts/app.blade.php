@@ -21,6 +21,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontawesome-free/css/fontawesome.css') }}" rel="stylesheet">
 
 
 </head>
