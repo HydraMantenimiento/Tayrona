@@ -6,10 +6,10 @@
     <hr class="bg-jaiber">
     <form method="POST" action="{{ route('register') }}">
         <div class="row">
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <div class=" d-none d-md-block col-md-4 d-flex align-items-center justify-content-center">
                 <img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="200px" height="100px">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-12">
                 @csrf
                 <div class="form-group ">
                     <label for="name" >Nombres</label>
@@ -75,7 +75,7 @@
         @enderror
             </div>
         <!--end gender -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-12">
             <!-- telephone -->
             <div class="form-group">
                 <label for="telephone">Telefono</label>
