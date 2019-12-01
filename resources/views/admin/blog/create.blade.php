@@ -13,13 +13,18 @@
                     Añadir Blog
                     <a href="{{ route('blog.index') }}" class="btn btn-default pull-right">Regresar</a>
                 </div>
-                <form action="{{ route('blog.store') }}" method="POST">
+                <form action="{{ route('blog.store') }}" method="POST"  enctype="multipart/form-data">
                     @csrf
                     <div class="box-body">
                         <div class="form-group">
                             <label for="title">Titulo</label>
                             <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
                             <small class="text-danger">{{ $errors->first('title') }}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="imagen">Imagen Precentacion</label>
+                            <input type="file" class="form-control" id="imagen" name="imagen" value="{{ old('Imagen') }}">
+                            <small class="text-danger">{{ $errors->first('imagen') }}</small>
                         </div>
                         <div class="form-group">
                             <label for="category_blog">Categoria</label>

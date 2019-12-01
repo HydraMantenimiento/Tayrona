@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 use App\Blog;
 use App\BlogCategory;
+use App\User;
+use App\Comment;
 use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MostrarblogController extends Controller
 {
@@ -15,73 +18,39 @@ class MostrarblogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::orderBy('id','desc')->paginate(5);
+        $blogs = Blog::orderBy('id','desc')->paginate(6);
         return view('/visitante/blog', compact('blogs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function indexuser()
     {
-        //
+        $blogs = Blog::orderBy('id','desc')->paginate(6);
+        return view('user/views/bloguser', compact('blogs'));
+    }
+    public function blogview($id)
+    {
+        $user = Auth::User();
+        $blog = Blog::find($id);
+        return view('user/views/blogview', compact('blog', 'user'));
+    }
+    public function viewblog($id)
+    {
+        $blog = Blog::find($id);
+        $query = Comment::join('comments', 'comments.blog_id', '=', 'blogs.id')
+            ->where('comments.blog_id', $id)
+            ->select('comments.blog_id' , 'blogs.id' , 'comments.comment', 'comments.status');
+        return view('/visitante/viewblog', compact('blog', 'query'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($mostrarblog)
-    {
+    public function commentBlog(Request $request , $user, $blog){
+        $comment = new Comment;
+        $comment->user_id = $user;
+        $comment->blog_id = $blog;
+        $comment->comment = $request->message;
+        $comment->status  = 'active';
+        $comment->save();
+        return back()->with('agregar','commentario agregado');
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

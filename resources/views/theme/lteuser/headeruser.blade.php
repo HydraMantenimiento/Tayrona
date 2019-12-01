@@ -38,6 +38,10 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer " style="background: #2D3E50;">
+                            <div class="pull-left">
+
+                                <a href="{{ route('vistaperfil' ) }}" class="btn btn-default btn-flat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Perfil</font></font></a>
+                            </div>
                             <div class="pull-right" >
 
                                 <a class="dropdown-item btn btn-default btn-flat"  href="{{ route('logout') }}"

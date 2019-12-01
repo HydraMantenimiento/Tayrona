@@ -128,7 +128,8 @@
                     @foreach($query as $producto)
                     <div class="item-product">
                         <div class="card ">
-                            <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url) }}" class="card-img-top p-1 "  alt="..." height="250px">
+                        <!-- a la ruta de la imagen le quite ->url -->
+                           <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)) }}" class="card-img-top p-1 "  alt="..." height="250px">
                             <div class="card-body">
                                 <small class="card-text  text-center font-lato font-weight-bold m-0 p-0 d-block" style="font-size:14px;">{{ $producto->name }}</small>
                                 <p class="card-title text-danger text-center p-0 m-0" style="font-size: 14px;">$ {{ number_format($producto->precio, '0' , '.', '.') }}</p>

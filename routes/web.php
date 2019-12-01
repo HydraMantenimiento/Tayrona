@@ -21,6 +21,7 @@
         Route::resource ('/descriptions' , 'descriptions_productController' );
         Route::resource('users', 'UserController');
         Route::get('admin-list-excel','reportsController@exportExcel')->name('reports.excel');
+        Route::resource('/admin/carrousel', 'carrouselController');
 
 
         //cliente-----*
@@ -28,18 +29,25 @@
 
         Route::get('visistacategoriauser/{category}/{subcategory?}','categoryusersController@checkcategoryuser')->name('visistacategoriauser');
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
+        Route::get('/vistaperfil', 'updateuserController@vistaperfil')->name('vistaperfil');
+        Route::post('/updateuser/{id}','updateuserController@updateuser')->name('updateuser');
+        Route::post('/mascota/{id}','updateuserController@mascotas')->name('mascota');
+
         route::view('/veterinariauser','user/views/veterinariauser')->name('veterinariauser');
-        route::view('/bloguser','user/views/bloguser')->name('bloguser');
-        route::view('/blogview','user/views/blogview')->name('blogview');
         route::get('/descripcionuser/{producto}','descriptions_productController@index')->name('descripcionuser');
 
-        //route::resource('/listadeseos','listadeseosController');
+        /*blog*/
+        Route::get('/bloguser','MostrarblogController@indexuser')->name('bloguser');
+        Route::get('/blogview/{id}','MostrarblogController@blogview')->name('blogview');
+        Route::post('/commentBlog/{user}/{blog}',[ 'uses'=>'MostrarblogController@commentBlog', 'as' => 'commentBlog' ]);
+
+        /*lista deseos */
+        route::get('/lista','listaController@index')->name('lista');
+        route::get('listadeseos/{producto}/{user}', [ 'uses'=>'listaController@store', 'as' => 'listadeseos' ]);
 
         /* carro de compras*/
         Route::get('/add-to-car/{id}',['uses' => 'CartproductsController@getAddToCart', 'as'   => 'product.addToCart']);
         Route::get('/shopping-cart',['uses' => 'CartproductsController@getCart', 'as'   => 'product.shoppingCart']);
-
-
 
         Route::post('/payments/pay', 'PaymentController@pay')->name('pay');
         Route::get('/payments/approval', 'PaymentController@approval')->name('approval');
@@ -47,23 +55,17 @@
 
     });
 
-    Route::view('/blogAdmin','admin/blogAdmin')->name('blogAdmin');
+
     //FIN ADMINISTRADOR
 
 
-    //rutas visitantes
-    route::get('vistascategorias/{name}/{subcategory?}','viewsCategoryController@checkcategories')->name('vistascategorias');
-    route::view('/groming','visitante/groming')->name('groming');
-    route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
-    route::view('/about','visitante/about')->name('about');
-    route::view('/politicas','visitante/politicas')->name('politicas');
-
-
-    route::view('/descripcion','visitante/descripcion')->name('descripcion');
-    #route::get('/descripcion', 'ProductController@descriptionProduct');
-    route::view('/blog','visitante/blog')->name('blog');
-    route::view('/descripcion','visitante/descripcion')->name('descripcion');
-    Route::resource('/mostrarblog','MostrarblogController');
-
-
-
+        //rutas visitantes
+        route::get('vistascategorias/{name}/{subcategory?}','viewsCategoryController@checkcategories')->name('vistascategorias');
+        route::view('/groming','visitante/groming')->name('groming');
+        route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
+        route::view('/about','visitante/about')->name('about');
+        route::view('/politicas','visitante/politicas')->name('politicas');
+        route::get('/descripcion/{producto}','viewsCategoryController@descripcion')->name('descripcion');
+        /*blog*/
+        Route::get('/mostrarblog','MostrarblogController@index')->name('mostrarblog');
+        Route::get('/viewblog/{id}','MostrarblogController@viewblog')->name('viewblog');

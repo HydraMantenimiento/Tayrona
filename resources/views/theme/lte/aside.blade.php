@@ -20,11 +20,6 @@
                     <i class="fa fa-users"></i> <span>Usuarios</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-circle-o text-aqua"></i> <span>Repoprtes</span>
-                </a>
-            </li>
             <li class="treeview">
                 <a href="#" ><i class="fa fa-commenting"></i> <span>Blog</span>
                     <span class="pull-right-container">
@@ -34,10 +29,13 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ route('blogCategory.index') }}"><i class="fa fa-circle-o"></i> Categoria Blog</a></li>
                     <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i>Blogs</a></li>
+                    <li><a href=""><i class="fa fa-circle-o"></i>Comentarios</a></li>
                 </ul>
             </li>
             <li>
-                <a href="{{ route('blogCategory.index') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Categorias Blog</span></a>
+                <a href="{{ route('carrousel.index') }}">
+                    <i class="fa fa-users"></i> <span>Carrousel</span>
+                </a>
             </li>
         </ul>
     </section>

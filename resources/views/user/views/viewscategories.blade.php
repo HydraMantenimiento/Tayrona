@@ -147,8 +147,10 @@
                                                     </div>
                                                     <div class="product-btns">
                                                         <button class="add-to-wishlist">
-                                                            <i class="fa fa-heart-o"></i>
-                                                            <span class="tooltipp">add to wishlist</span>
+                                                            <a href="{{ route('listadeseos', ['producto'=>$producto->id, 'user'=>$user] ) }}">
+                                                                <i class="fa fa-heart-o"></i>
+                                                                <span class="tooltipp">add to wishlist</span>
+                                                            </a>
                                                         </button>
                                                         <button class="quick-view" >
                                                             <a href="{{ route('descripcionuser',$producto->id) }}">
@@ -175,12 +177,12 @@
                             <!-- </div>-->
                     </div>
                 </div>
-            {{$query -> links()}}
+
             <!-- /Products tab & slick -->
             </div>
             <!-- /row -->
         </div>
         <!-- /container -->
     </div>
-
+    {{$query -> links()}}
 @endsection

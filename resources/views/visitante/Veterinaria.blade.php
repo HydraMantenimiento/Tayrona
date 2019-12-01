@@ -6,7 +6,7 @@
 
 <body class="boxed_wrapper">
 <!-- page-title -->
-<section class="page-title centred" style="background-image: url('imagenes/page-title.jpg');">
+<section class="page-title centred" style="background-image:url({{ asset('imagenes/page-title.jpg') }});">
     <div class="container">
         <h1>CONTROL DE SALUD</h1>
     </div>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="content-box clearfix">
             <ul class="bread-crumb">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ route('inicio') }}">Home</a></li>
                 <li>Servicios</li>
             </ul>
         </div>
@@ -83,7 +83,7 @@
             <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                 <div class="service-sidebar sidebar">
                     <div class="sidebar-category sidebar-widget gray-bg wow fadeInRight" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible;">
-                        <h3 class="sidebar-title">Services</h3>
+                        <h3 class="sidebar-title">Servicios</h3>
                         <div class="widget-content">
                             <ul class="category-list">
                                 <li class="active">CONSULTA VETERINARIA</li>

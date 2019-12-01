@@ -3,10 +3,10 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/user/usuariogrooming.css') }}">
- <body class="boxed_wrapper" cz-shortcut-listen="true">
+    <body class="boxed_wrapper" cz-shortcut-listen="true">
 
     <div class="preloader" style="display: none;"></div>
-    <section class="page-title centred" style="background-image: url('imagenes/page-title.jpg');">
+    <section class="page-title centred" style="background-image: url({{ asset('imagenes/page-title.jpg') }});">
         <div class="container">
             <h1>Noticia</h1>
         </div>
@@ -17,7 +17,6 @@
             <div class="content-box clearfix">
                 <ul class="bread-crumb">
                     <li><a href="{{ route('bloguser') }}">Homepage</a></li>
-                    <li>noticias</li>
                 </ul>
             </div>
         </div>
@@ -30,23 +29,19 @@
                     <div class="blog-single-content">
                         <div class="inner-box">
                             <div class="news-block-one">
-                                <div class="date">30<br>Feb</div>
-                                <figure class="image"><img src="{{asset('imagenes/news-3.png')}}" alt="" style="width: 770px; height: 470px; "></figure>
+                                <div class="date">{{ $blog->created_at }}</div>
+                                <figure class="image"><img src="{{ asset($blog->imagen) }}" alt="" style="width: 770px; height: 470px; "></figure>
                                 <div class="lower-content">
                                     <ul class="info-box">
-                                        <li>Jaiber Vargas</li>
-                                        <li>2 Comments</li>
+                                        <li>Mike Hardson</li>
+                                        <li>5 Comments</li>
                                     </ul>
-                                    <h2>Refugia y alimenta a los animales que lo necesitan</h2>
+                                    <h2>{{ $blog->title }}</h2>
                                 </div>
                             </div>
                             <div class="text">
-                                <p>There are many variations of passages of lorem ipsum available, but the majority have suffered alteration in some form. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor erat lectus, euismod posuere erat aliquet quis. Etiam sit amet nunc sed quam dapibus non efficitur at in metus. Nam et metus eget arcu volutpat rhoncus et eu mi. Donec id tellus sed nulla faucibus aliquam.</p>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi est nibh, hendrerit bibendum enim eu, vehicula porta nisi. Donec at ligula sed turpis mollis commodo in convallis magna. Aliquam a mi mauris. Maecenas volutpat dui vel mauris tempus placerat. Proin blandit eu tortor vel pellentesque. Fusce laoreet ipsum lorem, at aliquet ipsum varius tempus.</p>
-                                <blockquote>
-                                    Anyone can write code that a computer can understand. Good programmers write code that humans can understand. Intuitive design is how we give the user new superpowers.
-                                </blockquote>
-                                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere id cubilia Curae; Maecenas nec tellus vehicula lorem ultricies condimentum. Sed consectetur urna eget et finibus posuere. Sed tempus orci erat, sit amet pretium lorem tincidunt eget. Maecenas porta risus on neque rhoncus, sed pharetra diam vulputate. Nunc in ligula vel sem porttitor consequat. Ut porttitor non ante at bibendum. Praesent posuere turpis lacus, vel tempor felis eleifend eu. Morbi velit odio, pulvinar vel ligula donec, consectetur faucibus elit.</p>
+                                <!--<blockquote></blockquote>-->
+                                {!!$blog->body!!}
                             </div>
                         </div>
                         <div class="comments-area">
@@ -76,19 +71,13 @@
                                         <a href="{{ route('bloguser') }}"><button class="theme-btn">ver mas</button></a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="comments-form-area">
                             <h2 class="group-title">Deja un comentario</h2>
-                            <form action="#" method="post" class="comment-form">
+                            <form action="{{ route('commentBlog', ['user'=>$user->id, 'blog'=>$blog->id]) }}" method="post" class="comment-form">
+                                @csrf()
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="name" placeholder="Full name" required="">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="email" name="email" placeholder="Email address" required="">
-                                    </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <textarea name="message" placeholder="Write here message"></textarea>
                                     </div>
@@ -100,19 +89,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="sidebar blog-sidebar">
-                        <div class="sidebar-category sidebar-widget">
-                            <h3 class="sidebar-title">Categories</h3>
-                            <div class="widget-content">
-                                <ul class="category-list">
-                                    <li><a href="#">Perros</a></li>
-                                    <li><a href="#">Gatoa</a></li>
-                                    <li><a href="#">Otras &amp; Mascotas</a></li>
-                                    <li><a href="#">Mascotas &amp; Otras</a></li>
-                                </ul>
-                            </div>
-                        </div>
                         <div class="sidebar-post sidebar-widget">
                             <h3 class="sidebar-title">Noticias recientes</h3>
                             <div class="widget-content">
@@ -132,7 +111,7 @@
                         </div>
                         <div class="featured-widget sidebar-widget">
                             <h3 class="sidebar-title">Featured Post</h3>
-                            <div class="widget-content centred" style="background-image: url('imagenes/page-title.jpg');">
+                            <div class="widget-content centred" style="background-image:url({{ asset('imagenes/page-title.jpg') }});">
                                 <h2>No te preocupes, tus mascotas están en buenas manos</h2>
                             </div>
                         </div>

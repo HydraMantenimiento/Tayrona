@@ -6,6 +6,7 @@ use App\Blog;
 use App\BlogCategory;
 use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -41,6 +42,10 @@ class BlogController extends Controller
     {
         $blog = new Blog();
         $blog->title = $request->title;
+        if ( $request->file('imagen')){
+            $path = Storage::disk('public')->put('imageFolders/blogImagenes', $request->file('imagen'));
+            $blog->imagen = $path;
+        }
         $blog->body = $request->body;
         $blog->category_blog_id= $request->category_blog_id;
         $blog->save();
@@ -80,6 +85,7 @@ class BlogController extends Controller
      */
     public function update(BlogRequest $request, $id)
     {
+
         $blog =Blog::find($id);
         $blog->title = $request->title;
         $blog->body = $request->body;

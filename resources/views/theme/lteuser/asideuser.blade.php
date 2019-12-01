@@ -73,7 +73,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('lista') }}">
                     <i class="fa fa-circle-o text-aqua"></i> <span>Lista de deseos</span>
                 </a>
             </li>
@@ -84,7 +84,7 @@
                             @if( session('cartproduct'))
                             {{ session('cartproduct')->totalQty }}
                         @endif
-                </span>
+                    </span>
                 </a>
             </li>
 

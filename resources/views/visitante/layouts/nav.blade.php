@@ -98,7 +98,7 @@
                         <a href="{{ route('about') }}" class="nav-link  nav-item d-block text-center {{ (request()->is('about')) ? 'active' : '' }}">
                             <i class="fas fa-info"></i>  Nosotros
                         </a>
-                        <a href="{{ route('mostrarblog.index') }}" class="nav-link nav-item  d-block text-center {{ (request()->is('mostrarblog')) ? 'active' : '' }}">
+                        <a href="{{ route('mostrarblog') }}" class="nav-link nav-item  d-block text-center {{ (request()->is('mostrarblog')) ? 'active' : '' }}">
                             <i class="fas fa-blog"></i> Blog
                         </a>
                         <a href="{{ route('politicas') }}" class="nav-link nav-item d-block text-center  {{ (request()->is('politicas')) ? 'active' : '' }}">
