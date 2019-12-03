@@ -23,6 +23,12 @@ $(document).ready(function () {
         $('.logo').show();
     }
     //localStorage.removeItem('modal');
+
+    $('.img-option').click(function () {
+        var img = $(this).attr('src');
+        console.log(img);
+        $('#img-first').attr('src', img);
+    })
 });
 
 

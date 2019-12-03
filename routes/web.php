@@ -18,9 +18,9 @@
         Route::resource('/category_product', 'category_productController');
         Route::resource('/admin/blog', 'BlogController');
         Route::resource('/admin/blogCategory', 'BlogCategoryController');
-        Route::resource ('/descriptions' , 'descriptions_productController' );
         Route::resource('users', 'UserController');
         Route::get('admin-list-excel','reportsController@exportExcel')->name('reports.excel');
+        Route::post('/description', 'DescriptionProductController@store')->name('descriptions.store');
 
 
         //cliente-----*
@@ -59,7 +59,7 @@
     route::view('/politicas','visitante/politicas')->name('politicas');
 
 
-    route::view('/descripcion','visitante/descripcion')->name('descripcion');
+    route::get('description/{id}', 'DescriptionProductController@visitors')->name('description.visitors');
     #route::get('/descripcion', 'ProductController@descriptionProduct');
     route::view('/blog','visitante/blog')->name('blog');
     route::view('/descripcion','visitante/descripcion')->name('descripcion');

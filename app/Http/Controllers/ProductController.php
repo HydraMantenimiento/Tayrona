@@ -123,10 +123,4 @@ class ProductController extends Controller
         $producteliminar->delete();
         return back()->with ('eliminar','el producto ha sido eliminado');
     }
-
-    public function descriptionProduct($id = 1)
-    {
-        $descriptions = descriptions_product::where('product_id', $id)->get();
-        return view('visitante/descripcion', compact('descriptions'));
-    }
 }

@@ -350,7 +350,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form action="{{route('descriptions.store',$productactualizar->id)}}" method="post"  enctype="multipart/form-data">
+                            <form action="{{route('descriptions.store')}}" method="post"  enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="productid" value="{{$productactualizar->id}}">
                                 <div class="col-md-pull-12">

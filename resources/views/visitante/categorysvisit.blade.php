@@ -61,6 +61,25 @@
             width: 100%;
             padding: 10px 20px;
         }
+        .desc {
+            position: absolute;
+            background: #FC7D3F;
+            padding: 5px 10px ;
+            color: white;
+            top:10px;
+            right: 10px;
+        }
+        .prod-info{
+            padding: 5px 0px;
+        }
+
+        .like{
+            position: absolute;
+            top:10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.66);
+            padding: 5px 10px 5px 10px;
+        }
 
         @media only screen and (max-width: 960px){
             .item-product {
@@ -126,17 +145,37 @@
                 <div class="col-12 d-block">
                     <div class="content-product">
                     @foreach($query as $producto)
-                    <div class="item-product">
+
+                            <div class="item-product">
+
                         <div class="card ">
-                            <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url) }}" class="card-img-top p-1 "  alt="..." height="250px">
-                            <div class="card-body">
-                                <small class="card-text  text-center font-lato font-weight-bold m-0 p-0 d-block" style="font-size:14px;">{{ $producto->name }}</small>
-                                <p class="card-title text-danger text-center p-0 m-0" style="font-size: 14px;">$ {{ number_format($producto->precio, '0' , '.', '.') }}</p>
+                            <div class="desc bg-danger">
+                                20 %
                             </div>
-                            <div class="card-footer bg-white d-flex py-3 justify-content-center">
-                                <i class="fas fa-eye"></i>
+                            <div class="like">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <a href="{{ route('description.visitors', $producto->id) }}">
+                                <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url) }}" class="card-img-top p-1 "  alt="..." height="200px">
+                            </a>
+                            <div class="prod-info">
+                                <small class="  text-center font-lato font-weight-bold m-0 p-0 d-block" style="font-size:12px;">
+                                    {{ strtoupper($producto->name) }}
+                                </small>
+                                <p class="text-center">
+                                    <small style="text-decoration: line-through;">${{ number_format($producto->precio, '0' , '.', '.') }}</small>
+                                    <?php
+                                        $desc = $producto->precio * 20 / 100;
+                                    ?>
+                                    <small> - </small>
+                                    <small class="text-danger">${{ number_format($producto->precio - $desc, '0' , '.', '.') }}</small>
+                                </p>
+                                <div class="px-1">
+                                <button class="btn btn-block btn-dark">Comprar <i class="fas fa-shopping-cart"></i></button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                     @endforeach
                     </div>
