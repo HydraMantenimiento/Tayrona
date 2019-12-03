@@ -30,16 +30,17 @@
                         @foreach($comments as $comment)
                             <tr>
                                 <td style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$comment->id}}</td>
-                                <td style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{ $comment->status}}</td>
+                                <td style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$comment->status }}</td>
                                 <td style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$comment->user->name}}</td>
                                 <td style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$comment->comment}}</td>
                                 <td style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$comment->blog->id}}</td>
                                 <td style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$comment->blog->title}}</td>
                                 <td width="70px">
-                                    <a class="btn btn-warning btn-sm" href="">
-                                        <i class="fa fa-pencil"></i>
-                                    </a>
-
+                                    <form action="{{route('updatecomment', [ 'id'=>$comment->id, 'blog'=> $blog])}}">
+                                        <button type="submit" class="btn btn-warning btn-sm">
+                                                <i class="fa fa-pencil"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

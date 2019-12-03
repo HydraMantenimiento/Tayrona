@@ -29,6 +29,7 @@
         Route::post('/description', 'DescriptionProductController@store')->name('descriptions.store');
 
         Route::get('/vistaComment/{id}','MostrarblogController@vistaComment')->name('vistaComment');
+        Route::get('/updatecomment/{id}/{blog}','MostrarblogController@updatecomment')->name('updatecomment');
 
         Route::get('/descriptions/{id}', 'descriptions_productController@create')->name('create.descriptions');
         Route::get('/descriptions/{id}/{product}', 'descriptions_productController@edit')->name('edit.descriptions');
