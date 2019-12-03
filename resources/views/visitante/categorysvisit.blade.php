@@ -156,7 +156,7 @@
                                 <i class="fas fa-heart"></i>
                             </div>
                             <a href="{{ route('description.visitors', $producto->id) }}">
-                                <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url) }}" class="card-img-top p-1 "  alt="..." height="200px">
+                                <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url ?? 'imagenes/default.png') }}" class="card-img-top p-1 "  alt="..." height="200px">
                             </a>
                             <div class="prod-info">
                                 <small class="  text-center font-lato font-weight-bold m-0 p-0 d-block" style="font-size:12px;">
