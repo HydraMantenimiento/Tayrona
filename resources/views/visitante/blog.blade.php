@@ -31,7 +31,8 @@
                 @foreach($blogs as $blog)
                     <div class="col-lg-4 col-md-6 col-sm-12 news-column">
                         <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="date">{{ $blog->created_at}}</div>
+                            <?php \Carbon\Carbon::setLocale('es'); ?>
+                            <div class="date" style="font-size: 20px;">{{ \Carbon\Carbon::now()->diffForHumans($blog->created_at) }}</div>
                             <figure class="image-box"><a href="{{ route('viewblog', $blog->id) }}"><img src="{{ asset($blog->imagen) }}" alt="" style="height: 387px; width:370px;"></a></figure>
                             <div class="lower-content">
                                 <ul class="info-box"></ul>

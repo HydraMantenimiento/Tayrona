@@ -19,7 +19,7 @@ class CreateProductReferencesTable extends Migration
             $table->foreign('product_id')->references('id')->on('productos');
             $table->string('reference');
             $table->string('precio');
-            $table->string('img');
+            $table->string('product_img');
             $table->timestamps();
         });
     }

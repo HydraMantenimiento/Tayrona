@@ -115,6 +115,7 @@
             }
         }
     </style>
+
     <div class="section">
         <div class="container">
             <div class="row">
@@ -122,13 +123,13 @@
                     <div class="row">
                         <div class="products-tabs">
                             <div id="tab2" class="tab-pane fade in active">
-
+                                @foreach($deseos as $deseo)
                                     <div class="col-md-3 col-xs-6">
                                         <div class="product">
                                             <div class="product-img">
-                                                <img src="{{asset("desing/img/product06.png")}}" alt="">
+                                                <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($deseo->product_id)->url ?? 'imagenes/default.png') }}" alt="">
                                                 <div class="product-label">
-                                                    <a href="">
+                                                    <a href="{{ route('listdelete', $deseo->id) }}">
                                                         <span class="sale">
                                                             <i class="fa fa-close"></i>
                                                        </span>
@@ -136,29 +137,30 @@
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <p class="product-category">Category</p>
+                                                <p class="product-category">{{ $deseo->product->name }}</p>
                                                 <h3 class="product-name"><a href="#"></a></h3>
-                                                <h4 class="product-price">$</h4>
+                                                <h4 class="product-price">$ {{ $deseo->product->precio }}</h4>
                                                 <div class="product-rating">
                                                 </div>
-                                               <!-- <div class="product-btns">
+                                                <div class="product-btns">
                                                     <button class="quick-view" >
-                                                        <a href="">
-                                                            <i class="fa fa-cart-arrow-down"></i>
+                                                        <a href="{{ route('descripcionuser',$deseo->product_id) }}">
+                                                            <i class="fa fa-eye"></i>
                                                             <span class="tooltipp">quick view</span>
                                                         </a>
                                                     </button>
-                                                </div>-->
+                                                </div>
                                             </div>
                                             <div class="add-to-cart">
                                                 <button class="add-to-cart-btn">
-                                                    <a href="">
+                                                    <a href="{{ route('product.addToCart',['id'=>$deseo->product_id]) }}">
                                                         <i class="fa fa-cart-arrow-down"></i> add to cart
                                                     </a>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
+                                @endforeach
                             </div>
                             <div id="slick-nav-2" class="products-slick-nav"></div>
                         </div>

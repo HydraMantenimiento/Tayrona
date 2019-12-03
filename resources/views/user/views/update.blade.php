@@ -8,7 +8,7 @@
             <div class="col-md-3">
                 <div class="box box-primary">
                     <div class="box-body box-profile">
-                        <img class="profile-user-img img-responsive img-circle" src="{{$user->avatar}}" alt="Foto de perfil de usuario " style=" height: 100px; width: 100px;">
+                        <img class="profile-user-img img-responsive img-circle" src="{{ $user->avatar }}" alt="Foto de perfil de usuario " style=" height: 100px; width: 100px;">
                         <h3 class="profile-username text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ $user->name }}</font></font></h3>
                         <p class="text-muted text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$user->lastname}}</font></font></p>
                     </div>
@@ -18,16 +18,14 @@
                         <h3 class="box-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mascotas</font></font></h3>
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body">
-                        <ul class="list-group ">
+                        <ul class="list-group list-group-unbordered ">
                             @foreach($mascotas as $mascota)
                             <li class="list-group-item">
-                                <img src="{{ $mascota->avatar }}" class="user-image" alt="User Image" style="width: 50px; height: 50px; border-radius: 50px;">
+                                <img src="{{ $mascota->avatar }}" class="img-circle img-bordered-sm" alt="User Image" style="width: 50px; height: 50px; border-radius: 50px;">
                                 <b>{{ $mascota->name }}</b>
                             </li>
                             @endforeach
                         </ul>
-                    </div>
                     <!-- /.box-body -->
                 </div>
             </div>
@@ -146,7 +144,7 @@
                                 </div>-->
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enviar</font></font></button>
+                                        <button type="submit" class="btn btn-warning pull-right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enviar</font></font></button>
                                     </div>
                                 </div>
                             </form>

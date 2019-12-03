@@ -12,13 +12,23 @@
         Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
         Route::resource('/product', 'ProductController');
-        Route::resource('/product-img', 'Product_imgController');
+        Route::get('/product_img/{id}', 'Product_imgController@create')->name('create.product_img');
+        Route::resource('/product_img', 'Product_imgController');
+
         Route::resource('/category', 'categoryController');
         Route::resource('/subcategory', 'subcategoryController');
+
+        Route::get('/category_product/{id}', 'category_productController@create')->name('create.category_product');
         Route::resource('/category_product', 'category_productController');
+
         Route::resource('/admin/blog', 'BlogController');
         Route::resource('/admin/blogCategory', 'BlogCategoryController');
+        Route::get('/vistaComment/{id}','MostrarblogController@vistaComment')->name('vistaComment');
+
+        Route::get('/descriptions/{id}', 'descriptions_productController@create')->name('create.descriptions');
+        Route::get('/descriptions/{id}/{product}', 'descriptions_productController@edit')->name('edit.descriptions');
         Route::resource ('/descriptions' , 'descriptions_productController' );
+
         Route::resource('users', 'UserController');
         Route::get('admin-list-excel','reportsController@exportExcel')->name('reports.excel');
         Route::resource('/admin/carrousel', 'carrouselController');
@@ -44,6 +54,7 @@
         /*lista deseos */
         route::get('/lista','listaController@index')->name('lista');
         route::get('listadeseos/{producto}/{user}', [ 'uses'=>'listaController@store', 'as' => 'listadeseos' ]);
+        route::get('listdelete/{id}/', [ 'uses'=>'listaController@destroy', 'as' => 'listdelete' ]);
 
         /* carro de compras*/
         Route::get('/add-to-car/{id}',['uses' => 'CartproductsController@getAddToCart', 'as'   => 'product.addToCart']);

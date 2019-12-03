@@ -25,9 +25,10 @@ class descriptions_productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $product = productos::find($id);
+        return view('admin/products/descripcion/create',compact('product'));
     }
 
     /**
@@ -43,7 +44,7 @@ class descriptions_productController extends Controller
         $description->name = $request->name;
         $description->description =$request->descripcion;
         $description->save();
-        return back();
+        return back()->with('alert','La Descripcion fue agregada correctamente.');
     }
 
     /**
@@ -63,9 +64,11 @@ class descriptions_productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $product)
     {
-        //
+        $product = productos::find($product);
+        $description = descriptions_product::find($id);
+        return view('admin/products/descripcion/edit', compact('description', 'product'));
     }
 
     /**
@@ -77,7 +80,12 @@ class descriptions_productController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update = descriptions_product::find($id);
+
+        $update->name = $request->name;
+        $update->description = $request->descripcion;
+        $update->save();
+        return back()->with('alert','La Descripcion fue modifcada correctamente.');
     }
 
     /**
@@ -88,6 +96,8 @@ class descriptions_productController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = descriptions_product::find($id);
+        $delete->delete();
+        return back();
     }
 }

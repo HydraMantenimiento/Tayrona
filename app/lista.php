@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class lista extends Model
 {
 
-    use SoftDeletes;
+    protected $table='listadeseos';
 
-    protected $table='lista';
+    public function product(){
+        return $this->belongsTo('App\productos');
+    }
 
     public function  product_status(){
         return $this->belongsTo('App\product_status');
@@ -19,7 +21,10 @@ class lista extends Model
     public function  category(){
         return $this->belongsTo('App\category');
     }
-
+    public function product_img()
+    {
+        return $this->hasMany('App\product_img');
+    }
     public function  subcategory(){
         return $this->belongsTo('App\Subcategory');
     }
@@ -32,6 +37,7 @@ class lista extends Model
     public function User(){
         return$this->belongsTo('App\User');
     }
+
 
 
 }

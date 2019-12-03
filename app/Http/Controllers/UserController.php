@@ -6,6 +6,7 @@ use App\subcategorys;
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
+use App\Http\Requests\UsersRequest;
 
 class UserController extends Controller
 {
@@ -43,7 +44,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->lastname = $request->lastname;
         $user->type_document = $request->type_document;
-        $user->email = $request->email;
+
         $user->number_document = $request->number_document;
         $user->address = $request->address;
         $user->telephone = $request->telephone;

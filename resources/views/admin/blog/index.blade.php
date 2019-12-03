@@ -29,9 +29,12 @@
                                 <td>{{ $blog->id }}</td>
                                 <td><img src="{{ asset($blog->imagen) }}" alt="" style="width:50px; height:50px; "></td>
                                 <td>{{ $blog->title }}</td>
-                                <td width="70px">
+                                <td width="102px">
                                     <a class="btn btn-warning btn-sm" href="{{ route('blog.edit', $blog->id) }}">
                                         <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="{{ route('vistaComment', $blog->id) }}">
+                                        <i class="fa fa-commenting-o"></i>
                                     </a>
 
                                     <div class="pull-right">

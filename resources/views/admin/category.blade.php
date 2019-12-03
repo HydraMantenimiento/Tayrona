@@ -116,7 +116,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="recipient-" class="col-form-label">categorias</label>
-                            <input type="text" name="categoria" class="form-control" id="recipient-name">
+                            <input type="text" name="categoria" class="form-control" id="recipient-name" required>
                         </div>
 
                         <div class="modal-footer">
@@ -145,7 +145,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="recipient-" class="col-form-label">Subcategoria</label>
-                            <input type="text" name="subcategoria" class="form-control" id="recipient-name">
+                            <input type="text" name="subcategoria" class="form-control" id="recipient-name" required>
                         </div>
 
                         <div class="modal-footer">

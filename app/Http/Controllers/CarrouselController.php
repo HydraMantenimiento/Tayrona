@@ -6,6 +6,7 @@ use App\Carrousel;
 use App\carrousels;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
+use App\Http\Requests\SliderRequest;
 use Illuminate\Support\Facades\Storage;
 
 class carrouselController extends Controller
@@ -37,7 +38,7 @@ class carrouselController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SliderRequest $request)
     {
         $carrousels = new Carrousel();
 

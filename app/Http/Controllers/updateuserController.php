@@ -16,19 +16,23 @@ class updateuserController extends Controller
     public function vistaperfil()
     {
         $user = Auth::User();
-        $mascotas = mascota::where('user_id','=',$user)->get();
+        $mascotas = mascota::where('user_id','=',$user->id)->get();
         return view('user/views/update', compact('user', 'mascotas'));
     }
 
     public function  updateuser(Request $request, $id)
     {
-        $datos= request()->except(['_token']);
+        if ($request->file('avatar')){
 
-        if ($request->hasFile('avatar')){
-
-            $datos['avatar']=$request->file('avatar')->store('imageFolders/userImage','public');
+            $path = Storage::disk('public')->put('imageFolders/userImage', $request->file('avatar'));
+            $user = User::find($id);
+            $user->avatar =  $path;
+            $user->save();
         }
+        $datos = request()->except(['_token', 'avatar']);
         User::where('id','=',$id)->update($datos);
+        return redirect()->back();
+
     }
 
     public function mascotas(Request $request, $id){

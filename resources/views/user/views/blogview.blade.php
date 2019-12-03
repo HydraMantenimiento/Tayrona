@@ -29,7 +29,8 @@
                     <div class="blog-single-content">
                         <div class="inner-box">
                             <div class="news-block-one">
-                                <div class="date">{{ $blog->created_at }}</div>
+                                <?php \Carbon\Carbon::setLocale('es'); ?>
+                                <div class="date" style="font-size: 20px;">{{ \Carbon\Carbon::now()->diffForHumans($blog->created_at) }}</div>
                                 <figure class="image"><img src="{{ asset($blog->imagen) }}" alt="" style="width: 770px; height: 470px; "></figure>
                                 <div class="lower-content">
                                     <ul class="info-box">
@@ -45,34 +46,24 @@
                             </div>
                         </div>
                         <div class="comments-area">
-                            <h2 class="group-title">2 Comentarios</h2>
+                            <h2 class="group-title">{{ count($comentarios) }} Comentarios</h2>
                             <div class="comment-box">
-                                <div class="comment">
-                                    <figure class="author-thumb">
-                                        <div class="date">14<br>Mar</div>
-                                        <img src="{{asset('imagenes/news-3.png')}}" alt="">
-                                    </figure>
-                                    <div class="comment-inner clearfix">
-                                        <h3>Kevin Martin</h3>
-
-                                        <div class="text">Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est  dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta.</div>
+                                @foreach($comentarios as $comentario)
+                                    <div class="comment">
+                                        <figure class="author-thumb">
+                                            <div class="date">14<br>Mar</div>
+                                            <img src="{{ asset($comentario->user->avatar) }}" alt="" >
+                                        </figure>
+                                        <div class="comment-inner clearfix">
+                                            <h3>{{ $comentario->user->name }}</h3>
+                                            <div class="text">{{$comentario->comment}}</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="comment">
-                                    <figure class="author-thumb">
-                                        <div class="date">15<br>Mar</div>
-                                        <img src="{{asset('imagenes/news-3.png')}}" alt="">
-                                    </figure>
-                                    <div class="comment-inner clearfix">
-                                        <h3>Jessica Brown</h3>
-                                        <div class="text">Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est  dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta.</div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                        <a href="{{ route('bloguser') }}"><button class="theme-btn">ver mas</button></a>
-                                    </div>
-                                </div>
+                                @endforeach
+                                {{ $comentarios->links() }}
                             </div>
                         </div>
+
                         <div class="comments-form-area">
                             <h2 class="group-title">Deja un comentario</h2>
                             <form action="{{ route('commentBlog', ['user'=>$user->id, 'blog'=>$blog->id]) }}" method="post" class="comment-form">
@@ -93,20 +84,15 @@
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="sidebar blog-sidebar">
                         <div class="sidebar-post sidebar-widget">
-                            <h3 class="sidebar-title">Noticias recientes</h3>
+                            <h3 class="sidebar-title">Blogs recientes</h3>
                             <div class="widget-content">
-                                <div class="post">
-                                    <span>04 Mar, 2019</span>
-                                    <div class="text"><a href="blog-single.html">Cómo cuidar a cualquier tipo de mascota</a></div>
-                                </div>
-                                <div class="post">
-                                    <span>20 Feb, 2019</span>
-                                    <div class="text"><a href="blog-single.html">Los 10 mejores consejos para pasear y entrenar perros</a></div>
-                                </div>
-                                <div class="post">
-                                    <span>17 Feb, 2019</span>
-                                    <div class="text"><a href="blog-single.html">Obtenga dietas y planes de nutrición para mascotas gratis</a></div>
-                                </div>
+                                @foreach( $blogs as $blog)
+                                    <div class="post">
+                                        <?php \Carbon\Carbon::setLocale('es'); ?>
+                                        <span>{{ \Carbon\Carbon::now()->diffForHumans($blog->created_at) }}</span>
+                                        <div class="text"><a href="blog-single.html">Cómo cuidar a cualquier tipo de mascota</a></div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="featured-widget sidebar-widget">

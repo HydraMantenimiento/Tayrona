@@ -29,7 +29,6 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ route('blogCategory.index') }}"><i class="fa fa-circle-o"></i> Categoria Blog</a></li>
                     <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i>Blogs</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i>Comentarios</a></li>
                 </ul>
             </li>
             <li>

@@ -8,6 +8,7 @@ use App\Comment;
 use App\Http\Requests\BlogRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class MostrarblogController extends Controller
 {
@@ -31,15 +32,20 @@ class MostrarblogController extends Controller
     {
         $user = Auth::User();
         $blog = Blog::find($id);
-        return view('user/views/blogview', compact('blog', 'user'));
+        $blogs = Blog::limit(3)->get();
+        $comentarios = Comment::where('blog_id',$id)
+            ->where('status','=','active')
+            ->paginate(2);
+        return view('user/views/blogview', compact('blog', 'user', 'comentarios','blogs'));
     }
     public function viewblog($id)
     {
         $blog = Blog::find($id);
-        $query = Comment::join('comments', 'comments.blog_id', '=', 'blogs.id')
-            ->where('comments.blog_id', $id)
-            ->select('comments.blog_id' , 'blogs.id' , 'comments.comment', 'comments.status');
-        return view('/visitante/viewblog', compact('blog', 'query'));
+        $blogs = Blog::limit(3)->get();
+        $comentarios = Comment::where('blog_id',$id)
+            ->where('status','=','active')
+            ->paginate(2);
+        return view('/visitante/viewblog', compact('blog', 'comentarios','blogs'));
     }
 
     public function commentBlog(Request $request , $user, $blog){
@@ -50,7 +56,11 @@ class MostrarblogController extends Controller
         $comment->status  = 'active';
         $comment->save();
         return back()->with('agregar','commentario agregado');
+    }
+    public function vistaComment($id){
 
+        $comments = Comment::where('blog_id', $id )->get();
+        return view('/admin/blog/comment', compact('comments'));
     }
 
 }

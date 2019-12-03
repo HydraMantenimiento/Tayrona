@@ -22,9 +22,10 @@ class listaController extends Controller
      */
     public function index()
     {
-        $user = Auth::User();
-        $deseos = lista::where('id_user','=',$user);
-        return view('user/views/lista', compact('user', 'deseos'));
+        $user = Auth::User()->id;
+        $deseos = lista::where('user_id','=',$user)->get();
+        $producto = productos::all();
+        return view('user/views/lista', compact('user', 'deseos','producto'));
     }
 
     /**
@@ -45,11 +46,17 @@ class listaController extends Controller
      */
     public function store(Request $request , $producto , $user )
     {
-        $lista = new lista;
-        $lista->id_product = $producto;
-        $lista->id_user =  $user;
-        $lista->save();
+        $lista = lista::where('product_id',$producto)->get();
+
+        if(count($lista) == 0){
+            $listas = new lista;
+            $listas->product_id = $producto;
+            $listas->user_id =  $user;
+            $listas->save();
+            return back();
+        }
         return back();
+
     }
 
     /**
@@ -94,7 +101,9 @@ class listaController extends Controller
      */
     public function destroy($id)
     {
-
+        $listas = lista::find($id);
+        $listas->delete();
+        return redirect()->route('lista')->with('alert','El producto fue eliminado correctamente.');
     }
 }
 

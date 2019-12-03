@@ -33,7 +33,7 @@ class productos extends Model
         return $this->belongsTo('App\descriptions_product');
     }
 
-    public function product_imgs()
+    public function product_img()
     {
         return $this->hasMany('App\product_img');
     }

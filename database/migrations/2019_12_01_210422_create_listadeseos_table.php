@@ -15,9 +15,9 @@ class CreateListadeseosTable extends Migration
     {
         Schema::create('listadeseos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_product');
+            $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('productos');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

@@ -23,12 +23,12 @@
                         </div>
                         <div class="form-group">
                             <label for="title">Descripcion</label>
-                            <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{ old('Descripcion') }}">
+                            <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{ old('descripcion') }}">
                             <small class="text-danger">{{ $errors->first('descripcion') }}</small>
                         </div>
                         <div class="form-group">
                             <label for="imagen">Imagen </label>
-                            <input type="file" class="form-control" id="imagen" name="imagen" value="{{ old('Imagen') }}">
+                            <input type="file" class="form-control" id="imagen" name="imagen" value="{{ old('imagen') }}">
                             <small class="text-danger">{{ $errors->first('imagen') }}</small>
                         </div>
                     </div>
