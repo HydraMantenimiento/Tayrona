@@ -13,7 +13,7 @@
     }
 </style>
 <a target="_blank" href="https://api.whatsapp.com/send?phone=3143256396&text=Hola!&nbsp;me&nbsp;pueden&nbsp;apoyar?" class="appwhatsapp">
-    <img src="{{'fonts/whatsapp.png'}}" alt="">
+    <h1 class="display-3"><i class="fab fa-whatsapp-square" style="color:#4CAF50;"></i></h1>
 </a>
 <div class="bg-orange ">
     <footer class="container">

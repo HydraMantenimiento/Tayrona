@@ -1,4 +1,4 @@
-@extends('visitante.layouts.app')
+@extends('visitante.layouts.layout')
 
 @section('content')
     <div class="container-fluid bg-login py-5 h-100 ">

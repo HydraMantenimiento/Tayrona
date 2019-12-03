@@ -47,12 +47,12 @@
         }
         .content-product{
             display: flex;
-            justify-content:flex-start;
+            justify-content:center;
             flex-wrap: wrap;
         }
 
         .item-product{
-            width: 23%;
+            width: 18%;
             display: block;
             margin: 10px 0.5%;
         }
@@ -115,32 +115,52 @@
 
 
     </style>
-    <div class="content">
-    <div class="menu-secundary d-block d-lg-none">
-        <button class="btn shadow btn-open">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-    <div class="wrap shadow">
-        <div class="close-menu d-block d-lg-none">
-            <button class="btn"><i class="fas fa-chevron-left"></i></button>
-        </div>
-        <div class="store-wrapper">
-            <div class="category_title pt-lg-5">
-                <h6>Subcategorias</h6>
-            </div>
-            <div class="category_list">
-                <a href="{{ url('vistascategorias/'.$name.'/alimentos') }}" class="category_item" category="all">Alimentos</a>
-                <a href="{{ url('vistascategorias/'.$name.'/accesorios') }}" class="category_item" category="ordenadores">Accesorios</a>
-                <a href="{{ url('vistascategorias/'.$name.'/aseo') }}" class="category_item" category="laptops">Productos Aceo</a>
-                <a href="{{ url('vistascategorias/'.$name.'/juguetes') }}" class="category_item" category="smartphones">Juguetes</a>
-                <a href="{{ url('vistascategorias/'.$name.'/drogueria') }}" class="category_item" category="monitores">Drogueria</a>
-            </div>
-        </div>
-    </div>
+    
 
     <div class="product_list">
     <div class="container-fluid ">
+            <div class="col-12">
+            <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @for($i = 0; $i < count($carrousels); $i++ )
+                    <li data-target="#carouselExampleCaptions" data-slide-to="{{ $i }}" class="{{ $i == 0 ? 'active' :'' }} "></li>
+                @endfor
+            </ol>
+            <div class="carousel-inner">
+                <?php $i = 0 ?>
+                @foreach($carrousels as $carrousel)
+                <div class="carousel-item {{ $i == 0 ? 'active' :'' }} ">
+                    <img src="{{ asset($carrousel->img) }}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ $carrousel->title }}</h5>
+                        <p>{{ $carrousel->description }}</p>
+                    </div>
+                </div>
+                    <?php $i++ ?>
+                @endforeach
+                    @if(count($carrousels)  == 0)
+                        @for($i = 0; $i < 3; $i++)
+                            <div class="carousel-item {{ $i == 0 ? 'active' :'' }} ">
+                                <img src="holder.js/500x600" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>TITULO</h5>
+                                    <p></p>
+                                </div>
+                            </div>
+                        @endfor
+                    @endif
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+            </div>
             <div class="row">
                 <div class="col-12 d-block">
                     <div class="content-product">

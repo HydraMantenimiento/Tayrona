@@ -55,9 +55,7 @@
                 height: auto;
             }
         </style>
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=3143256396&text=Hola!&nbsp;en que &nbsp;podemos&nbsp;ayudarte?" class="appwhatsapp">
-            <img src="{{'fonts/whatsapp.png'}}" alt="">
-        </a>
+        
 @endsection
 
 

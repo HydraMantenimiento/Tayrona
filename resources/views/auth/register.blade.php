@@ -1,13 +1,14 @@
-@extends('visitante.layouts.app')
+@extends('visitante.layouts.layout')
+
 
 @section('content')
-<div class="container shadow py-3 px-3">
+<div class="container shadow py-3 px-3 my-5">
     <h1>Registro</h1>
     <hr class="bg-jaiber">
     <form method="POST" action="{{ route('register') }}">
         <div class="row">
-            <div class=" d-none d-md-block col-md-4 d-flex align-items-center justify-content-center">
-                <img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="200px" height="100px">
+            <div class=" d-none d-md-block col-md-4 d-md-flex  align-items-center justify-content-center">
+                <img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="200px" height="100px" class="d-block">
             </div>
             <div class="col-md-4 col-12">
                 @csrf
