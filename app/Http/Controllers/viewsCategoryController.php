@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\category_product;
 use App\product_img;
 use App\productos;
+use App\Carrousel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,8 +21,9 @@ class viewsCategoryController extends Controller
             ->where('categorys.name', $category)
             ->select('productos.*', 'categorys.name as categoria', 'subcategorys.name as sub')
             ->paginate(8);
+            $carrousels = Carrousel::all();
         $name = $category;
-        return view('visitante/categorysvisit', compact('query','name'));
+        return view('visitante/categorysvisit', compact('query','name', 'carrousels'));
 
     }
 

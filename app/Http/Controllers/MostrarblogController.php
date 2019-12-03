@@ -73,7 +73,7 @@ class MostrarblogController extends Controller
             $comment->save();
             return redirect()->route('vistaComment',$blog)->with('alert','El producto fue eliminado correctamente.');
         }else{
-         
+
             $comment->status = 'active';
             $comment->save();
             return redirect()->route('vistaComment',$blog)->with('alert','El producto fue eliminado correctamente.');

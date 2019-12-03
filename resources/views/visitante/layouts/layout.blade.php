@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
         <link rel="stylesheet" href="{{ asset('css/all.css') }}">
+        <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <!-- platilla productos-->
         <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/nouislider.min.css")}}">
