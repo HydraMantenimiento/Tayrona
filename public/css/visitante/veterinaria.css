@@ -61,7 +61,7 @@
 @import url('../../fontawesome-free/css/all.css');
 @import url('flaticon.css');
 @import url('owl.css');
-@import url('../bootstrap.css');
+
 @import url('jquery.fancybox.min.css');
 @import url('animate.css');
 
@@ -256,7 +256,7 @@ img{
     color: #ffffff;
     transform: translateY(-3px);
 }
-
+/*
 
 .pagination{
     position: relative;
@@ -288,7 +288,7 @@ img{
     background: #fe7a00;
     color: #ffffff;
 }
-
+*/
 .sec-pad{
     padding: 154px 0px 120px 0px;
 }
@@ -622,7 +622,7 @@ img{
 
 
 /** main-menu **/
-
+/*
 .main-header .menu-area,
 .main-header .social-style-one{
     position: relative;
@@ -763,9 +763,9 @@ img{
 .navbar-header {
     display: none;
 }
-
+*/
 /** sub-menu **/
-
+/*
 .main-menu .navigation > li > ul > li > ul{
     position:absolute;
     left:100%;
@@ -839,10 +839,10 @@ img{
 .main-menu .navigation > li > ul > li.dropdown:hover > a:after{
     color: #ffffff;
 }
-
+*/
 
 /** stricky-header **/
-
+/*
 .sticky-header .main-menu .navigation > li{
     margin: 0px;
 }
@@ -875,7 +875,7 @@ img{
 .sticky-header .main-menu .navigation > li > a:before{
     display: none;
 }
-
+*/
 /** main-slider **/
 
 .main-slider{

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\category;
+use App\productos;
 use App\Subcategory;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,6 @@ class categoryController extends Controller
     {
         $categorias = category::all();
         $subcategorias = Subcategory::all();
-
         return  view('admin/category', compact('categorias','subcategorias'));
     }
 

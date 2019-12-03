@@ -740,7 +740,7 @@
                 }
 
                 if ( !obj.opts.$thumb && obj.opts.$orig ) {
-                    obj.opts.$thumb = obj.opts.$orig.find( 'img:first' );
+                    obj.opts.$thumb = obj.opts.$orig.find( 'product_img:first' );
                 }
 
                 if ( obj.opts.$thumb && !obj.opts.$thumb.length ) {
@@ -1768,7 +1768,7 @@
                 slide.width  = slide.opts.width;
                 slide.height = slide.opts.height;
 
-                slide.$ghost = $('<img />')
+                slide.$ghost = $('<product_img />')
                     .one('error', function() {
 
                         $(this).remove();
@@ -1803,7 +1803,7 @@
 
         setBigImage : function ( slide ) {
             var self = this;
-            var $img = $('<img />');
+            var $img = $('<product_img />');
 
             slide.$image = $img
                 .one('error', function() {
@@ -3158,7 +3158,7 @@
 			paramPlace : 8,
 			type  : 'iframe',
 			url   : '//www.youtube.com/embed/$4',
-			thumb : '//img.youtube.com/vi/$4/hqdefault.jpg'
+			thumb : '//product_img.youtube.com/vi/$4/hqdefault.jpg'
 		},
 
 		vimeo : {
@@ -4725,7 +4725,7 @@
 				}
 
 				if ( src && src.length ) {
-					list += '<li data-index="' + i + '"  tabindex="0" class="fancybox-thumbs-loading"><img data-src="' + src + '" /></li>';
+					list += '<li data-index="' + i + '"  tabindex="0" class="fancybox-thumbs-loading"><product_img data-src="' + src + '" /></li>';
 				}
 			});
 

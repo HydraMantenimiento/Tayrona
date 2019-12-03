@@ -9,8 +9,9 @@ use App\descriptions_product;
 use App\product_img;
 use App\product_status;
 use App\Subcategory;
-use Illuminate\Http\Request;
 use App\productos;
+use App\Http\Requests\ProductRequest;
+use Illuminate\Http\Request;
 
 
 class ProductController extends Controller
@@ -28,7 +29,7 @@ class ProductController extends Controller
         $category = category::all();
         $subcategory = Subcategory::all();
         $category_product = category_product::all();
-        return  view('admin/product', compact('product','status','category','subcategory','category_product') );
+        return  view('admin/products/product', compact('product','status','category','subcategory','category_product') );
     }
 
     /**
@@ -38,7 +39,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('');
+        $status = product_status::all();
+        $category = category::all();
+        $subcategory = Subcategory::all();
+        $category_product = category_product::all();
+        return  view('admin/products/create', compact('status','category','subcategory','category_product') );
     }
 
     /**
@@ -47,16 +52,17 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $productoagregar = new productos;
-        $productoagregar->product_status_id  = $request->estado;
-        $productoagregar->subcategory_id  = $request->subcategorias;
         $productoagregar->name = $request->name;
         $productoagregar->descripcion = $request->descripcion;
         $productoagregar->precio = $request->precio;
+        $productoagregar->product_status_id  = $request->estado;
+        $productoagregar->subcategory_id  = $request->subcategorias;
+
         $productoagregar->save();
-        return back()->with('agregar','El producto se ha agregado');
+        return redirect()->route('product.index')->with('alert','El blog fue creado correctamente.');
     }
 
     /**
@@ -70,7 +76,7 @@ class ProductController extends Controller
         $product = productos::find($id);
         $status = product_status::all();
 
-        return view('admin/productshow', compact('product','status'));
+        return view('admin/products/productshow', compact('product','status'));
     }
 
     /**
@@ -88,7 +94,7 @@ class ProductController extends Controller
         $category = category::all();
         $status = product_status::all();
         $category_product = category_product::where('product_id', $id)->get();
-        return view('admin/producteditar', compact('productactualizar', 'img','category','category_product','status','descripcion'));
+        return view('admin/products/producteditar', compact('productactualizar', 'img','category','category_product','status','descripcion'));
     }
 
 

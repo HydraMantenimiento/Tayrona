@@ -2,13 +2,13 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/visitante/veterinaria.css') }}">
 
-<body class="boxed_wrapper" cz-shortcut-listen="true">
+    <body class="boxed_wrapper" cz-shortcut-listen="true">
     <!-- .preloader -->
     <div class="preloader" style="display: none;"></div>
     <!-- /.preloader -->
 
     <!-- page-title -->
-    <section class="page-title centred" style="background-image: url('imagenes/baño.jpg');">
+    <section class="page-title centred" style="background-image:url({{ asset('imagenes/baño.jpg') }}) ;">
         <div class="container">
             <h1>SOBRE NOSOTROS</h1>
         </div>
@@ -19,8 +19,7 @@
         <div class="container">
             <div class="content-box clearfix">
                 <ul class="bread-crumb">
-                    <li><a >SOBRE</a></li>
-                    <li>NOSOTROS</li>
+                    <li><a href="{{ route('home') }}">NOSOTROS</a></li>
                 </ul>
             </div>
         </div>
@@ -70,19 +69,19 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 staff-column">
                     <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
-                        <figure class="image-box"><a href="#"><img src="{{asset('imagenes/baño.jpg')}}" alt="" style="height: 212px;"></a></figure>
+                        <figure class="image-box"><a href="#"><img src="{{asset('imagenes/german.png')}}" alt="" style="height: 212px;"></a></figure>
                         <div class="lower-content">
-                            <h3><a href="#">Reena Scot</a></h3>
-                            <span class="designation">Groomer</span>
+                            <h3><a href="#">German</a></h3>
+                            <span class="designation">Jefe</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 staff-column">
                     <div class="team-block-one wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 200ms; animation-name: fadeInUp;">
-                        <figure class="image-box"><a href="#"><img src="{{asset('imagenes/service-details-2.jpg')}}" alt="" style="height: 212px;"></a></figure>
+                        <figure class="image-box"><a href="#"><img src="{{asset('imagenes/luis.png')}}" alt="" ></a></figure>
                         <div class="lower-content">
                             <h3><a href="#">Luis  Parra</a></h3>
-                            <span class="designation">boss</span>
+                            <span class="designation">Jefe</span>
                         </div>
                     </div>
                 </div>
@@ -91,7 +90,7 @@
                         <figure class="image-box"><a href="#"><img src="{{asset('imagenes/team-5.png')}}" alt="" style="height: 212px;"></a></figure>
                         <div class="lower-content">
                             <h3><a href="#">Sarah Eve</a></h3>
-                            <span class="designation">Groomer</span>
+                            <span class="designation">Jefa</span>
                         </div>
                     </div>
                 </div>
@@ -100,7 +99,7 @@
                         <figure class="image-box"><a href="#"><img src="{{asset('imagenes/baño.jpg')}}" alt="" style="height: 212px;"></a></figure>
                         <div class="lower-content">
                             <h3><a href="#">Reena Scot</a></h3>
-                            <span class="designation">Groomer</span>
+                            <span class="designation">Veterinario</span>
                             <!--<ul class="social-style-one">
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

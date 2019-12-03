@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\category_product;
+use App\product_img;
 use App\productos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class categoryusersController extends Controller
@@ -20,7 +22,8 @@ class categoryusersController extends Controller
             ->select('productos.*', 'categorys.name as categoria', 'subcategorys.name as sub')
             ->paginate(8);
         $name = $category;
-        return view('user/views/viewscategories', compact('query','name'));
+        $user = Auth::User();
+        return view('user/views/viewscategories', compact('query','name', 'user'));
     }
 
 }

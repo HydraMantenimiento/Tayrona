@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\product_img;
+use App\productos;
+use App\Http\Requests\imagenRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,9 +25,10 @@ class product_imgController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $product = productos::find($id);
+        return view('admin/products/product_img/create',compact('product'));
     }
 
     /**
@@ -43,10 +46,9 @@ class product_imgController extends Controller
             $path = Storage::disk('public')->put('upload', $request->file('avatar'));
             $productimg->url = $path;
         }
-
         $productimg->save();
 
-        return back();
+        return back()->with('alert','La Imagen fue agregada correctamente.');
     }
 
     /**

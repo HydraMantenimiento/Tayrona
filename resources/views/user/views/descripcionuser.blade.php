@@ -20,7 +20,7 @@
                         </div>
 
                         <div class="product-preview">
-                            <img src="{{asset("desing/img/product06.png")}}" alt="">
+                            <img src="{{asset("product_img")}}" alt="">
                         </div>
 
                         <div class="product-preview">
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="product-preview">
-                            <img src="{{asset("desing/img/product06.png")}}" alt="">
+                            <img src="{{asset("product_img")}}" alt="">
                         </div>
 
                         <div class="product-preview">

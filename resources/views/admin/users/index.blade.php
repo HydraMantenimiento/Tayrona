@@ -43,9 +43,9 @@
                                 <td width="10px">
                                     <a href="{{ route('users.show', $user->id ) }}" class="btn btn-info"><i class="fa fa-eye"></i></a>
                                 </td>
-                                <td width="10px">
+                               <!-- <td width="10px">
                                     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                </td>
+                                </td>-->
                                 <td width="10px">
                                     <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                                         @method('DELETE')

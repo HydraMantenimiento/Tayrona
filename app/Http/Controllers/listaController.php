@@ -2,9 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\category;
+use App\category_product;
+use App\descriptions_product;
+use App\lista;
+use App\product_img;
+use App\product_status;
+use App\Subcategory;
 use Illuminate\Http\Request;
+use App\productos;
+use Illuminate\Support\Facades\Auth;
 
-class CommentController extends Controller
+class listaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +22,10 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::User()->id;
+        $deseos = lista::where('user_id','=',$user)->get();
+        $producto = productos::all();
+        return view('user/views/lista', compact('user', 'deseos','producto'));
     }
 
     /**
@@ -23,7 +35,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -32,9 +44,19 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request , $producto , $user )
     {
-        //
+        $lista = lista::where('product_id',$producto)->get();
+
+        if(count($lista) == 0){
+            $listas = new lista;
+            $listas->product_id = $producto;
+            $listas->user_id =  $user;
+            $listas->save();
+            return back();
+        }
+        return back();
+
     }
 
     /**
@@ -45,7 +67,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -56,7 +78,7 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -68,7 +90,7 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -79,6 +101,9 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $listas = lista::find($id);
+        $listas->delete();
+        return redirect()->route('lista')->with('alert','El producto fue eliminado correctamente.');
     }
 }
+

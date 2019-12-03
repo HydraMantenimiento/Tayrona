@@ -134,21 +134,23 @@
                                         <div class="col-md-3 col-xs-6">
                                             <div class="product">
                                                 <div class="product-img">
-                                                    <img src="{{asset("desing/img/product06.png")}}" alt="">
+                                                    <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url ?? 'imagenes/default.png') }}" alt="">
                                                     <div class="product-label">
                                                         <span class="sale">-30%</span>
                                                     </div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <p class="product-category">Category</p>
-                                                    <h3 class="product-name"><a href="#">{{$producto->name}}</a></h3>
+                                                    <!--<p class="product-category">Category</p>-->
+                                                    <h3 class="product-name">{{$producto->name}}</h3>
                                                     <h4 class="product-price">${{$producto->precio}} <del class="product-old-price">$990.00</del></h4>
                                                     <div class="product-rating">
                                                     </div>
                                                     <div class="product-btns">
                                                         <button class="add-to-wishlist">
-                                                            <i class="fa fa-heart-o"></i>
-                                                            <span class="tooltipp">add to wishlist</span>
+                                                            <a href="{{ route('listadeseos', ['producto'=>$producto->id, 'user'=>$user] ) }}">
+                                                                <i class="fa fa-heart-o"></i>
+                                                                <span class="tooltipp">add to wishlist</span>
+                                                            </a>
                                                         </button>
                                                         <button class="quick-view" >
                                                             <a href="{{ route('descripcionuser',$producto->id) }}">
@@ -175,12 +177,12 @@
                             <!-- </div>-->
                     </div>
                 </div>
-            {{$query -> links()}}
+
             <!-- /Products tab & slick -->
             </div>
             <!-- /row -->
         </div>
         <!-- /container -->
     </div>
-
+    {{$query -> links()}}
 @endsection

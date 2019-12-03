@@ -18,6 +18,7 @@ class CreateBlogsTable extends Migration
             $table->unsignedBigInteger('category_blog_id');
             $table->foreign('category_blog_id')->references('id')->on('blog_categorys');
             $table->string('title');
+            $table->string('imagen');
             $table->text('body');
             $table->softDeletes();
             $table->timestamps();

@@ -22,13 +22,13 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="user-image" alt="User Image">
+                        <img src="{{asset(Auth::user()->avatar)}}" class="user-image" alt="User Image">
                         <span class="hidden-xs text-black">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu ">
                         <!-- User image -->
                         <li class="user-header bg-orange">
-                            <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="img-circle" alt="User Image">
+                            <img src="{{asset(Auth::user()->avatar)}}" class="img-circle" alt="User Image">
 
                             <p class="text-black">
                                 {{ Auth::user()->name }} - Web Developer
@@ -38,6 +38,10 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer " style="background: #2D3E50;">
+                            <div class="pull-left">
+
+                                <a href="{{ route('vistaperfil' ) }}" class="btn btn-default btn-flat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Perfil</font></font></a>
+                            </div>
                             <div class="pull-right" >
 
                                 <a class="dropdown-item btn btn-default btn-flat"  href="{{ route('logout') }}"

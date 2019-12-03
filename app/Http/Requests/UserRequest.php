@@ -27,9 +27,9 @@ class UserRequest extends FormRequest
             'name' => 'string|required',
             'lastname' => 'string|required',
             'type_document' => 'string|required',
-            'number_document' => 'number|required',
+            'number_document' => 'numeric|required',
             'email' => 'email|unique|required',
-            'role_id' => 'number|required',
+            'role_id' => 'numeric|required',
             'password' => 'string|required',
             'gender' => 'string|required'
         ];

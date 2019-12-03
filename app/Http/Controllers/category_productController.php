@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\category;
 use App\category_product;
+use App\productos;
+use foo\bar;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class category_productController extends Controller
 {
@@ -22,9 +26,11 @@ class category_productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $product = productos::find($id);
+        $category = category::all();
+        return view('admin/products/category/create',compact('product', 'category'));
     }
 
     /**
@@ -35,12 +41,17 @@ class category_productController extends Controller
      */
     public function store(Request $request)
     {
-        $category_products = new category_product;
-        $category_products ->product_id = $request->productid;
-        $category_products ->category_id = $request->categoria;
-        $category_products ->save();
-        return back();
-
+        $category_products = category_product::where('product_id',$request->productid)
+            ->where('category_id',$request->categoria)
+            ->get();
+        if(count($category_products) == 0){
+            $category_products = new category_product;
+            $category_products ->product_id = $request->productid;
+            $category_products ->category_id = $request->categoria;
+            $category_products ->save();
+            return back()->with('alert','La categoria fue agregada correctamente.');
+        }
+        return back()->with('alert','La categoria ya se encuentra agregada correctamente.');;
     }
 
     /**

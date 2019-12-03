@@ -31,13 +31,13 @@
                         </div>
                     </div>
                 </div>
-                <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                <script src="{{ asset('js/vue.js') }}"></script>
+                <script src="{{ asset('js/axios.min.js') }}"></script>
                 <script>
                     var vue = new Vue({
                         el: '#search',
                         mounted() {
-                            axios.get('http://127.0.0.1/tayrona/public/products')
+                            axios.get('http://127.0.0.1/Tayrona/public/products')
                                 .then(response => {
                                     this.products = response.data
                                     console.log(response);
@@ -98,7 +98,7 @@
                         <a href="{{ route('about') }}" class="nav-link  nav-item d-block text-center {{ (request()->is('about')) ? 'active' : '' }}">
                             <i class="fas fa-info"></i>  Nosotros
                         </a>
-                        <a href="{{ route('mostrarblog.index') }}" class="nav-link nav-item  d-block text-center {{ (request()->is('mostrarblog')) ? 'active' : '' }}">
+                        <a href="{{ route('mostrarblog') }}" class="nav-link nav-item  d-block text-center {{ (request()->is('mostrarblog')) ? 'active' : '' }}">
                             <i class="fas fa-blog"></i> Blog
                         </a>
                         <a href="{{ route('politicas') }}" class="nav-link nav-item d-block text-center  {{ (request()->is('politicas')) ? 'active' : '' }}">

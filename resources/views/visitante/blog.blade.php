@@ -1,72 +1,67 @@
 @extends('visitante.layouts.layout')
 
-
 @section('content')
+    <link rel="stylesheet" href="{{ asset('css/visitante/veterinaria.css') }}">
+    <body class="boxed_wrapper" cz-shortcut-listen="true">
 
-<div class="container "style="">
-    <div class="row">
-        <div class="ultimos-blog ml-4 my-4" style=" width:300px; height:auto; border-right:  solid #571C7C; ">
-            <h3 class="titulo-blog" style=" text-align:center;">Ultimos Blogs</h3>
-            @foreach($blogs as $blog)
-            <div class="blog-ultimos my-2 select-blog" data-id="id{{$blog->id}}" style="  background: ; width:90%; height:60px; border-bottom: solid;  border-width: 1px;">
-                <div class="row">
-                    <div class="img-2 my-2 ml-3" style="  width:20%; height:45px; "><img src="{{ asset('imagenes/m.jpg') }}" alt="" style=" width:auto; height:45px; "></div>
-                    <div class="my-2 ml-4" style=" background:; width:180px; height:45px; "><p class="ml-2">{{ $blog->title}}</p></div>
-                </div>
-            </div>
-            @endforeach
-          </div>
-    <div class="content-blogs" style=" width:65%; height:500px;">
-        @foreach($blogs as $blog)
-        <div class="blog  ml-5 my-4" id="id{{$blog->id}}">
-                <h1>{{$blog->title}}</h1>
-                {!!$blog->body!!}
+    <div class="preloader" style="display: none;"></div>
+    <section class="page-title centred" style="background-image: url({{ asset('imagenes/page-title.jpg') }});">
+        <div class="container">
+            <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuestras noticias</font></font></h1>
         </div>
-        @endforeach
-    </div>
+    </section>
 
-    <hr class="p-0 m-0">
-    <div class="comments-container">
-		<ul id="comments-list" class="comments-list">
-			<li>
-				<div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="{{ asset('imagenes/m1.jpg') }}" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					    <div class="comment-box">
-                                <div class="comment-head">
-                                    <h6 class="comment-name "><a href="">jaiber vargas</a></h6>
-                                    <span>hace 20 minutos</span>
-                                    <i class="fa fa-reply ji"></i>
-                                    <i class="fa fa-heart ji"></i>
-                                </div>
-                                <div class="comment-content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                                </div>
-					    </div>
+    <section class="page-info">
+        <div class="container">
+            <div class="content-box ">
+                <ul class="bread-crumb">
+                    <li><a href="#">Home</a></li>
+                    <li>Noticias</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-info -->
+
+
+    <!-- news-section -->
+    <section class="news-section blog-grid">
+        <div class="container">
+            <div class="row">
+                @foreach($blogs as $blog)
+                    <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                        <div class="news-block-one wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <?php \Carbon\Carbon::setLocale('es'); ?>
+                            <div class="date" style="font-size: 20px;">{{ \Carbon\Carbon::now()->diffForHumans($blog->created_at) }}</div>
+                            <figure class="image-box"><a href="{{ route('viewblog', $blog->id) }}"><img src="{{ asset($blog->imagen) }}" alt="" style="height: 387px; width:370px;"></a></figure>
+                            <div class="lower-content">
+                                <ul class="info-box"></ul>
+                                <h3><a href="{{ route('viewblog', $blog->id) }}">{{ $blog->title}}</a></h3>
+                                <div class="link"><a href="{{ route('viewblog', $blog->id) }}">Read more</a></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </li>
-		</ul>
-    </div>
+                @endforeach
+            </div>
+        {{$blogs -> links()}}
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12 message-btn ">
+                <a href="" ><button class="theme-btn col-md-3">ver mas</button></a>
+            </div>-->
+        </div>
+    </section>
 
-    <p class="my-2 vermas" ><link rel="stylesheet" href="">ver mas</link></p>
 
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-$(document).ready(function () {
-    $('.select-blog').click(function () {
-        var id = $(this).data('id');
-        console.log(id);
-        $('.blog').hide();
-        $('#'+ id).show();
-    });
-    $('.blog').hide();
-    var blogs=$('.content-blogs').children().first().show();
-    console.log(blogs);
 
-});
-</script>
 
+    <!-- jequery plugins-->
+    <script src="{{asset('js/visitante/popper.min.js')}}"></script>
+    <script src="{{asset('js/visitante/owl.js')}}"></script>
+    <script src="{{asset('js/visitante/wow.js')}}"></script>
+    <script src="{{asset('js/visitante/validation.js')}}"></script>
+    <script src="{{asset('js/visitante/jquery.fancybox.js')}}"></script>
+    <script src="{{asset('js/visitante/bxslider.js')}}"></script>
+    <script src="{{asset('js/visitante/appear.js')}}"></script>
+
+    <script src="{{asset('js/visitante/script.js')}}"></script>
 @endsection
+

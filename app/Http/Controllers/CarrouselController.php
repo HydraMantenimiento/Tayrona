@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Carrousel;
+use App\carrousels;
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
+use App\Http\Requests\SliderRequest;
+use Illuminate\Support\Facades\Storage;
 
-class CarrouselController extends Controller
+class carrouselController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +18,8 @@ class CarrouselController extends Controller
      */
     public function index()
     {
-        //
+        $carrousels = Carrousel::all();
+        return view('admin/slider/index', compact('carrousels'));
     }
 
     /**
@@ -23,7 +29,7 @@ class CarrouselController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/slider/create');
     }
 
     /**
@@ -32,9 +38,19 @@ class CarrouselController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SliderRequest $request)
     {
+        $carrousels = new Carrousel();
 
+        if ( $request->file('imagen')){
+            $path = Storage::disk('public')->put('imageFolders/carrouselImagenes', $request->file('imagen'));
+            $carrousels->img = $path;
+        }
+        $carrousels->title = $request->title;
+        $carrousels->description = $request->descripcion;
+        $carrousels->status = 'active';
+        $carrousels->save();
+        return redirect()->route('carrousel.index')->with('alert','El carrousel fue creado correctamente.');
     }
 
     /**
@@ -56,7 +72,8 @@ class CarrouselController extends Controller
      */
     public function edit($id)
     {
-        //
+        $carrousels = Carrousel::find($id);
+        return view('admin/slider/edit', compact('carrousels'));
     }
 
     /**
@@ -68,7 +85,21 @@ class CarrouselController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $carrousels = Carrousel::FindOrFail($id);
+        if ($request->hasFile('imagen')){
+            $imagen=  $request->file('imagen');
+            $filename = time() . '.' . $imagen->getClientOriginalExtension();
+            $imagen->move('carrouselImagenes'.$filename);
+            $carrousels->img = $filename;
+        }
+
+        $carrousels->title = $request->title;
+        $carrousels->description = $request->descripcion;
+        $carrousels->status = 'active';
+        $carrousels->save();
+        return redirect()->route('carrousel.index')->with('alert','El carrousel fue modificado correctamente.');
+
     }
 
     /**
@@ -79,6 +110,8 @@ class CarrouselController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Carrousel::find($id);
+        $blog->delete();
+        return redirect()->route('carrousel.index')->with('alert','El carrousel fue eliminado correctamente.');
     }
 }
