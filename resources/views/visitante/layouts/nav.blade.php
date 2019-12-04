@@ -77,12 +77,18 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <div class="navbar-nav">
-                        <a class="nav-link d-block text-center nav-item {{ (request()->is('/')) ? 'active' : '' }}" href="{{ url('/') }}"  >
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                        <a class="nav-link d-block text-center nav-item  {{ (request()->is('vistascategorias/perros')) ? 'active' : '' }}" href="{{ route('vistascategorias',$name = 'perros') }}"  >
-                            <i class="fas fa-bone"></i>  Perros
-                        </a>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
+                            <a class="nav-link d-block text-center " href="{{ url('/') }}"  >
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-iten">
+                            <a class="nav-link d-block text-center nav-item  {{ (request()->is('vistascategorias/perros')) ? 'active' : '' }}" href="{{ route('vistascategorias',$name = 'perros') }}"  >
+                                <i class="fas fa-bone"></i>  Perros
+                            </a>
+                        </li>
+                        <li></li>
                         <a class="nav-link  d-block text-center  nav-item {{ (request()->is('vistascategorias/gatos')) ? 'active' : '' }} " href="{{ route('vistascategorias',$name = 'gatos') }}" >
                             <i class="fas fa-paw"></i> Gatos
                         </a>
@@ -104,6 +110,7 @@
                         <a href="{{ route('politicas') }}" class="nav-link nav-item d-block text-center  {{ (request()->is('politicas')) ? 'active' : '' }}">
                             <i class="fas fa-handshake"></i> Políticas
                         </a>
+                        </ul>
                     </div>
                 </div>
             </nav>
