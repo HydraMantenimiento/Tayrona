@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 py-2 d-block d-lg-none">
             <a href="{{ route('inicio') }}" ><img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="35%" height="45px"></a>
-            <a href="{{ route('register') }}" class="btn float-right text-white">Registrate <i class="fas fa-dog"></i></a>
+            <a href="{{ route('register') }}" class="btn float-right text-white">Registro <i class="fas fa-dog"></i></a>
             <a href="{{ route('login') }}" class="btn float-right text-white">Login <i class="fas fa-cat"></i></a>
         </div>
         <div class="col-2 p-2  d-none  d-lg-block">
@@ -65,7 +65,7 @@
                 <div class="collapse navbar-collapse d-none d-md-none d-lg-block justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav mr-0 pr-0">
                         <!-- esto es para que se muestre solo cuando no se a iniciado session -->
-                        <a href="{{ route('register') }}" class="btn text-white">Registrate <i class="fas fa-dog"></i></a>
+                        <a href="{{ route('register') }}" class="btn text-white">Registro <i class="fas fa-dog"></i></a>
                         <a href="{{ route('login') }}" class="btn text-white">Login <i class="fas fa-cat"></i></a>
                     </div>
                 </div>

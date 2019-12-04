@@ -12,7 +12,7 @@
             <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuestras noticias</font></font></h1>
         </div>
     </section>
-
+<!--
     <section class="page-info">
         <div class="container">
             <div class="content-box ">
@@ -22,7 +22,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- page-info -->
 
 

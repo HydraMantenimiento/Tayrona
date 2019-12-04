@@ -14,7 +14,7 @@
         </div>
     </section>
     <!-- page-title end -->
-    <!-- page-info -->
+    <!-- page-info
     <section class="page-info">
         <div class="container">
             <div class="content-box clearfix">
@@ -23,7 +23,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- page-info -->
 
 
@@ -38,7 +38,7 @@
                 <div class="lower-content centred">
                     <div class="sec-title">
                         <div class="top-title">Pocas palabras sobre la empresa</div>
-                        <h1>Comercializamos alimentos todas las marcas, medicamentos y accesorios para mascotas.</h1>
+                        <h1 style="font-size: 40px;">Comercializamos alimentos todas las marcas, medicamentos y accesorios para mascotas.</h1>
                     </div>
                     <div class="text">
                         <p>

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Blog;
 use App\Carrousel;
 use App\category_product;
 use App\Currency;
 use App\PaymentPlatform;
 use App\productos;
+use App\User;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -34,6 +36,7 @@ class HomeController extends Controller
     {
 
         if(Auth::user()->role_id == '1') {
+
            return  redirect()->route('dashboard');
         }else if(Auth::user()->role_id == '2') {
             return  redirect()->route('cliente');
@@ -48,7 +51,10 @@ class HomeController extends Controller
 
     public function dashboard()
 {
-    return view('admin/dashboard');
+    $user = User::all();
+    $product = productos::all();
+    $blog = Blog::all();
+    return view('admin/dashboard', compact('user', 'product', 'blog'));
 }
     public function cliente()
     {
