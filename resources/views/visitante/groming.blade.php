@@ -13,7 +13,7 @@
     <!-- page-title end -->
 
 
-    <!-- page-info -->
+    <!-- page-info
     <section class="page-info">
         <div class="container">
             <div class="content-box clearfix">
@@ -23,7 +23,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- page-info -->
 
 

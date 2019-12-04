@@ -11,7 +11,7 @@
             <h1>Noticia</h1>
         </div>
     </section>
-
+<!--
     <section class="page-info">
         <div class="container">
             <div class="content-box clearfix">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </section>
-
+-->
     <section class="sidebar-page-container">
         <div class="container">
             <div class="row">

@@ -60,7 +60,24 @@ class MostrarblogController extends Controller
     public function vistaComment($id){
 
         $comments = Comment::where('blog_id', $id )->get();
-        return view('/admin/blog/comment', compact('comments'));
+        $blog = $id;
+        return view('/admin/blog/comment', compact('comments', 'blog'));
+    }
+    public function updatecomment( $id , $blog ){
+
+        $comment = Comment::find($id);
+
+        if ($comment->status == 'active'){
+
+            $comment->status = 'inactive';
+            $comment->save();
+            return redirect()->route('vistaComment',$blog)->with('alert','El producto fue eliminado correctamente.');
+        }else{
+
+            $comment->status = 'active';
+            $comment->save();
+            return redirect()->route('vistaComment',$blog)->with('alert','El producto fue eliminado correctamente.');
+        }
     }
 
 }

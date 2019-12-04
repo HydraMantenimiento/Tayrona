@@ -29,6 +29,7 @@
         Route::post('/description', 'DescriptionProductController@store')->name('descriptions.store');
 
         Route::get('/vistaComment/{id}','MostrarblogController@vistaComment')->name('vistaComment');
+        Route::get('/updatecomment/{id}/{blog}','MostrarblogController@updatecomment')->name('updatecomment');
 
         Route::get('/descriptions/{id}', 'descriptions_productController@create')->name('create.descriptions');
         Route::get('/descriptions/{id}/{product}', 'descriptions_productController@edit')->name('edit.descriptions');
@@ -62,13 +63,17 @@
         route::get('listadeseos/{producto}/{user}', [ 'uses'=>'listaController@store', 'as' => 'listadeseos' ]);
         route::get('listdelete/{id}/', [ 'uses'=>'listaController@destroy', 'as' => 'listdelete' ]);
 
+        /*Pedidos*/
+        Route::get('/orders','OrderController@index')->name('orders');
+
         /* carro de compras*/
         Route::get('/add-to-car/{id}',['uses' => 'CartproductsController@getAddToCart', 'as'   => 'product.addToCart']);
+        Route::get('/reduce/{id}',['uses' => 'CartproductsController@getReduceByOne', 'as'   => 'product.reduce']);
         Route::get('/shopping-cart',['uses' => 'CartproductsController@getCart', 'as'   => 'product.shoppingCart']);
 
         Route::post('/payments/pay', 'PaymentController@pay')->name('pay');
         Route::get('/payments/approval', 'PaymentController@approval')->name('approval');
-        Route::post('/payments/cancelled', 'PaymentController@cancelled')->name('cancelled');
+        Route::get('/payments/cancelled', 'PaymentController@cancelled')->name('cancelled');
 
     });
 

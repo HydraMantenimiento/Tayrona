@@ -1,8 +1,9 @@
 
+
 <style>
     .appwhatsapp{
         position: fixed;
-        right: 26px;
+        right: 40px;
         bottom: 50px;
         width: 60px;
         z-index: 1000;
@@ -12,9 +13,10 @@
         height: auto;
     }
 </style>
-<a target="_blank" href="https://api.whatsapp.com/send?phone=3143256396&text=Hola!&nbsp;me&nbsp;pueden&nbsp;apoyar?" class="appwhatsapp">
+<a target="_blank" href="https://api.whatsapp.com/send?phone=+573124678866&text=¡Hola!,&nbsp; Bienvenido a Almacenes Tayrona,&nbsp; &nbsp;Cuéntanos, ¿En qué podemos ayudarte?" class="appwhatsapp">
     <h1 class="display-3"><i class="fab fa-whatsapp-square" style="color:#4CAF50;"></i></h1>
 </a>
+
 <div class="bg-orange ">
     <footer class="container">
         <div class="row">
@@ -29,8 +31,12 @@
                           <p class="text-white text-center m-0">Carrera 19 No 18-43 Sur Plaza Mercado Restrepo L 29-30-31 Bogota D.C - Colombia</p>
                           <p class="text-white  text-center p-0" >TEL: +57 031-239-2673</p>
                           <h1 class="text-white d-block text-center">
-                              <i class="fab fa-facebook-square"></i>
-                              <i class="fab fa-whatsapp-square"></i>
+                              <a target="_blank" href="https://www.facebook.com/TayronaPetShop/">
+                                  <i class="fab fa-facebook" style=" color: #fffbe3;"></i>
+                              </a>
+                              <a target="_blank" href="https://api.whatsapp.com/send?phone=+573124678866&text=¡Hola!,&nbsp; Bienvenido a Almacenes Tayrona,&nbsp; &nbsp;Cuéntanos, ¿En qué podemos ayudarte?" >
+                                  <i class="fab fa-whatsapp " style=" color: #fffbe3;"></i>
+                              </a>
                           </h1>
                       </div>
                   </div>
@@ -47,7 +53,7 @@
     <div class="container py-3 text-white font-weight-bold">
        <div class="row">
            <div class="col-12 col-md-6 text-center  text-md-left font-lato font-weight-light"> Copyright 2019 &copy; Tayrona Pet Shop</div>
-           <div class="col-12 col-md-6 text-center  text-md-left font-lato font-weight-light">&reg;</div>
+           <div class="col-12 col-md-6 text-center  text-md-left font-lato font-weight-light"></div>
        </div>
     </div>
 </div>

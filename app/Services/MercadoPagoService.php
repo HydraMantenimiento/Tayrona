@@ -2,9 +2,11 @@
 
 namespace App\Services;
 
+use App\Order;
 use Illuminate\Http\Request;
 use App\Traits\ConsumesExternalServices;
 use App\Services\CurrencyConversionService;
+use Illuminate\Support\Facades\Auth;
 
 class MercadoPagoService
 {
@@ -33,8 +35,6 @@ class MercadoPagoService
     public function resolveAuthorization(&$queryParams, &$formParams, &$headers)
     {
         $queryParams['access_token'] = $this->resolveAccessToken();
-
-
     }
 
     public function decodeResponse($response)
@@ -67,13 +67,24 @@ class MercadoPagoService
             $name = $payment->payer->first_name;
             $currency = strtoupper($payment->currency_id);
             $amount = number_format($payment->transaction_amount, 0, ',', '.');
-
             $originalAmount = $request->value;
             $originalCurrency = strtoupper($request->currency);
 
+            foreach (session('cartproduct')->items as $session ){
+
+                $order = new Order;
+                $order->id_user = Auth::User()->id;
+                $order->id_product = $session['item']->id;
+                $order->cantidad = $session['qty'];
+                $order->precio = $session['item']->precio;
+                $order->total = $session['qty'] * $session['item']->precio ;
+                $order->status = 'Pedido';
+                $order->save();
+            }
+            session()->forget('cartproduct');
             return redirect()
-                ->route('home')
-                ->withSuccess(['payment' => "Thanks, {$name}. We received your {$originalAmount}{$originalCurrency} payment ({$amount}{$currency})."]);
+                ->route('cliente')
+                ->withSuccess(['payment' => "Gracias, {$name}. Recibimos su pago de {$originalAmount}{$originalCurrency} pago ({$amount}{$currency})."]);
         }
 
         return redirect()
@@ -95,7 +106,7 @@ class MercadoPagoService
                     'email' => $email,
                 ],
                 'binary_mode' => true,
-                'transaction_amount' => round($value * $this->resolveFactor($currency)),
+                'transaction_amount' => round($value),
                 'payment_method_id' => $cardNetwork,
                 'token' => $cardToken,
                 'installments' => $installments,
@@ -103,11 +114,12 @@ class MercadoPagoService
             ],
             [],
             $isJsonRequest = true
+
         );
     }
 
     public function resolveFactor($currency)
     {
-        return $this->converter->convertCurrency($currency, $this->baseCurrency);
+        return $this->converter->convertCurrency('cop', 'usd');
     }
 }

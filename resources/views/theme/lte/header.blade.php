@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="{{route('dashboard')}}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>T</b>A</span>
+        <span class="logo-mini"><b><img src="{{ asset('iconos/solo.png') }}" alt="" width="100%" height="100px"></b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Tayrona</b></span>
+        <span class="logo-lg"><b><img src="{{ asset('iconos/logo-tayrona.png') }}" alt="" width="100%" height="100px"></b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -30,7 +30,7 @@
                         <li class="user-header">
                             <img src="{{asset( Auth::user()->avatar )}}" class="img-circle" alt="User Image">
                             <p>
-                                {{ Auth::user()->name }} - Web Developer
+                                {{ Auth::user()->name }} {{ Auth::user()->lastname }}
                                 <small>{{ Auth::user()->created_at }}</small>
                             </p>
                         </li>

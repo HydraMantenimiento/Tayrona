@@ -10,6 +10,7 @@
             <h1>POLITICAS</h1>
         </div>
     </section>
+    <!--
     <section class="page-info">
         <div class="container">
             <div class="content-box clearfix">
@@ -18,7 +19,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section>-->
     <section class="about-style-three">
         <div class="container">
             <h1 class="my-2">ENTREGA</h1>

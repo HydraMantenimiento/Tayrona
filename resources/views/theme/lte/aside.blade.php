@@ -6,8 +6,13 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li>
+                <a href="{{ route('dashboard') }}">
+                    <i class="fa fa-home"></i> <span>Home</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('product.index') }}">
-                    <i class="fa fa-book"></i> <span>Productos</span>
+                    <i class="fa  fa-archive"></i> <span>Productos</span>
                 </a>
             </li>
             <li>
@@ -18,6 +23,11 @@
             <li>
                 <a href="{{ route('users.index') }}">
                     <i class="fa fa-users"></i> <span>Usuarios</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('orders') }}">
+                    <i class="fa fa-tags"></i> <span>Pedidos</span>
                 </a>
             </li>
             <li class="treeview">
@@ -33,7 +43,7 @@
             </li>
             <li>
                 <a href="{{ route('carrousel.index') }}">
-                    <i class="fa fa-users"></i> <span>Carrousel</span>
+                    <i class="fa fa-map"></i> <span>Carrousel</span>
                 </a>
             </li>
         </ul>
