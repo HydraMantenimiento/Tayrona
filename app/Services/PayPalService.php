@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Services;
+use App\Order;
+use App\Services\CurrencyConversionService;
 use Illuminate\Http\Request;
-use App\Traits\ConsumesExternalServices;//<-- asi estaba primero y aparecia el error , coloque el de abajo y se sluciono
-use App\Traits\ConsumesExternalServices\makeRequest; //el de abajo<---si no llamo el makeRequest aparece error 401
+use App\Traits\ConsumesExternalServices;
+use Illuminate\Support\Facades\Auth;//<-- asi estaba primero y aparecia el error , coloque el de abajo y se sluciono
+//use App\Traits\ConsumesExternalServices\makeRequest; el de abajo<---si no llamo el makeRequest aparece error 401
 
 
 class PayPalService
@@ -16,11 +19,14 @@ class PayPalService
 
     protected $clientSecret;
 
-    public function __construct()
+    protected $converter;
+
+    public function __construct(CurrencyConversionService $converter)
     {
         $this->baseUri = config('services.paypal.base_uri');
         $this->clientId = config('services.paypal.client_id');
         $this->clientSecret = config('services.paypal.client_secret');
+        $this->converter = $converter;
     }
 
     public function resolveAuthorization(&$queryParams, &$formParams, &$headers)
@@ -55,6 +61,7 @@ class PayPalService
 
     public function handleApproval()
     {
+
         if (session()->has('approvalId')) {
             $approvalId = session()->get('approvalId');
 
@@ -65,9 +72,22 @@ class PayPalService
             $amount = $payment->value;
             $currency = $payment->currency_code;
 
+            foreach (session('cartproduct')->items as $session ){
+
+                $order = new Order;
+                $order->id_user = Auth::User()->id;
+                $order->id_product = $session['item']->id;
+                $order->cantidad = $session['qty'];
+                $order->precio = $session['item']->precio;
+                $order->total = $session['qty'] * $session['item']->precio ;
+                $order->status = 'Pedido';
+                $order->save();
+            }
+            session()->forget('cartproduct');
+
             return redirect()
-                ->route('client')
-                ->withSuccess(['payment' => "Thanks, {$name}. We received your {$amount}{$currency} payment."]);
+                ->route('cliente')
+                ->withSuccess(['payment' => "Thanks, {$name}. We received your {$amount} payment."]);
         }
 
         return redirect()
@@ -86,8 +106,8 @@ class PayPalService
                 'purchase_units' => [
                     0 => [
                         'amount' => [
-                            'currency_code' => strtoupper($currency),
-                            'value' => round($value * $factor = $this->resolveFactor($currency)) / $factor,
+                            'currency_code' => strtoupper('usd'),
+                            'value' => round($value * $this->resolveFactor('usd'),2),
                         ]
                     ]
                 ],
@@ -119,12 +139,6 @@ class PayPalService
 
     public function resolveFactor($currency)
     {
-        $zeroDecimalCurrencies = ['JPY'];
-
-        if (in_array(strtoupper($currency), $zeroDecimalCurrencies)) {
-            return 1;
-        }
-
-        return 100;
+        return $this->converter->convertCurrency('cop', 'usd');
     }
 }

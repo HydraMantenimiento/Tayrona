@@ -32,4 +32,19 @@ class Cartproduct
 
     }
 
+    public function reduceByOne($id){
+        $this->items[$id]['qty']--;
+        $this->items[$id]['precio'] -= $this->items[$id]['item']['precio'];
+        $this->totalQty--;
+        $this->totalPrice -= $this->items[$id]['item']['precio'];
+
+        if ($this->items[$id]['qty']<= 0){
+            $this->totalQty -= $this->items[$id]['qty'];
+            $this->totalPrice -= $this->items[$id]['precio'];
+            unset($this->items[$id]);
+        }
+    }
+
+
+
 }

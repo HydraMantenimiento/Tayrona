@@ -18,8 +18,17 @@ class CartproductsController extends Controller
         $cart->add($product, $product->id);
         $request->session()->put('cartproduct',$cart);
         //dd($request->session()->get('cartproduct'));  //esto es para comprobar que si envie los datos
-        return redirect()->route('cliente');
+        return redirect()->route('product.shoppingCart');
     }
+    public function getReduceByOne($id){
+        $oldCart = Session::has('cartproduct') ? session::get('cartproduct') : null;
+        $cart = new Cartproduct($oldCart);
+        $cart->reduceByOne($id);
+
+        session::put('cartproduct',$cart);
+        return redirect()->route('product.shoppingCart');
+    }
+
     public function getCart(){
         $currencies = Currency::all();
         $PaymentPlatforms = PaymentPlatform::all();

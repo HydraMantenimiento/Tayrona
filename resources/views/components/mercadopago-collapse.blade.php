@@ -1,4 +1,4 @@
-<label class="mt-3">Card details:</label>
+    <label class="mt-3">Card details:</label>
 
 <div class=" form-row">
     <div class="col-md-5 form-group">

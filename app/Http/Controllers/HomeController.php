@@ -7,6 +7,7 @@ use App\Blog;
 use App\Carrousel;
 use App\category_product;
 use App\Currency;
+use App\Order;
 use App\PaymentPlatform;
 use App\productos;
 use App\User;
@@ -51,10 +52,11 @@ class HomeController extends Controller
 
     public function dashboard()
 {
-    $user = User::all();
+    $user    = User::all();
     $product = productos::all();
-    $blog = Blog::all();
-    return view('admin/dashboard', compact('user', 'product', 'blog'));
+    $blog    = Blog::all();
+    $order   = Order::all();
+    return view('admin/dashboard', compact('user', 'product', 'blog', 'order'));
 }
     public function cliente()
     {

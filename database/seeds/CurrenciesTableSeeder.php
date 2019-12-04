@@ -10,7 +10,6 @@ class CurrenciesTableSeeder extends Seeder
         $currencies =[
 
             'usd',
-            'eur',
         ];
 
         foreach ($currencies as $currency){

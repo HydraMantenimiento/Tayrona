@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('orders') }}">
                     <i class="fa fa-tags"></i> <span>Pedidos</span>
                 </a>
             </li>

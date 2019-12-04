@@ -57,7 +57,7 @@
                                     <td>{{ $products['qty'] }}</td>
                                     <td>{{ $products['item']['precio'] }}</td>
                                     <td>{{ $products['precio'] }}</td>
-                                    <td></td>
+                                    <td><a href="{{ route('product.reduce',['id'=>$products['item']['id']]) }}"><i class="fa fa-close"></i></a></td>
                                 </tr>
                             </tbody>
                             @endforeach
@@ -99,16 +99,16 @@
                                    @endforeach
                                </div>
                            <br>
-                           <p class="text-muted well well-sm no-shadow" >
+                           <!--
+                           <p class="text-muted well well-sm no-shadow"  >
                                <label>Tipo Moneda</label>
                                <select class="custom-select" name="currency" required >
-                                   @foreach($currencies as $currency)
-                                       <option value="{{ $currency->iso }}" required>
-                                           {{ $currency->iso }}
+                                   aca va un foreach para traer tipo de moneda que esta en la base de datos
+                                       <option value="" required>
                                        </option>
-                                   @endforeach
                                </select>
                            </p>
+                           -->
                        </div>
                     </div>
                     <div class="col-xs-6">

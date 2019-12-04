@@ -53,7 +53,7 @@
     <div class="container py-3 text-white font-weight-bold">
        <div class="row">
            <div class="col-12 col-md-6 text-center  text-md-left font-lato font-weight-light"> Copyright 2019 &copy; Tayrona Pet Shop</div>
-           <div class="col-12 col-md-6 text-center  text-md-left font-lato font-weight-light">&reg;</div>
+           <div class="col-12 col-md-6 text-center  text-md-left font-lato font-weight-light"></div>
        </div>
     </div>
 </div>

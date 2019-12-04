@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\PayPalService;
+use App\Services\MercadoPagoService;
 use App\Resolvers\PaymentPlatformResolver;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class PaymentController extends Controller
     {
         $rules = [
             'value'=>['required'],
-            'currency' => ['required', 'exists:currencies,iso'],
+
             'payment_platform' => ['required', 'exists:payment_platforms,id'],
         ];
         $request->validate($rules);
@@ -39,9 +40,9 @@ class PaymentController extends Controller
             return $paymentPlatform->handleApproval();
         }
 
-        return redirect()->route('home')->withErrors('We cannot retrieve your payment platform. Try again, plase.');
+        return redirect()->route('cliente')->withErrors('No podemos recuperar su plataforma de pago. Por favor, inténtalo de nuevo.');
     }
     public function cancelled(){
-        return redirect()->route('product.shoppingCart')->withErrors('you cancelled the payment');
+        return redirect()->route('product.shoppingCart')->withErrors('cancelaste el pago.');
     }
 }
