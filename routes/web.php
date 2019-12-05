@@ -37,7 +37,7 @@
 
         Route::resource('users', 'UserController');
         Route::get('admin-list-excel','reportsController@exportExcel')->name('reports.excel');
-        Route::resource('/admin/carrousel', 'carrouselController');
+        Route::resource('/admin/carrousel', 'CarrouselController');
 
 
 

@@ -3,12 +3,13 @@
 @section('content')
     <style>
         .content-imgs{
-            height: 400px;
+            height: 300px;
             width: 120px;
             overflow-y: -moz-scrollbars-vertical;
             overflow-y: scroll !important;
-            padding: 10px;
+            padding:0px 10px;
             position: relative;
+            
             background: #f5f5f5;
         }
         .content-imgs .img-des img {
@@ -22,48 +23,70 @@
 
         }
         .arrow-img-up{
-            left: 0px;
-            background: rgba(255, 255, 255, 0.67);
+            background: #eeeeee;
             padding: 10px;
             text-align: center;
-            position: absolute;
-            width: 100%;
+            width: 120px;
+            transition:0.5s;
+          
         }
         .arrow-img-down{
-            left: 0px;
-            bottom: 0px;
-            background: rgba(255, 255, 255, 0.67);
+            background: #eeeeee;
             padding: 10px;
             text-align: center;
-            position: absolute;
-            width: 100%;
+            width: 120px;
             z-index: 200;
         }
+
+        .arrow-img-down:hover, .arrow-img-up:hover{
+            background:#424242;
+            color:white;
+            transition:0.5s;
+        }
+
         .img-m{
             height: 400px;
         }
+
+        #img-first {
+            position: relative;
+            width: 640px;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(50,50,50 0.5);
+        }
     </style>
 
-    <div class="container" style=" width: 100vw;  height: 100vh;">
-    <div class="row my-2">
-        <div class="content-imgs">
+    <div class="container-fluid" style=" width: 100vw;  height: 100vh;">
+    <div class="row my-4">
+    <div class="col-2">
+        <div class="float-right">
             <div class="arrow-img-up">
                 <i class="fas fa-chevron-up"></i>
             </div>
-            @foreach($imgs as $img)
-                <div class="img-des ">
-                    <img src="{{ asset($img->url) }}" alt="" class="img-t img-option">
-                </div>
-            @endforeach
+            <div class="content-imgs">
+                
+                @foreach($imgs as $img)
+                    <div class="img-des ">
+                        <img src="{{ asset($img->url) }}" alt="" class="img-t img-option">
+                    </div>
+                @endforeach
+            
+            </div>
             <div class="arrow-img-down">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
-        <!-- imagen grande -->
-        <div class="col-5 my-3  img-m">
-            <img src="{{ asset($imgs[0]->url) }}" alt="" id="img-first" class="d-block img-fluid" style="height: 380px; padding: 10px 0px;">
+        
         </div>
+        <div class="col-5">
+        <!-- imagen grande -->
+   
+            <img src="{{ asset($imgs[0]->url) }}"  alt="" id="img-first"  data-big="{{ asset($imgs[0]->url) }}"  data-overlay="{{ asset($imgs[0]->url) }}" class="d-block img-fluid" style="height: 380px; padding: 10px 0px;">
+        
         <!-- este campo es de la descripcion -->
+        </div>
+
         <div class="col-5 my-3 ">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
