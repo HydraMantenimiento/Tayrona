@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services;
+use App\Operation;
 use App\Order;
 use App\Services\CurrencyConversionService;
 use Illuminate\Http\Request;
@@ -72,17 +73,25 @@ class PayPalService
             $amount = $payment->value;
             $currency = $payment->currency_code;
 
+
+            $operation = new Operation;
+            $operation->user_id = Auth::User()->id;
+            $operation->total = session('cartproduct')->totalPrice;
+            $operation->status = 'encurso';
+            $operation->save();
+
             foreach (session('cartproduct')->items as $session ){
 
                 $order = new Order;
-                $order->id_user = Auth::User()->id;
+                $order->oper_id = $operation->id;
                 $order->id_product = $session['item']->id;
                 $order->cantidad = $session['qty'];
                 $order->precio = $session['item']->precio;
                 $order->total = $session['qty'] * $session['item']->precio ;
-                $order->status = 'Pedido';
+
                 $order->save();
             }
+
             session()->forget('cartproduct');
 
             return redirect()

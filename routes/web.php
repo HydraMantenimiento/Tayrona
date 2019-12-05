@@ -65,6 +65,7 @@
 
         /*Pedidos*/
         Route::get('/orders','OrderController@index')->name('orders');
+        Route::get('/show','OrderController@show')->name('orders.show');
 
         /* carro de compras*/
         Route::get('/add-to-car/{id}',['uses' => 'CartproductsController@getAddToCart', 'as'   => 'product.addToCart']);

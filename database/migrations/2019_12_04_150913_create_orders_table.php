@@ -15,14 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->unsignedBigInteger('oper_id');
+            $table->foreign('oper_id')->references('id')->on('operation');
             $table->unsignedBigInteger('id_product');
             $table->foreign('id_product')->references('id')->on('productos');
-            $table->text('precio');
+            $table->integer('precio');
             $table->string('cantidad');
             $table->string('total');
-            $table->string('status');
+
             $table->timestamps();
         });
     }
