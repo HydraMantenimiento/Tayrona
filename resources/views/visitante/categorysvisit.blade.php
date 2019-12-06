@@ -14,7 +14,7 @@
         .close-menu .btn{
             float: right;
             border-radius: 30px;
-           margin: 20px 10px;
+            margin: 20px 10px;
         }
         .wrap{
             padding-top: 0px;
@@ -47,12 +47,12 @@
         }
         .content-product{
             display: flex;
-            justify-content:center;
+            justify-content:flex-start;
             flex-wrap: wrap;
         }
 
         .item-product{
-            width: 18%;
+            width: 23%;
             display: block;
             margin: 10px 0.5%;
         }
@@ -60,25 +60,6 @@
         .menu-secundary{
             width: 100%;
             padding: 10px 20px;
-        }
-        .desc {
-            position: absolute;
-            background: #FC7D3F;
-            padding: 5px 10px ;
-            color: white;
-            top:10px;
-            right: 10px;
-        }
-        .prod-info{
-            padding: 5px 0px;
-        }
-
-        .like{
-            position: absolute;
-            top:10px;
-            left: 10px;
-            background: rgba(255, 255, 255, 0.66);
-            padding: 5px 10px 5px 10px;
         }
 
         @media only screen and (max-width: 960px){
@@ -115,95 +96,57 @@
 
 
     </style>
-    
-    <div class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                @for($i = 0; $i < count($carrousels); $i++ )
-                    <li data-target="#carouselExampleCaptions" data-slide-to="{{ $i }}" class="{{ $i == 0 ? 'active' :'' }} "></li>
-                @endfor
-            </ol>
-            <div class="carousel-inner">
-                <?php $i = 0 ?>
-                @foreach($carrousels as $carrousel)
-                <div class="carousel-item {{ $i == 0 ? 'active' :'' }} ">
-                    <img src="{{ asset($carrousel->img) }}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2 class="text-white">{{ $carrousel->title }}</h5>
-                        <p>{{ $carrousel->description }}</p>
-                    </div>
-                </div>
-                    <?php $i++ ?>
-                @endforeach
-                    @if(count($carrousels)  == 0)
-                        @for($i = 0; $i < 3; $i++)
-                            <div class="carousel-item {{ $i == 0 ? 'active' :'' }} ">
-                                <img src="holder.js/500x600" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-white">TITULO</h5>
-                                    <p></p>
-                                </div>
-                            </div>
-                        @endfor
-                    @endif
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+    <div class="content">
+        <div class="menu-secundary d-block d-lg-none">
+            <button class="btn shadow btn-open">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+        <div class="wrap shadow">
+            <div class="close-menu d-block d-lg-none">
+                <button class="btn"><i class="fas fa-chevron-left"></i></button>
             </div>
-    <div class="product_list">
-    <div class="container-fluid  mt-3">
-            <div class="col-12">
-         
-            <div class="row">
-                <div class="col-12 d-block">
-                    <div class="content-product">
-                    @foreach($query as $producto)
+            <div class="store-wrapper">
+                <div class="category_title pt-lg-5">
+                    <h6>Subcategorias</h6>
+                </div>
+                <div class="category_list">
+                    <a href="{{ url('vistascategorias/'.$name.'/alimentos') }}" class="category_item" category="all">Alimentos</a>
+                    <a href="{{ url('vistascategorias/'.$name.'/accesorios') }}" class="category_item" category="ordenadores">Accesorios</a>
+                    <a href="{{ url('vistascategorias/'.$name.'/aseo') }}" class="category_item" category="laptops">Productos Aceo</a>
+                    <a href="{{ url('vistascategorias/'.$name.'/juguetes') }}" class="category_item" category="smartphones">Juguetes</a>
+                    <a href="{{ url('vistascategorias/'.$name.'/drogueria') }}" class="category_item" category="monitores">Drogueria</a>
+                </div>
+            </div>
+        </div>
 
-                            <div class="item-product">
-
-                        <div class="card ">
-                            <div class="desc bg-danger">
-                                20 %
-                            </div>
-                            <div class="like">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <a href="{{ route('description.visitors', $producto->id) }}">
-                                <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url ?? 'imagenes/default.png') }}" class="card-img-top p-1 "  alt="..." height="200px">
-                            </a>
-                            <div class="prod-info">
-                                <small class="  text-center font-lato font-weight-bold m-0 p-0 d-block" style="font-size:12px;">
-                                    {{ strtoupper($producto->name) }}
-                                </small>
-                                <p class="text-center">
-                                    <small style="text-decoration: line-through;">${{ number_format($producto->precio, '0' , '.', '.') }}</small>
-                                    <?php
-                                        $desc = $producto->precio * 20 / 100;
-                                    ?>
-                                    <small> - </small>
-                                    <small class="text-danger">${{ number_format($producto->precio - $desc, '0' , '.', '.') }}</small>
-                                </p>
-                                <div class="px-1">
-                                <button class="btn btn-block btn-outline-danger btn-disabled">Comprar <i class="fas fa-shopping-cart"></i></button>
+        <div class="product_list">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-12 d-block">
+                        <div class="content-product">
+                            @foreach($query as $producto)
+                                <div class="item-product">
+                                    <div class="card ">
+                                        <a href="{{ route('description.visitors', $producto->id) }}">
+                                            <img src="{{asset(\App\Http\Controllers\viewsCategoryController::productImg($producto->id)->url ?? 'imagenes/default.png') }}" class="card-img-top "  alt="..." height="200px">
+                                        </a>
+                                        <div class="card-body">
+                                            <small class="card-text  text-center font-lato font-weight-bold m-0 p-0 d-block" style="font-size:14px;">{{ strtoupper($producto->name) }}</small>
+                                            <p class="card-title text-danger text-center p-0 m-0" style="font-size: 14px;">${{ number_format($producto->precio, '0' , '.', '.') }}</p>
+                                        </div>
+                                        <div class="card-footer bg-white d-flex py-3 justify-content-center">
+                                            <i class="fas fa-eye"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-
-                    </div>
-                    @endforeach
                     </div>
                 </div>
+                {{$query -> links()}}
+            </div>
         </div>
-        {{$query -> links()}}
-    </div>
-    </div>
     </div>
     <div class="clearfix"></div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -212,9 +155,9 @@
             $('.btn-open').click(function () {
                 $('.wrap').css({ 'left' : '0px' })
             });
-           $('.close-menu').click(function () {
-               $('.wrap').css({ 'left' : '-260px' })
-           });
+            $('.close-menu').click(function () {
+                $('.wrap').css({ 'left' : '-260px' })
+            });
         });
     </script>
 @endsection

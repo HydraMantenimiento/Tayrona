@@ -88,7 +88,6 @@ class PayPalService
                 $order->cantidad = $session['qty'];
                 $order->precio = $session['item']->precio;
                 $order->total = $session['qty'] * $session['item']->precio ;
-
                 $order->save();
             }
 

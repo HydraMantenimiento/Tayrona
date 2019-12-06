@@ -10,8 +10,13 @@ class Order extends Model
     {
         return $this->belongsTo('App\User','id_user');
     }
-
+    public function operation(){
+        return $this->belongsTo('App\Operation','oper_id');
+    }
     public function product(){
         return $this->belongsTo('App\productos', 'id_product');
+    }
+    public  function img(){
+        return $this->belongsTo('App\product_img' , 'id_product');
     }
 }

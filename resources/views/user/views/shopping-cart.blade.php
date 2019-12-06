@@ -23,16 +23,7 @@
                         TEL: 2392673
                     </address>
                 </div>
-                <div class="col-sm-4 invoice-col ">
-                    Para:
-                    <address>
-                        <strong>John Doe</strong><br>
-                        795 Folsom Ave, Suite 600<br>
-                        San Francisco, CA 94107<br>
-                        Phone: (555) 539-1037<br>
-                        Email: john.doe@example.com
-                    </address>
-                </div>
+
             </div>
             <form action="{{ route('pay') }}" method="POST" id="paymentForm">
                 @csrf
@@ -130,12 +121,10 @@
                 </div>
                 <div class="row no-print">
                     <div class="col-xs-12">
-                        <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+                        <a href="{{ route('invoice-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
                         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
                         </button>
-                        <button type="button" id="payButton" class="btn btn-primary pull-right" style="margin-right: 5px;">
-                            <i class="fa fa-download"></i> Generate PDF
-                        </button>
+
                     </div>
                 </div>
             </form>

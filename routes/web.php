@@ -1,12 +1,13 @@
 <?php
 
+
     //rutas home
     Route::get('/', 'HomeController@home')->name('inicio');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/products', 'HomeController@products')->name('products');
 
-    //Verificacion de email
-    Auth::routes(['verify' => true]);
+//Verificacion de email
+Auth::routes(['verify' => true]);
     Route::group(['middleware' => 'verified', 'auth'], function () {
 
         Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
@@ -39,6 +40,10 @@
         Route::get('admin-list-excel','reportsController@exportExcel')->name('reports.excel');
         Route::resource('/admin/carrousel', 'CarrouselController');
 
+        /*Pedidos*/
+        Route::get('/orders','OrderController@index')->name('orders');
+        Route::get('/show/{id}','OrderController@show')->name('orders.show');
+        Route::post('/updateOrder/{id}','OrderController@updateOrder')->name('orders.update');
 
 
         //cliente-----*
@@ -46,6 +51,7 @@
 
         Route::get('visistacategoriauser/{category}/{subcategory?}','categoryusersController@checkcategoryuser')->name('visistacategoriauser');
         route::view('/grominguser','user/views/grominguser')->name('grominguser');
+
         Route::get('/vistaperfil', 'updateuserController@vistaperfil')->name('vistaperfil');
         Route::post('/updateuser/{id}','updateuserController@updateuser')->name('updateuser');
         Route::post('/mascota/{id}','updateuserController@mascotas')->name('mascota');
@@ -63,9 +69,9 @@
         route::get('listadeseos/{producto}/{user}', [ 'uses'=>'listaController@store', 'as' => 'listadeseos' ]);
         route::get('listdelete/{id}/', [ 'uses'=>'listaController@destroy', 'as' => 'listdelete' ]);
 
-        /*Pedidos*/
-        Route::get('/orders','OrderController@index')->name('orders');
-        Route::get('/show','OrderController@show')->name('orders.show');
+        /*ordenes*/
+        Route::get('/orderindex','OrderController@indexUser')->name('orders.index');
+        Route::get('/orderuser/{id}','OrderController@showUser')->name('orders.user');
 
         /* carro de compras*/
         Route::get('/add-to-car/{id}',['uses' => 'CartproductsController@getAddToCart', 'as'   => 'product.addToCart']);
@@ -75,14 +81,15 @@
         Route::post('/payments/pay', 'PaymentController@pay')->name('pay');
         Route::get('/payments/approval', 'PaymentController@approval')->name('approval');
         Route::get('/payments/cancelled', 'PaymentController@cancelled')->name('cancelled');
-
+        Route::view('invoice-print','user/invoice-print')->name('invoice-print');
     });
 
     Route::view('/blogAdmin','admin/blogAdmin')->name('blogAdmin');
-    //FIN ADMINISTRADOR
+//FIN ADMINISTRADOR
 
 
     //rutas visitantes
+
     route::get('vistascategorias/{name}/{subcategory?}','viewsCategoryController@checkcategories')->name('vistascategorias');
     route::view('/groming','visitante/groming')->name('groming');
     route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
@@ -93,20 +100,11 @@
     route::get('description/{id}', 'DescriptionProductController@visitors')->name('description.visitors');
     #route::get('/descripcion', 'ProductController@descriptionProduct');
     route::view('/blog','visitante/blog')->name('blog');
-    route::view('/descripcion','visitante/descripcion')->name('descripcion');
-    Route::resource('/mostrarblog','MostrarblogController');
+
+    Route::get('/mostrarblog','MostrarblogController@index')->name('mostrarblog');
+    Route::get('/viewblog/{id}','MostrarblogController@viewblog')->name('viewblog');
 
 
-    //FIN ADMINISTRADOR
 
+//FIN ADMINISTRADOR
 
-        //rutas visitantes
-        route::get('vistascategorias/{name}/{subcategory?}','viewsCategoryController@checkcategories')->name('vistascategorias');
-        route::view('/groming','visitante/groming')->name('groming');
-        route::view('/Veterinaria','visitante/Veterinaria')->name('Veterinaria');
-        route::view('/about','visitante/about')->name('about');
-        route::view('/politicas','visitante/politicas')->name('politicas');
-        route::get('/descripcion/{producto}','viewsCategoryController@descripcion')->name('descripcion');
-        /*blog*/
-        Route::get('/mostrarblog','MostrarblogController@index')->name('mostrarblog');
-        Route::get('/viewblog/{id}','MostrarblogController@viewblog')->name('viewblog');

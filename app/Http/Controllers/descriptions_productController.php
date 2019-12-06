@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\descriptions_product;
+use App\product_img;
 use App\productos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class descriptions_productController extends Controller
 {
@@ -17,7 +19,9 @@ class descriptions_productController extends Controller
     {
         $producto = productos::find($id);
         $descripcion = descriptions_product::where('product_id', $id)->get();
-        return view('user/views/descripcionuser', compact('producto','descripcion'));
+        $imgs = product_img::where('product_id', $id)->get();
+        $user = $user = Auth::User();
+        return view('user/views/descripcionuser', compact('producto','descripcion','imgs','user'));
     }
 
     /**

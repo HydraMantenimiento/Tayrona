@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
 
 
+
         <!-- platilla productos-->
         <link rel="stylesheet" href="{{asset("desing/css/bootstrap.min.css")}}">
         <link rel="stylesheet" href="{{asset("desing/css/font-awesome.min.css")}}">
@@ -98,7 +99,6 @@
         <script src="{{asset("desing/js/nouislider.min.js")}}"></script>
         <script src="{{asset("desing/js/jquery.zoom.min.js")}}"></script>
         <script src="{{asset("desing/js/main.js")}}"></script>
-
         @yield("script")
 
     </body>

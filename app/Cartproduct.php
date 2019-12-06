@@ -17,14 +17,18 @@ class Cartproduct
         }
     }
 
-    public function add($item, $id ){
+    public function add($item, $id , $cant){
         $storedItem = ['qty'=>0, 'precio'=>$item->precio, 'item'=>$item];
         if ($this->items){
             if (array_key_exists($id, $this->items)){
                 $storedItem = $this->items[$id];
             }
         }
-        $storedItem['qty']++;
+        if ($cant > 1 ) {
+            $storedItem['qty'] = $cant;
+        }else{
+            $storedItem['qty']++;
+        }
         $storedItem['precio'] = $item->precio * $storedItem['qty'];
         $this->items[$id] = $storedItem;
         $this->totalQty++;
@@ -48,3 +52,4 @@ class Cartproduct
 
 
 }
+

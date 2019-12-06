@@ -1,4 +1,7 @@
-@extends('theme.lte.master')
+@extends('theme.lteuser.masteruser')
+
+
+
 
 @section('title')
     Tayrona Pet Shop
@@ -28,10 +31,10 @@
                         </thead>
                         <tbody>
 
-                        @foreach($orders as  $order)
+                        @foreach($operation as  $order)
                             <tr>
                                 <td class="text-center" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$order->id}}</td>
-                                <td class="text-center" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{ $order->user->name . '' . $order->user->lastname}}</td>
+                                <td class="text-center" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{ $order->user->name . '  ' . $order->user->lastname}}</td>
                                 <td class="text-center" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{ $order->user->address  }}</td>
                                 <td class="text-center" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{$order->user->telephone  }}</td>
                                 <td class="text-center" style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;  max-width: 150px;" width="100px">{{ $order->user->email }}</td>
@@ -39,7 +42,7 @@
 
                                 <td class="td-actions text-center "  width="100px">
                                     <a>
-                                        <a href="{{route('orders.show',$order->id)}}" class="btn btn-info" data-toggle="tooltip" title="Vista pedido"><i class="fa fa-eye"></i></a>
+                                        <a href="{{route('orders.user',$order->id)}}" class="btn btn-info" data-toggle="tooltip" title="Vista pedido"><i class="fa fa-eye"></i></a>
                                     </a>
                                 </td>
                             </tr>

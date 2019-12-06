@@ -31,7 +31,7 @@
                             <img src="{{asset(Auth::user()->avatar)}}" class="img-circle" alt="User Image">
 
                             <p class="text-black">
-                                {{ Auth::user()->name }} - Web Developer
+                                {{ Auth::user()->name }} - {{ Auth::user()->lastname }}
                                 <small>{{ Auth::user()->created_at }}</small>
                             </p>
                         </li>

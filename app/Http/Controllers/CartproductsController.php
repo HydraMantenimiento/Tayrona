@@ -13,9 +13,10 @@ class CartproductsController extends Controller
 {
     public function getAddToCart(Request $request, $id){
         $product = productos::find($id);
+        $cant = $request->cant;
         $oldCart = Session::has('cartproduct') ? session::get('cartproduct') : null;
         $cart = new Cartproduct($oldCart);
-        $cart->add($product, $product->id);
+        $cart->add($product, $product->id, $cant );
         $request->session()->put('cartproduct',$cart);
         //dd($request->session()->get('cartproduct'));  //esto es para comprobar que si envie los datos
         return redirect()->route('product.shoppingCart');

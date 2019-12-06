@@ -79,7 +79,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('orders.index')}}">
                     <i class="fa fa-tags"></i> <span>Pedidos</span>
                 </a>
             </li>

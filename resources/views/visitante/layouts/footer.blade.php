@@ -1,9 +1,8 @@
 
-
 <style>
     .appwhatsapp{
         position: fixed;
-        right: 40px;
+        right: 26px;
         bottom: 50px;
         width: 60px;
         z-index: 1000;
@@ -14,9 +13,8 @@
     }
 </style>
 <a target="_blank" href="https://api.whatsapp.com/send?phone=+573124678866&text=¡Hola!,&nbsp; Bienvenido a Almacenes Tayrona,&nbsp; &nbsp;Cuéntanos, ¿En qué podemos ayudarte?" class="appwhatsapp">
-    <h1 class="display-3"><i class="fab fa-whatsapp-square" style="color:#4CAF50;"></i></h1>
+    <img src="{{'fonts/whatsapp.png'}}" alt="">
 </a>
-
 <div class="bg-orange ">
     <footer class="container">
         <div class="row">

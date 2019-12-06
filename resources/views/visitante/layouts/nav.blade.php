@@ -16,7 +16,7 @@
                     <input type="text" class="barra-busqueda " placeholder="Buscar" v-model="dataText" v-on:keyup="search()">
                     <div class="list-search" v-if="dataText.length > 0 || data.length  > 0">
                         <div class="content-list" v-for="product of data" v-on:focus="show()">
-                            <a href="">
+                            <a v-bind:href="window.location.origin + '/Tayrona/public/description/'+ product.id">
                                 <div class="item-search">
                                     <span class="d-block">@{{ product.name }}</span>
                                 </div>
